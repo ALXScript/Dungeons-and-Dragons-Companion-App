@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dice"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Dice Roller" />
+
+        <item
+            android:id="@+id/nav_stats"
+            android:icon="@drawable/ic_exposure_plus_1_black_24dp"
+            android:title="Stats" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_extension_black_24dp"
+                android:title="Share" />
+        </menu>
+    </item>
+
+
+</menu>
