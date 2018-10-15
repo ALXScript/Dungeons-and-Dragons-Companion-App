@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DnD Player Companion</string>
+    <string name="charCreat">Create Char</string>
+    <string name="selChar">Select Char</string>
+    <string name="diceRoll">Roll Dice</string>
+    <string name="spellBook">Spell Book</string>
+    <string name="itemBook">Item Book</string>
+    <string name="stats">Stats</string>
 </resources>
