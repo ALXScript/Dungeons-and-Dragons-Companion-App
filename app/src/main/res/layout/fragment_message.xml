@@ -6,7 +6,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Message Fragment"
+        android:text="Dice Roller Fragment"
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
 
