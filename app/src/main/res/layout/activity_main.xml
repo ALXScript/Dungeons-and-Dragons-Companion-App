@@ -18,8 +18,7 @@
         android:text="@string/selChar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appFrontName" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/creatCharBtn"
@@ -35,12 +34,13 @@
 
     <TextView
         android:id="@+id/appFrontName"
-        android:layout_width="257dp"
-        android:layout_height="59dp"
+        android:layout_width="170dp"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="120dp"
-        android:fontFamily="cursive"
+        android:layout_marginEnd="106dp"
+        android:fontFamily="serif"
         android:text="@string/app_name"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="64dp"

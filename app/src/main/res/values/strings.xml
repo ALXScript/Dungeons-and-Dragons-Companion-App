@@ -5,5 +5,6 @@
     <string name="diceRoll">Roll Dice</string>
     <string name="spellBook">Spell Book</string>
     <string name="itemBook">Item Book</string>
+    <string name="inv">Inventory</string>
     <string name="stats">Stats</string>
 </resources>

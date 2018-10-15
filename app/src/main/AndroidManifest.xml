@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Options"></activity>
+        <activity android:name=".createChar"></activity>
+        <activity android:name=".diceRoll"></activity>
+        <activity android:name=".inventory"></activity>
+        <activity android:name=".spellBook"></activity>
+        <activity android:name=".stats"></activity>
     </application>
 
 </manifest>
