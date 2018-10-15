@@ -1,5 +1,6 @@
 package com.example.victor.myapplication;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -50,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_stats:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new StatsFragment()).commit();
+                break;
+            case R.id.nav_spellbook:
+                Intent intent = new Intent(this, SpellBookActivity.class);
+                this.startActivity(intent);
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "send", Toast.LENGTH_SHORT).show();
