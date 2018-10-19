@@ -34,12 +34,12 @@
 
     <TextView
         android:id="@+id/appFrontName"
-        android:layout_width="170dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="106dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="71dp"
         android:fontFamily="serif"
         android:text="@string/app_name"
         android:textSize="30sp"
