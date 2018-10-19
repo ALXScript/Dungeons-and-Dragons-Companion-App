@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_inventory:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HomeFragment()).commit();
+                        new InventoryFragment()).commit();
                 break;
             case R.id.nav_spellbook:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HomeFragment()).commit();
+                        new SpellbookFragment()).commit();
                 break;
             case R.id.nav_dice:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
