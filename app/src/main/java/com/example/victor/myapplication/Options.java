@@ -23,6 +23,7 @@ public class Options extends AppCompatActivity
         btnSpellBook = (Button) findViewById(R.id.spellBookBtn);
         btnStats = (Button) findViewById(R.id.statsBtn);
 
+
         btnDiceRoll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
