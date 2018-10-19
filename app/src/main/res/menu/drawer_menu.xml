@@ -5,21 +5,31 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_dice"
-            android:icon="@drawable/ic_pets_black_24dp"
-            android:title="Dice Roller" />
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_24dp"
+            android:title="Home" />
 
         <item
             android:id="@+id/nav_stats"
             android:icon="@drawable/ic_exposure_plus_1_black_24dp"
             android:title="Stats" />
+        <item
+            android:id="@+id/nav_inventory"
+            android:icon="@drawable/shopping_cart_24dp"
+            android:title="Inventory"/>
 
         <item
             android:id="@+id/nav_spellbook"
-            android:icon="@drawable/ic_pets_black_24dp"
+            android:icon="@drawable/ic_whatshot_black_24dp"
             android:title="Spell Book"/>
+
+        <item
+            android:id="@+id/nav_dice"
+            android:icon="@drawable/ic_widgets_black_24dp"
+            android:title="Dice Roller" />
     </group>
 
+    <!--This is just for reference on how to make toasts-->
     <item android:title="Communicate">
         <menu>
             <item

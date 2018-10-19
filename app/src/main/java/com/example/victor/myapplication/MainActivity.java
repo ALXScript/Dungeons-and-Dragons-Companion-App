@@ -36,25 +36,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new DiceFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_dice);
+                    new HomeFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
         }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case R.id.nav_dice:
+            case R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DiceFragment()).commit();
+                        new HomeFragment()).commit();
                 break;
             case R.id.nav_stats:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new StatsFragment()).commit();
                 break;
+            case R.id.nav_inventory:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new HomeFragment()).commit();
+                break;
             case R.id.nav_spellbook:
-                Intent intent = new Intent(this, SpellBookActivity.class);
-                this.startActivity(intent);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new HomeFragment()).commit();
+                break;
+            case R.id.nav_dice:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new DiceFragment()).commit();
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "send", Toast.LENGTH_SHORT).show();
