@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DnD Player Companion</string>
+    <string name="app_name">My Application</string>
     <string name="charCreat">Create Char</string>
     <string name="selChar">Select Char</string>
     <string name="diceRoll">Roll Dice</string>
@@ -7,4 +7,7 @@
     <string name="itemBook">Item Book</string>
     <string name="inv">Inventory</string>
     <string name="stats">Stats</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>
