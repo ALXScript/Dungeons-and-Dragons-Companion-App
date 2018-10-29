@@ -1,0 +1,21 @@
+{
+    "race": "",
+    "isSubrace": "",
+    "subRace": "",
+    "Description": "",
+    "SubRaceDescription": "",
+    "AS_Str": "",
+    "AS_Dex": "",
+    "AS_Cst": "",
+    "AS_Int": "",
+    "AS_Wis": "",
+    "AS_Cha": "",
+    "Alignment": "",
+    "Speed": "",
+    "Abilities": [
+        {"AbilityName": "",
+        "AbilityDescription": ""}
+    ],
+    "Languages": ["",""]
+
+}
