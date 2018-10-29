@@ -5,14 +5,19 @@ import android.support.v7.app.AppCompatActivity;
 
 public class Race extends AppCompatActivity
 {
+    public static  void testFunction()
+    {
+
+    }
+
     private static final String TAG = "race";
 
     //create class variables
     private String race;
 
     //get race function
-    String getRace(){
-        return  race;
+    public void getRace(){
+        //return  race;
     }
 
     //set race function

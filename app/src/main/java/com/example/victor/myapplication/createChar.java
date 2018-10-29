@@ -2,6 +2,9 @@ package com.example.victor.myapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import com.example.victor.myapplication.DClass;
+import com.example.victor.myapplication.Race;
+
 
 //extends AppCompatActivity needed to be able to go from one activity to another
 public class createChar extends AppCompatActivity
@@ -10,6 +13,11 @@ public class createChar extends AppCompatActivity
     private static final String TAG = "createChar";
 
     //******STARTING DEFINING VARIABLES********
+    //Imported Classes variables classes
+
+
+    //myRace.setRace();
+
     //Stat Variables
     private String myName;
     private int myCurrentHP;
@@ -29,7 +37,7 @@ public class createChar extends AppCompatActivity
     3 - intelligence
     4 - Wisdom
     5 - Charisma*/
-    private int myAbilityScores[6];
+    private int myAbilityScores[] = new int[6];
 
     //Other Stat Variables
     private boolean statInspiration;
@@ -43,8 +51,8 @@ public class createChar extends AppCompatActivity
     3 - intelligence
     4 - Wisdom
     5 - Charisma*/
-    private boolean savingThrowActive[6];
-    private int savingThrow[6];
+    private boolean savingThrowActive[] = new boolean[6];
+    private int savingThrow[] = new int[6];
 
     //Skills Variable
     /* Array Legend
@@ -67,8 +75,8 @@ public class createChar extends AppCompatActivity
     16 - Stealth (Dex)
     17 - Survival (Wis)
     */
-    private boolean skillsActive[18];
-    private int skills[18];
+    private boolean skillsActive[] = new boolean[18];
+    private int skills[] = new int[18];
 
     //Char Creation Variables
     private int mySpellBookTable;
@@ -85,4 +93,5 @@ public class createChar extends AppCompatActivity
         //references the XML in Layout Folder
         setContentView(R.layout.createchar);
     }
+
 }
