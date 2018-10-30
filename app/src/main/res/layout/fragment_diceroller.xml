@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@android:color/holo_red_light">
+    android:background="@android:color/holo_green_dark">
 
 
     <Button
@@ -13,8 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="28dp"
         android:layout_marginTop="53dp"
-        android:text="4" />
-
+        android:text="d4" />
 
 
     <Button
@@ -23,8 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/d4"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="22dp"
-        android:text="10" />
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="269dp"
+        android:text="d10" />
 
 
 
@@ -64,5 +64,45 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="217dp"
         android:text="diceQuantity" />
+
+    <Button
+        android:id="@+id/d12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/d4"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="155dp"
+        android:text="d12" />
+
+    <Button
+        android:id="@+id/d20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/roll"
+        android:layout_alignTop="@+id/d12"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="-2dp"
+        android:text="d20" />
+
+    <Button
+        android:id="@+id/d8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/d4"
+        android:layout_alignEnd="@+id/d6"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="-138dp"
+        android:text="d8" />
+
+    <Button
+        android:id="@+id/d100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/diceResultTextView"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="228dp"
+        android:text="d100" />
 
 </RelativeLayout>
