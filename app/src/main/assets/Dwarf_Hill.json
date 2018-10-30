@@ -1,0 +1,20 @@
+{
+  "race": "Dwarf",
+  "isSubrace": "true",
+  "subRace": "Hill Dwarf",
+  "Description": "null",
+  "SubRaceDescription": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faenln in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Oragonlance setting.",
+  "AS_Str": "0",
+  "AS_Dex": "0",
+  "AS_Cst": "0",
+  "AS_Int": "0",
+  "AS_Wis": "1",
+  "AS_Cha": "0",
+  "Alignment": "null",
+  "Speed": "null",
+  "Abilities": [
+    {"AbilityName": "Dwarven Toughness",
+      "AbilityDescription": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."}
+  ],
+  "Languages": ["null"]
+}

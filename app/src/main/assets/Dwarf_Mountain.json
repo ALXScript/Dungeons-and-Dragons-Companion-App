@@ -1,0 +1,20 @@
+{
+  "race": "Dwarf",
+  "isSubrace": "true",
+  "subRace": "Mountain Dwarf",
+  "Description": "null",
+  "SubRaceDescription": "As a mountain dwarf, you're strong and hardy, accustomed to a difficult life in rugged terrain. You're probably on the tall side (for a dwarf), and tend toward lighter coloration, The shield dwarves of northern Faerun, as well as the ruling Hylar c1an and the noble Oaewar c1an of Oragonlance, are mountain dwarves.",
+  "AS_Str": "2",
+  "AS_Dex": "0",
+  "AS_Cst": "0",
+  "AS_Int": "0",
+  "AS_Wis": "0",
+  "AS_Cha": "0",
+  "Alignment": "null",
+  "Speed": "null",
+  "Abilities": [
+    {"AbilityName": "Dwarven Armor Training",
+      "AbilityDescription": "You have proficiency with light and medium armor"}
+  ],
+  "Languages": ["null"]
+}
