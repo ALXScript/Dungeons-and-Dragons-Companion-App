@@ -1,21 +1,28 @@
 {
-    "race": "",
-    "isSubrace": "",
-    "subRace": "",
-    "Description": "",
-    "SubRaceDescription": "",
-    "AS_Str": "",
-    "AS_Dex": "",
-    "AS_Cst": "",
-    "AS_Int": "",
-    "AS_Wis": "",
-    "AS_Cha": "",
-    "Alignment": "",
-    "Speed": "",
+    "race": "Dwarf",
+    "isSubrace": "false",
+    "subRace": "null",
+    "Description": "Kingdoms rich in ancient grandeur, halls carved into the roots of mountains, the echoing of picks and hammers in deep mines and blazing forges, a commitment to clan and tradition, and a burning hatred of goblins and ores-lhese common threads unite all dwarves.",
+    "SubRaceDescription": "null",
+    "AS_Str": "0",
+    "AS_Dex": "0",
+    "AS_Cst": "2",
+    "AS_Int": "0",
+    "AS_Wis": "0",
+    "AS_Cha": "0",
+    "Alignment": "LG / LN / LC",
+    "Speed": "25",
     "Abilities": [
-        {"AbilityName": "",
-        "AbilityDescription": ""}
+        {"AbilityName": "Darkvision",
+            "AbilityDescription": "Accustomed to life underground, you have superior vision in dark and dim conditions. Vou can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim lighl. Vou can't discern color in darkness, only shades of gray."},
+        {"AbilityName": "Dwarven Resilience",
+            "AbilityDescription": "You have advantage on saving throws against poison, and you have resistance against poison damage"},
+        {"AbilityName": "Dwarven Combat Training",
+            "AbilityDescription": "You have proficiency witht he battleaxe, handaxe, throwing hammer, and warhammer."},
+        {"AbilityName": "Tool Proficiency",
+            "AbilityDescription": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools"},
+        {"AbilityName": "Stonecutting",
+            "AbilityDescription": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."}
     ],
-    "Languages": ["",""]
-
+    "Languages": ["Common","Dwarvish"]
 }

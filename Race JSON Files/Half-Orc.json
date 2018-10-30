@@ -1,0 +1,26 @@
+{
+    "race": "Half-Orc",
+    "isSubrace": "false",
+    "subRace": "null",
+    "Description": "Whether united under the leadership of a mighty warloek OI' having fought to a standstill after years of eonfliet, ore and human tribes sometimes form allianees, joining forces into a larger horde lo lhe terror of eivilized lands nearby. When lhese allianees are sealed by marriages, half-ores are bom. Some half-ores rise lo beeome proud ehiefs of ore lribes, lheir human blood giving them an edge over lheir full-blooded ore rivaIs. Some venture inlo lhe world lo prove lheir worlh among humans and other more civilized raees. Many of lhese beeome advenlurers, aehieving grealness for lheir mighly deeds and nOloriely for their barbarie eustoms and savage fury",
+    "SubRaceDescription": "null",
+    "AS_Str": "2",
+    "AS_Dex": "0",
+    "AS_Cst": "1",
+    "AS_Int": "0",
+    "AS_Wis": "0",
+    "AS_Cha": "0",
+    "Alignment": "LE / TN / TE / CN / CE",
+    "Speed": "30",
+    "Abilities": [
+        {"AbilityName": "Darkvision",
+            "AbilityDescription": "Thanks to your ore blood. you have superior vision in dark and dim eOllditions. Vou ean see in dim tight within 60 feet of you as if it were bright tight. and in darkness as if it were dim light. You ean't diseern eolor in darkness, only shades of gray."},
+        {"AbilityName": "Menacing",
+            "AbilityDescription": "You gain proficiency in the Intimidation skill"},
+        {"AbilityName": "Relentless Endurance",
+            "AbilityDescription": "When you are reduced to O hit points but not killed outright. you can drop to I hit point instead. Vou can't use this feature again unti! you finish a long resto"},
+        {"AbilityName": "Savage Attacks",
+            "AbilityDescription": "When you score a criticaI hit with a melee weapon attack, you can roll one of thc wcapon's damage dice one additional time and add it lo lhe extra damage of lhe criticaI hit."}
+    ],
+    "Languages": ["Common","Orc"]
+}
