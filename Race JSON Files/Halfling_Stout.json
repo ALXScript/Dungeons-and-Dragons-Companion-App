@@ -1,0 +1,20 @@
+{
+    "race": "Halfling",
+    "isSubrace": "true",
+    "subRace": "Stout",
+    "Description": "null",
+    "SubRaceDescription": "",
+    "AS_Str": "0",
+    "AS_Dex": "0",
+    "AS_Cst": "1",
+    "AS_Int": "0",
+    "AS_Wis": "0",
+    "AS_Cha": "0",
+    "Alignment": "null",
+    "Speed": "null",
+    "Abilities": [
+        {"AbilityName": "Stout Resilience",
+            "AbilityDescription": "You have advantage on saving rhows against poison, and you have resistance against poison damage."}
+    ],
+    "Languages": ["null"]
+}

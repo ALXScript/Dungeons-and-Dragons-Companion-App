@@ -1,0 +1,26 @@
+{
+    "race": "Elf",
+    "isSubrace": "false",
+    "subRace": "null",
+    "Description": "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it. They live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze. Elves lave nature and magic, art and artistry, music and poetry, and the good things of the world.",
+    "SubRaceDescription": "null",
+    "AS_Str": "0",
+    "AS_Dex": "2",
+    "AS_Cst": "0",
+    "AS_Int": "0",
+    "AS_Wis": "0",
+    "AS_Cha": "0",
+    "Alignment": "",
+    "Speed": "30",
+    "Abilities": [
+        {"AbilityName": "Darkvision",
+            "AbilityDescription": "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can'l discern color in darkness, only shades of gray."},
+        {"AbilityName": "Keen Senses",
+            "AbilityDescription": "You have proficiency in the Perception skill"},
+        {"AbilityName": "Fey Ancestry",
+            "AbilityDescription": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."},
+        {"AbilityName": "Trance",
+            "AbilityDescription": "Evles don't need to sleep. Instead, they meditate deeply, remianning semiconscious, for 4 hours a day. (The Common word for such meditation is 'trance'.) While meditating, you can dream after a fasion; such dreams are actually mental exercises that hve become reflexive through years of practice. after resting in this way. you gain the same benefit that a human does from 8 hours of sleep."}
+    ],
+    "Languages": ["Common","Elvish"]
+}
