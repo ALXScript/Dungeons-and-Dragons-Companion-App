@@ -19,6 +19,7 @@
         </activity>
 
         <activity android:name=".createChar"></activity>
+        <activity android:name=".ListItembook"></activity>
     </application>
 
 </manifest>

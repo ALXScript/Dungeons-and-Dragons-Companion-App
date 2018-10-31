@@ -138,6 +138,7 @@
     <orderEntry type="library" name="Gradle: com.android.support:drawerlayout-28.0.0-rc02" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel-1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:loader-28.0.0-rc02" level="project" />
+    <orderEntry type="library" name="Gradle: com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable-28.0.0-rc02" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-1.1.3" level="project" />
