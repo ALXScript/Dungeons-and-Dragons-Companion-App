@@ -3,7 +3,7 @@ package com.example.victor.myapplication;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class createChar extends AppCompatActivity
+public class CreateChar extends AppCompatActivity
 {
     private static final String TAG = "createChar";
 

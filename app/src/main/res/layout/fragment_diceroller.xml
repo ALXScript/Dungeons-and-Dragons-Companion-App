@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@android:color/holo_green_dark">
 
@@ -11,9 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="53dp"
-        android:text="d4" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:text="d4"
+        app:layout_constraintEnd_toStartOf="@+id/d6"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
@@ -22,10 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/d4"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="269dp"
-        android:text="d10" />
-
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
+        android:text="d10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d4" />
 
 
     <ImageView
@@ -34,7 +41,12 @@
         android:layout_height="72dp"
         android:layout_alignTop="@+id/d4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-14dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/d6" />
 
     <TextView
@@ -43,9 +55,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="74dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:text="diceSum"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/roll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/roll"
@@ -53,8 +70,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/diceResultTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-74dp"
-        android:text="Roll" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="Roll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/diceQuant"
@@ -62,8 +84,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="217dp"
-        android:text="diceQuantity" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="140dp"
+        android:text="diceQuantity"
+        app:layout_constraintBottom_toTopOf="@+id/diceResultTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/d12"
@@ -71,9 +98,16 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/d4"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="155dp"
-        android:text="d12" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="d12"
+        app:layout_constraintBottom_toTopOf="@+id/d100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d6"
+        app:layout_constraintVertical_bias="0.571" />
 
     <Button
         android:id="@+id/d20"
@@ -81,9 +115,14 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/roll"
         android:layout_alignTop="@+id/d12"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="-2dp"
-        android:text="d20" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="36dp"
+        android:text="d20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/d12"
+        app:layout_constraintTop_toBottomOf="@+id/d8" />
 
     <Button
         android:id="@+id/d8"
@@ -91,9 +130,14 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/d4"
         android:layout_alignEnd="@+id/d6"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="-138dp"
-        android:text="d8" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="d8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toEndOf="@+id/d6"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/d100"
@@ -101,8 +145,12 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/diceResultTextView"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-8dp"
-        android:layout_marginTop="228dp"
-        android:text="d100" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="20dp"
+        android:text="d100"
+        app:layout_constraintBottom_toTopOf="@+id/diceQuant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

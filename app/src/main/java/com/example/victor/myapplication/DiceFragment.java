@@ -1,3 +1,6 @@
+//DiceFragment holds the dice roller logic that creates and displays a random number based on the
+//dice selected. If multiple dice are selected it will add them and display the sum.
+
 package com.example.victor.myapplication;
 
 import android.os.Bundle;
@@ -21,48 +24,43 @@ public class DiceFragment extends Fragment implements View.OnClickListener{
 
     private Random rng = new Random();
     private int[] diceCount = {0,0,0,0,0,0,0};//Number of dice being rolled
-    private int[] diceResults = {0,0,0,0,0,0,0};//Size of dice. d4, d6, d8, etc.
-
 
     @Override
     public void onClick(View v){
         switch (v.getId()){
             case R.id.d4: //diceCount[0]
                 diceCount[0]++;
-                if (diceCount[1] > 0)
-                    diceQuant.setText(String.valueOf(diceCount[0])+"d4 + "+String.valueOf(diceCount[1])+"d6");
-                else
-                    diceQuant.setText(String.valueOf(diceCount[0])+"d4");
+                displayDiceSelected();
                 break;
             case R.id.d6:
                 diceCount[1]++;
-                diceQuant.setText(String.valueOf(diceCount[1])+"d6");
+                displayDiceSelected();
                 break;
             case R.id.d8:
                 diceCount[2]++;
-                diceQuant.setText(String.valueOf(diceCount[2])+"d8");
+                displayDiceSelected();
                 break;
             case R.id.d10:
                 diceCount[3]++;
-                diceQuant.setText(String.valueOf(diceCount[3])+"d10");
+                displayDiceSelected();
                 break;
             case R.id.d12:
                 diceCount[4]++;
-                diceQuant.setText(String.valueOf(diceCount[4])+"d12");
+                displayDiceSelected();
                 break;
             case R.id.d20:
                 diceCount[5]++;
-                diceQuant.setText(String.valueOf(diceCount[5])+"d20");
+                displayDiceSelected();
                 break;
             case R.id.d100:
                 diceCount[6]++;
-                diceQuant.setText(String.valueOf(diceCount[6])+"d100");
+                displayDiceSelected();
                 break;
             case R.id.roll:
                 rollDice();
-                for (int i =0; i<7; i++){
+                for (int i =0; i<7; i++){ //Resetting all counts
                     diceCount[i] =0;
-                } //Resetting all counts
+                }
                 break;
         }
     }
@@ -70,12 +68,14 @@ public class DiceFragment extends Fragment implements View.OnClickListener{
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_diceroller, container, false);
         super.onCreate(savedInstanceState);
 
         //Onclick listeners
-        d4 = view.findViewById(R.id.d4);
+        d4 = view.findViewById(R.id.d4); //Assigns id d4 from fragment_diceroller.xml to local button d4
         d4.setOnClickListener(this);
 
         d6 = view.findViewById(R.id.d6);
@@ -105,6 +105,25 @@ public class DiceFragment extends Fragment implements View.OnClickListener{
         return view;
     }
 
+    private void displayDiceSelected(){
+        int[] diceSize = {4,6,8,10,12,20,100};
+        String displayDice = "No dice Selected", additionalDice;
+        boolean firstRoll = TRUE;
+
+        for (int i =0; i < 7; i++){ //Loop for all 7 dice
+            if (diceCount[i] > 0 && firstRoll == TRUE){ //If dice[i] is selected and it is the first dice
+                displayDice = Integer.toString(diceCount[i])+"d"+Integer.toString(diceSize[i]);
+                firstRoll = FALSE;
+            }
+            else if(diceCount[i] > 0){ //Concat all other dice onto first roll
+                additionalDice = " + " + Integer.toString(diceCount[i])+"d"+ Integer.toString(diceSize[i]);
+                displayDice += additionalDice;
+            }
+            else{ }//No dice selected = Do nothing
+        }
+        diceQuant.setText(displayDice); //Update text to show dice selected
+    }
+
 
     private void rollDice(){
         int[] diceSize = {4,6,8,10,12,20,100};
@@ -114,16 +133,16 @@ public class DiceFragment extends Fragment implements View.OnClickListener{
 
         for (int j= 0; j<7; j++) {
             for (int i = 0; i < diceCount[j]; i++) {
-                diceResults[i] = rng.nextInt(diceSize[j]) + 1;
+                int diceResults= rng.nextInt(diceSize[j]) + 1;
                 if (firstRoll == TRUE) {
-                    individualDiceRoll = Integer.toString(diceResults[i]);
+                    individualDiceRoll = Integer.toString(diceResults);
                     firstRoll = FALSE;
                 }
                 else {
-                    newRoll = " + " + Integer.toString(diceResults[i]);
+                    newRoll = " + " + Integer.toString(diceResults);
                     individualDiceRoll += newRoll;
                 }
-                sum += diceResults[i];
+                sum += diceResults;
             }
         }
         if (firstRoll == FALSE) {
@@ -131,59 +150,7 @@ public class DiceFragment extends Fragment implements View.OnClickListener{
         }
         else {
             diceResultTextView.setText(individualDiceRoll);
+            diceQuant.setText("No Dice Selected");
         }
     }
 }
-
-/*
-        imageViewDice = view.findViewById(R.id.image_view_dice);
-        d6 = view.findViewById(R.id.d6);
-        diceResult = view.findViewById(R.id.diceResult);
-        d6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count++;
-                diceResult.setText(String.valueOf(count)+"d6 = ");
-                rollDice(6, count);
-            }
-
-            private void rollDice(int diceNum, int count) {
-                //int randomNumber = 0;
-                int sum = 0;
-                //diceResult.setText(String.valueOf(randomNumber));
-
-
-                for (int i =0; i<count+1; i++){
-                    sum += rng.nextInt(diceNum) + 1;
-                }
-                diceResult.setText(String.valueOf(count)+"d6 = "+String.valueOf(sum));
-
-//                switch (randomNumber) {
-//                    case 1:
-//                        imageViewDice.setImageResource(R.drawable.dice1);
-//                        break;
-//                    case 2:
-//                        imageViewDice.setImageResource(R.drawable.dice2);
-//                        break;
-//                    case 3:
-//                        imageViewDice.setImageResource(R.drawable.dice3);
-//                        break;
-//                    case 4:
-//                        imageViewDice.setImageResource(R.drawable.dice4);
-//                        break;
-//                    case 5:
-//                        imageViewDice.setImageResource(R.drawable.dice5);
-//                        break;
-//                    case 6:
-//                        imageViewDice.setImageResource(R.drawable.dice6);
-//                        break;
-//                }
-            }
-
-
-
-
-
-        });
-
- */
