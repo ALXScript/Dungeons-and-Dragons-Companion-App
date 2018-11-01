@@ -9,9 +9,26 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="@string/charCreat" />
+
+    <TextView
+        android:id="@+id/jsonTestView"
+        android:layout_width="335dp"
+        android:layout_height="356dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="99dp"
-        android:text="@string/charCreat" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="165dp" />
+
+    <Button
+        android:id="@+id/btnParseJSON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:text="Parse JSON" />
 </RelativeLayout>
