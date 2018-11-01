@@ -17,9 +17,7 @@ import java.util.ArrayList;
 
 public class TestJSONParse extends AppCompatActivity{
 
-    private Button btnParseJSON;
-    public TextView testView;
-    ArrayList<String> testDescription = new ArrayList<>();
+
 
 
     @Override
@@ -27,44 +25,16 @@ public class TestJSONParse extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createchar);
 
-        btnParseJSON = (Button) findViewById(R.id.btnParseJSON);
-        testView = (TextView) findViewById(R.id.jsonTestView);
+        toastMessage("In page");
 
-        btnParseJSON.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                get_JSON();
-                testView.setText(testDescription.toString());
-            }
-        });
-    }
-
-    public void get_JSON(){
-        String json = null;
-
-        try{
-            InputStream is = getAssets().open("Dragonborn.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read();
-            is.close();
-
-            json = new String(buffer, "UTF-8");
-            JSONArray jsonArray = new JSONArray(json);
-
-            for(int i = 0; i < jsonArray.length(); i++){
-                JSONObject obj = jsonArray.getJSONObject(i);
-                if(obj.getString("race").equals("Dragonborn")){
-                    testDescription.add(obj.getString("Description"));
-                }
-            }
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        catch (JSONException e){
-            e.printStackTrace();
-        }
 
 
     }
+
+
+    private void toastMessage(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+
 }

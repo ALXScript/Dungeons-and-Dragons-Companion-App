@@ -1,14 +1,35 @@
 package com.example.victor.myapplication;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.victor.myapplication.DClass;
 import com.example.victor.myapplication.Race;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 
 //extends AppCompatActivity needed to be able to go from one activity to another
 public class createChar extends AppCompatActivity
 {
+    //variables for the buttons
+    public Button buttonParseJSON;
+    public TextView testView;
+    public EditText textBox;
+    ArrayList<String> testDescription = new ArrayList<>();
+
     //A Tag to reference the class (not that important, may not be needed)
     private static final String TAG = "createChar";
 
@@ -92,6 +113,98 @@ public class createChar extends AppCompatActivity
 
         //references the XML in Layout Folder
         setContentView(R.layout.createchar);
+
+        toastMessage("inside createChar.java");
+
+        buttonParseJSON = (Button) findViewById(R.id.btnParseJSON);
+        testView = (TextView) findViewById(R.id.jsonTestView);
+        textBox = (EditText) findViewById(R.id.textBox);
+
+        testView.setText("Initial Setting Text");
+
+        buttonParseJSON.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                //@Override
+
+                String toastMessage = "Button has been pressed";
+                toastMessage("Button has been pressed");
+
+
+                //get_JSON();
+                //testView.setText(testDescription.toString());
+                //testView.setText(parse_JSON("Dragonborn.json"));
+                String readJSON = loadJSONFromAsset(textBox.getText().toString());
+                testView.setText(parse_JSON(readJSON));
+            }
+        });
+    }
+
+    public void toastMessage(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void get_JSON(){
+        String json = null;
+
+        try{
+            InputStream is = getAssets().open("Dragonborn.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            json = new String(buffer, "UTF-8");
+            JSONArray jsonArray = new JSONArray(json);
+
+            for(int i = 0; i < jsonArray.length(); i++){
+                JSONObject obj = jsonArray.getJSONObject(i);
+                if(obj.getString("race").equals("Dragonborn")){
+                    testDescription.add(obj.getString("Description"));
+                }
+            }
+        }
+        catch (IOException e){
+            toastMessage("IOException");
+            e.printStackTrace();
+        }
+        catch (JSONException e){
+            toastMessage("JSONException");
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public String loadJSONFromAsset(String filename) {
+        String json = null;
+        try {
+            InputStream is = getAssets().open(filename);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            toastMessage("IOException reading JSON");
+            return null;
+        }
+        return json;
+    }
+
+    public String parse_JSON(String jsonFile){
+        try{
+            JSONObject raceObject = new JSONObject(jsonFile);
+
+            String raceDescription = raceObject.getString("Description");
+
+            return raceDescription;
+        }
+        catch(JSONException e){
+            return "Error: JSONException happened";
+        }
+        //return "Never went through";
     }
 
 }
