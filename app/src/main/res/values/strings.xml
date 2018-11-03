@@ -7,13 +7,15 @@
     <string name="itemBook">Item Book</string>
     <string name="inv">Inventory</string>
     <string name="stats">Stats</string>
-    <string name="addItem">Add Item</string>
-    <string name="viewItem">View Item</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="home">Home</string>
-    <string name="items">Items</string>
-    <string name="spells">Spells</string>
-    <string name="rollDice">Roll Dice</string>
-    <string name="database">Database</string>
+    <string-array name="AbilityScores">
+        <item>Strength</item>
+        <item>Dexterity</item>
+        <item>Constitution</item>
+        <item>Intelligence</item>
+        <item>Wisdom</item>
+        <item>Charisma</item>
+    </string-array>
+
 </resources>
