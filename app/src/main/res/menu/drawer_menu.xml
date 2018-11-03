@@ -7,35 +7,35 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/home_24dp"
-            android:title="Home" />
+            android:title="@string/home" />
 
         <item
             android:id="@+id/nav_stats"
             android:icon="@drawable/ic_exposure_plus_1_black_24dp"
-            android:title="Stats" />
+            android:title="@string/stats" />
         <item
             android:id="@+id/nav_inventory"
             android:icon="@drawable/shopping_cart_24dp"
-            android:title="Inventory"/>
+            android:title="@string/inv" />
 
         <item
             android:id="@+id/nav_spellbook"
             android:icon="@drawable/ic_whatshot_black_24dp"
-            android:title="Spell Book"/>
+            android:title="@string/spellBook" />
 
         <item
             android:id="@+id/nav_dice"
             android:icon="@drawable/ic_widgets_black_24dp"
-            android:title="Dice Roller" />
+            android:title="@string/rollDice" />
     </group>
 
     <!--This is just for reference on how to make toasts-->
-    <item android:title="Communicate">
+    <item android:title="@string/database">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_extension_black_24dp"
-                android:title="Share" />
+                android:id="@+id/nav_items"
+                android:icon="@drawable/ic_local_library_black_24dp"
+                android:title="@string/items" />
         </menu>
     </item>
 
