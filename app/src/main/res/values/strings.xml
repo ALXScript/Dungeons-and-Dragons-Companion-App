@@ -9,6 +9,7 @@
     <string name="stats">Stats</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string-array name="AbilityScores">
         <item>Strength</item>
         <item>Dexterity</item>
@@ -16,6 +17,27 @@
         <item>Intelligence</item>
         <item>Wisdom</item>
         <item>Charisma</item>
+    </string-array>
+
+    <string-array name="Skills">
+        <item>Acrobatics</item>
+        <item>Animal Handling</item>
+        <item>Arcana</item>
+        <item>Athletics</item>
+        <item>Deception</item>
+        <item>History</item>
+        <item>Insight</item>
+        <item>Intimidation</item>
+        <item>Investigation</item>
+        <item>Medicine</item>
+        <item>Nature</item>
+        <item>Perception</item>
+        <item>Performance</item>
+        <item>Persuasion</item>
+        <item>Religion</item>
+        <item>Slight of Hand</item>
+        <item>Stealth</item>
+        <item>Survival</item>
     </string-array>
 
 </resources>
