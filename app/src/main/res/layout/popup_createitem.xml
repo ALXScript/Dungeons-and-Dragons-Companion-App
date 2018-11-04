@@ -8,7 +8,7 @@
     android:padding="5dp">
 
     <Button
-        android:id="@+id/closeBtn"
+        android:id="@+id/closeCreateItemBtn"
         android:layout_width="44dp"
         android:layout_height="38dp"
         android:layout_gravity="end"
@@ -20,34 +20,38 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp">
 
-        <TextView
+        <EditText
             android:id="@+id/itemNameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
+            android:inputType="text"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <TextView
+    <EditText
         android:id="@+id/itemTypeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:inputType="text" />
 
-    <TextView
+    <EditText
         android:id="@+id/itemSourceTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:inputType="text" />
 
-    <TextView
+    <EditText
         android:id="@+id/itemDescTextView"
         android:layout_width="match_parent"
-        android:layout_height="84dp" />
+        android:layout_height="84dp"
+        android:inputType="text" />
 
     <Button
-        android:id="@+id/itemAddBtn"
+        android:id="@+id/itemCreateAddBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/addItem" />
