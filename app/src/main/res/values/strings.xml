@@ -19,4 +19,8 @@
     <string name="database">Database</string>
     <string name="close">(X)</string>
     <string name="createItem">Create Item</string>
+    <string name="enterName">enter name</string>
+    <string name="enterType">enter type</string>
+    <string name="enterSource">enter source</string>
+    <string name="enterDesc">enter description</string>
 </resources>

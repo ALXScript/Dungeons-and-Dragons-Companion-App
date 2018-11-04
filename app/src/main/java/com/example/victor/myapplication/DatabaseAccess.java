@@ -19,14 +19,7 @@ public class DatabaseAccess {
     private SQLiteDatabase database;
     private static DatabaseAccess instance;
 
-    private static final String TABLE_NAME = "items";
-    private static final String COL0 = "id";
-    private static final String COL1 = "name";
-    private static final String COL2 = "desc";
-    private static final String COL3 = "source";
-    private static final String COL4 = "type";
-
-
+//General database functions -----------------------------------------------------------------
     private DatabaseAccess(Context context) {
         this.openHelper = new DatabaseHelper(context);
     }
@@ -48,6 +41,7 @@ public class DatabaseAccess {
         }
     }
 
+    //Itembook database functions -----------------------------------------------------------------
     public Cursor getData(){
         String query = "SELECT * FROM items";
         Cursor data = database.rawQuery(query, null);
@@ -66,45 +60,39 @@ public class DatabaseAccess {
         return list;
     }
 
-    public List<String> fillInventory() {
-        List<String> list = new ArrayList<>();
-        String query = "SELECT name FROM items, inventories WHERE items.id = inventories.id";
-        Cursor cursor = database.rawQuery(query, null);
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            list.add(cursor.getString(0));
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return list;
-    }
-
     public Cursor getItemIDitems(String name){
-        String query = "SELECT " + COL0 + " FROM " + TABLE_NAME +
-                " WHERE " + COL1 + " = '" + name + "'";
+        String query = "SELECT " + "id" + " FROM " + "items" +
+                " WHERE " + "name" + " = '" + name + "'";
         Cursor data = database.rawQuery(query, null);
         return data;
     }
 
-    public int getExistingItemCount(int id){
-
-        String idToCheck = Integer.toString(id);
-        int finalCount = -1;
-
-        String query = "SELECT " + "count" + " FROM " + "inventories" +
-                " WHERE " + "id" + " = '" + idToCheck + "'";
-
-        Cursor data = database.rawQuery(query, null);
-
-        while(data.moveToNext()) {
-            finalCount = data.getInt(0);
-        }
-
-        data.close();
-
-        return finalCount;
+    public void deleteItemFromItembook(int id){
+        String query = "DELETE FROM " + "items" + " WHERE "
+                + "id" + " = '" + id + "'";
+        Log.d(TAG, "deleteName: query: " + query);
+        Log.d(TAG, "deleteName: Deleting " + id + " from database.");
+        database.execSQL(query);
     }
 
+    public boolean addItemToItembook(String itemName, String descr, String source1, String type1) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", itemName);
+        contentValues.put("desc", descr);
+        contentValues.put("source", source1);
+        contentValues.put("type", type1);
+
+        long result = database.insert("items", null, contentValues);
+
+        //if data is inserted incorrectly it will return -1
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    //Inventory database functions -----------------------------------------------------------------
     public boolean isIteminInventories(int id){
 
         String idToCheck = Integer.toString(id);
@@ -128,6 +116,18 @@ public class DatabaseAccess {
         return inInventories;
     }
 
+    public List<String> fillInventory() {
+        List<String> list = new ArrayList<>();
+        String query = "SELECT name FROM items, inventories WHERE items.id = inventories.id";
+        Cursor cursor = database.rawQuery(query, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            list.add(cursor.getString(0));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
 
 
     public boolean addToInventories(int idchar, int id, int myCount) {
@@ -172,7 +172,7 @@ public class DatabaseAccess {
         database.execSQL(query);
     }
 
-    public void deleteItem(int id){
+    public void deleteItemFromInv(int id){
         String query = "DELETE FROM " + "inventories" + " WHERE "
                 + "id" + " = '" + id + "'";
         Log.d(TAG, "deleteName: query: " + query);
@@ -180,21 +180,23 @@ public class DatabaseAccess {
         database.execSQL(query);
     }
 
-    public boolean addItemToItembook(String itemName, String descr, String source1, String type1) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", itemName);
-        contentValues.put("desc", descr);
-        contentValues.put("source", source1);
-        contentValues.put("type", type1);
+    public int getExistingItemCount(int id){
 
-        long result = database.insert("items", null, contentValues);
+        String idToCheck = Integer.toString(id);
+        int finalCount = -1;
 
-        //if data is inserted incorrectly it will return -1
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
+        String query = "SELECT " + "count" + " FROM " + "inventories" +
+                " WHERE " + "id" + " = '" + idToCheck + "'";
+
+        Cursor data = database.rawQuery(query, null);
+
+        while(data.moveToNext()) {
+            finalCount = data.getInt(0);
         }
+
+        data.close();
+
+        return finalCount;
     }
 
 }
