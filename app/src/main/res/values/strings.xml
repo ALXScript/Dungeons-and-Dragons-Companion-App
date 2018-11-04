@@ -23,4 +23,7 @@
     <string name="enterType">enter type</string>
     <string name="enterSource">enter source</string>
     <string name="enterDesc">enter description</string>
+    <string name="createSpell">Create Spell</string>
+    <string name="addSpell">Add Spell</string>
+    <string name="removeSpell">Remove Spell</string>
 </resources>
