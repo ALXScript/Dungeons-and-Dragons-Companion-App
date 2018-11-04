@@ -5,8 +5,14 @@
     android:layout_height="match_parent"
     android:background="@color/colorTan">
 
+    <Button
+        android:id="@+id/createSpellBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/createSpell" />
+
     <ListView
-        android:id="@+id/listViewSpellbook"
+        android:id="@+id/listViewSpells"
         style="@style/Widget.AppCompat.Light.ListView.DropDown"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

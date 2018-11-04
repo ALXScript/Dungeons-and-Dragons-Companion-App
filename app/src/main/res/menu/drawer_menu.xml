@@ -28,14 +28,16 @@
             android:icon="@drawable/ic_widgets_black_24dp"
             android:title="@string/rollDice" />
     </group>
-
-    <!--This is just for reference on how to make toasts-->
     <item android:title="@string/database">
         <menu>
             <item
                 android:id="@+id/nav_items"
                 android:icon="@drawable/ic_local_library_black_24dp"
                 android:title="@string/items" />
+            <item
+                android:id="@+id/nav_spells"
+                android:icon="@drawable/ic_local_library_black_24dp"
+                android:title="@string/spells" />
         </menu>
     </item>
 
