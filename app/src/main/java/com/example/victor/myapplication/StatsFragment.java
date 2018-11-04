@@ -10,28 +10,85 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.Objects;
 
 
 public class StatsFragment extends Fragment {
 
+    ImageButton buttonLowerHealth, buttonIncreaseHealth;
+    ProgressBar progressBar;
     RecyclerView abilityScoreRecycler;
     AbilityScoreAdapter adapter;
     String [] abilityScoreNames;
+    TextView textViewHealthValue;
+    String displayHealth;
+
+
+    int currentHealth;
+    int maxHealth;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
+        //Load in the ability scores
+        maxHealth = 26;
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
         abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         abilityScoreNames = getResources().getStringArray(R.array.AbilityScores);
-
         adapter = new AbilityScoreAdapter(getContext(),abilityScoreNames);
         abilityScoreRecycler.setAdapter(adapter);
+
+        textViewHealthValue=view.findViewById(R.id.textViewHealthValue);
+
+        buttonLowerHealth=view.findViewById(R.id.buttonLowerHealth);
+        buttonIncreaseHealth=view.findViewById(R.id.buttonIncreaseHealth);
+
+        //Initialize Health Bar
+        progressBar = view.findViewById(R.id.progressBar);
+        progressBar.setMax(maxHealth);
+        progressBar.setProgress(16);
+        currentHealth=progressBar.getProgress();
+        displayHealth = (Integer.toString(currentHealth)+ "/" + Integer.toString(maxHealth));
+
+        textViewHealthValue.setText(displayHealth);
+        buttonLowerHealth.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                if (progressBar != null)
+                {
+                    progressBar.incrementProgressBy(-1);
+                    currentHealth=progressBar.getProgress();
+                    displayHealth = (Integer.toString(currentHealth)+ "/" + Integer.toString(maxHealth));
+                    textViewHealthValue.setText(displayHealth);
+
+
+                }
+            }
+        });
+
+        buttonIncreaseHealth.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                if ( progressBar != null)
+                {
+                    progressBar.incrementProgressBy(1);
+                    currentHealth=progressBar.getProgress();
+                    displayHealth = (Integer.toString(currentHealth)+ "/" + Integer.toString(maxHealth));
+                    textViewHealthValue.setText(displayHealth);
+                }
+
+            }
+        });
+
+
         return view;
     }
 }

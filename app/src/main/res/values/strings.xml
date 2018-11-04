@@ -7,16 +7,37 @@
     <string name="itemBook">Item Book</string>
     <string name="inv">Inventory</string>
     <string name="stats">Stats</string>
-    <string name="addItem">Add Item</string>
-    <string name="removeItem">Remove Item</string>
-    <string name="viewItem">View Item</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="home">Home</string>
-    <string name="items">Items</string>
-    <string name="spells">Spells</string>
-    <string name="rollDice">Roll Dice</string>
-    <string name="database">Database</string>
-    <string name="close">(X)</string>
-    <string name="createItem">Create Item</string>
+
+    <string-array name="AbilityScores">
+        <item>Str</item>
+        <item>Dex</item>
+        <item>Con</item>
+        <item>Int</item>
+        <item>Wis</item>
+        <item>Cha</item>
+    </string-array>
+
+    <string-array name="Skills">
+        <item>Acrobatics</item>
+        <item>Animal Handling</item>
+        <item>Arcana</item>
+        <item>Athletics</item>
+        <item>Deception</item>
+        <item>History</item>
+        <item>Insight</item>
+        <item>Intimidation</item>
+        <item>Investigation</item>
+        <item>Medicine</item>
+        <item>Nature</item>
+        <item>Perception</item>
+        <item>Performance</item>
+        <item>Persuasion</item>
+        <item>Religion</item>
+        <item>Slight of Hand</item>
+        <item>Stealth</item>
+        <item>Survival</item>
+    </string-array>
+
 </resources>

@@ -1,3 +1,7 @@
+//This file is used to populate the RecyclerView with the AbilityScores and their values.
+//Later we will need to pass it the character information to get the actual values.
+//I will look into populating other RecyclerView's on the stats page using this same adapter
+
 package com.example.victor.myapplication;
 
 import android.content.Context;
@@ -8,18 +12,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.victor.myapplication.R;
+
+//From my current understanding and Adapter 'adapts' a given view into a listview or recycler.
+//it "recycles" a given layout to do this
 public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapter.AbilityScoreViewHolder>
 {
     private Context myContext;
     String[] AbilityScoreNames;
+
+    //Constructor
     public AbilityScoreAdapter(Context myContext, String[] AbilityScoreStrings ) {
         this.myContext = myContext;
-        AbilityScoreNames=AbilityScoreStrings;
+        AbilityScoreNames = AbilityScoreStrings;
     }
+
 
     @NonNull
     @Override
     public AbilityScoreViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
         LayoutInflater inflater = LayoutInflater.from(myContext);
         View view = inflater.inflate(R.layout.layout_ability_scores,null);
         AbilityScoreViewHolder Holder = new AbilityScoreViewHolder(view);
@@ -28,17 +40,20 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
 
     }
 
+    //This function will populate the textView within the abilityScoreHolder
     @Override
     public void onBindViewHolder(@NonNull AbilityScoreViewHolder abilityScoreViewHolder, int i) {
 
         abilityScoreViewHolder.textViewAbilityScoreName.setText(AbilityScoreNames[i]);
     }
 
+    //There are 6 different Ability Scores
     @Override
     public int getItemCount() {
         return 6;
     }
 
+    //The View holder is a single instance of the layout used in the recycler.
     public class AbilityScoreViewHolder extends RecyclerView.ViewHolder{
         TextView textViewAbilityScoreName, textViewAbilityScoreValue,textViewAbilityScoreModifier;
 
@@ -47,8 +62,6 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
             textViewAbilityScoreName = itemView.findViewById(R.id.textViewAbilityScoreName);
             textViewAbilityScoreValue = itemView.findViewById(R.id.textViewAbilityScoreValue);
             textViewAbilityScoreModifier = itemView.findViewById(R.id.textViewAbilityScoreModifier);
-
-
         }
     };
 }
