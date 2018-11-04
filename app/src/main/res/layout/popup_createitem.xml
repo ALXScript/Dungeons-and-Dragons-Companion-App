@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
+            android:hint="@string/enterName"
             android:inputType="text"
             android:textStyle="bold" />
     </LinearLayout>
@@ -35,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:hint="@string/enterType"
         android:inputType="text" />
 
     <EditText
@@ -42,12 +44,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:hint="@string/enterSource"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/itemDescTextView"
         android:layout_width="match_parent"
         android:layout_height="84dp"
+        android:hint="@string/enterDesc"
         android:inputType="text" />
 
     <Button

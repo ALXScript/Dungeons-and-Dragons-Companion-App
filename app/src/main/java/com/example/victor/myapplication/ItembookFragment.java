@@ -1,7 +1,6 @@
 package com.example.victor.myapplication;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,20 +23,21 @@ import java.util.List;
 
 public class ItembookFragment extends Fragment {
 
-    Dialog myDialog;
-
+//General Listview Variables
     ListView itemBookListView;
     DatabaseAccess myDatabaseAccess;
     List<String> itemNames;
     ArrayAdapter<String> adapter;
-
+//Item Info Variables
+    Dialog myDialog;
     TextView itemNameTextView;
     Button addItemBttn;
     Button closeBttn;
+    Button removeItemBttn;
     TextView itemSource;
     TextView itemType;
     TextView itemDesc;
-
+//Create Item Variables
     Dialog createItemDialog;
     Button createItemBttn;
     EditText createItemName;
@@ -59,15 +59,14 @@ public class ItembookFragment extends Fragment {
         myDatabaseAccess.open();
         itemNames = myDatabaseAccess.getItemNames();
 
-
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, itemNames);
         itemBookListView.setAdapter(adapter);
 
-        myDialog = new Dialog(getContext());
+        myDialog = new Dialog(getContext()); //Used for item info popup
 
-        getIDFromListView();
+        getIDFromListView(); //Based on item clicked in listview
 
-        createItemDialog = new Dialog(getContext());
+        createItemDialog = new Dialog(getContext()); //Used for create item popup
 
         createItemBttn = (Button) view.findViewById(R.id.createItemBtn);
 
@@ -190,7 +189,7 @@ public class ItembookFragment extends Fragment {
         //set an onItemClickListener to the ListView
         itemBookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 String name = adapterView.getItemAtPosition(i).toString();
 
                 Cursor data = myDatabaseAccess.getItemIDitems(name); //get the id associated with that name
@@ -202,12 +201,13 @@ public class ItembookFragment extends Fragment {
 
                 if(itemID > -1){
 
-                    myDialog.setContentView(R.layout.popup_iteminfo);
+                    myDialog.setContentView(R.layout.popup_iteminfo); //popup for item info
 
                     getItemInfo(itemID, myDialog);
 
                     addItemBttn = (Button) myDialog.findViewById(R.id.itemAddBtn);
                     closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
+                    removeItemBttn = (Button) myDialog.findViewById(R.id.itemRemoveBtn);
 
                     closeBttn.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -221,6 +221,17 @@ public class ItembookFragment extends Fragment {
                         @Override
                         public void onClick(View v) {
                             addItemToInventories(1, finalItemID);
+                        }
+                    });
+
+                    removeItemBttn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            myDatabaseAccess.deleteItemFromItembook(finalItemID);
+                            adapter.remove(adapter.getItem(i));
+                            adapter.notifyDataSetChanged();
+                            myDialog.dismiss();
+                            toastMessage("Item removed from items!");
                         }
                     });
 

@@ -20,8 +20,13 @@ import java.util.List;
 
 public class InventoryFragment extends Fragment {
 
+    //General Listview Variables
+    ListView inventoryListView;
+    DatabaseAccess myDatabaseAccess;
+    List<String> itemNames;
+    ArrayAdapter<String> adapter;
+    //Item Info Variables
     Dialog myDialog;
-
     TextView itemNameTextView;
     Button removeItemBttn;
     Button closeBttn;
@@ -29,11 +34,6 @@ public class InventoryFragment extends Fragment {
     TextView itemType;
     TextView itemDesc;
     TextView itemCount;
-
-    ListView inventoryListView;
-    DatabaseAccess myDatabaseAccess;
-    List<String> itemNames;
-    ArrayAdapter<String> adapter;
 
 
     @Nullable
@@ -47,11 +47,10 @@ public class InventoryFragment extends Fragment {
         myDatabaseAccess.open();
         itemNames = myDatabaseAccess.fillInventory();
 
-
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, itemNames);
         inventoryListView.setAdapter(adapter);
 
-        myDialog = new Dialog(getContext());
+        myDialog = new Dialog(getContext()); //for item infoinventory popup
 
         getIDFromListView();
 
@@ -121,7 +120,7 @@ public class InventoryFragment extends Fragment {
                             }
 
                             else {
-                                myDatabaseAccess.deleteItem(finalItemID);
+                                myDatabaseAccess.deleteItemFromInv(finalItemID);
                                 adapter.remove(adapter.getItem(i));
                                 adapter.notifyDataSetChanged();
                                 myDialog.dismiss();
