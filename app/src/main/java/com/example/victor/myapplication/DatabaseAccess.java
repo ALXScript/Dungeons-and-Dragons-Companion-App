@@ -48,12 +48,31 @@ public class DatabaseAccess {
         }
     }
 
+    public Cursor getData(){
+        String query = "SELECT * FROM items";
+        Cursor data = database.rawQuery(query, null);
+        return data;
+    }
+
     public List<String> getItemNames() {
         List<String> list = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT * FROM items", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             list.add(cursor.getString(1));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
+
+    public List<String> fillInventory() {
+        List<String> list = new ArrayList<>();
+        String query = "SELECT name FROM items, inventories WHERE items.id = inventories.id";
+        Cursor cursor = database.rawQuery(query, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            list.add(cursor.getString(0));
             cursor.moveToNext();
         }
         cursor.close();
@@ -140,6 +159,42 @@ public class DatabaseAccess {
                 " = '" + newCount + "' WHERE " + "id" + " = '" + idToCheck + "'";
 
         database.execSQL(query);
+    }
+
+    public void removeFromInventoriesCount(int id, int myCount) {
+
+        String newCount = Integer.toString(myCount);
+        String idToCheck = Integer.toString(id);
+
+        String query = "UPDATE " + "inventories" + " SET " + "count" +
+                " = '" + newCount + "' WHERE " + "id" + " = '" + idToCheck + "'";
+
+        database.execSQL(query);
+    }
+
+    public void deleteItem(int id){
+        String query = "DELETE FROM " + "inventories" + " WHERE "
+                + "id" + " = '" + id + "'";
+        Log.d(TAG, "deleteName: query: " + query);
+        Log.d(TAG, "deleteName: Deleting " + id + " from database.");
+        database.execSQL(query);
+    }
+
+    public boolean addItemToItembook(String itemName, String descr, String source1, String type1) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", itemName);
+        contentValues.put("desc", descr);
+        contentValues.put("source", source1);
+        contentValues.put("type", type1);
+
+        long result = database.insert("items", null, contentValues);
+
+        //if data is inserted incorrectly it will return -1
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }

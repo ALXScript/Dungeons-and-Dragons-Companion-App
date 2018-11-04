@@ -47,9 +47,14 @@
         android:layout_height="84dp" />
 
     <Button
-        android:id="@+id/itemAddBtn"
+        android:id="@+id/itemRemoveBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/addItem" />
+        android:text="@string/removeItem" />
+
+    <TextView
+        android:id="@+id/itemCountTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

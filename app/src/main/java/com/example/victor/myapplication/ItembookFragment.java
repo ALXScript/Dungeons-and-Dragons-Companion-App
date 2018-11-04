@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,19 @@ public class ItembookFragment extends Fragment {
 
     TextView itemNameTextView;
     Button addItemBttn;
+    Button closeBttn;
+    TextView itemSource;
+    TextView itemType;
+    TextView itemDesc;
+
+    Dialog createItemDialog;
+    Button createItemBttn;
+    EditText createItemName;
+    EditText createItemType;
+    EditText createItemSource;
+    EditText createItemDesc;
+    Button createItemClose;
+    Button createItemAddItem;
 
 
     @Nullable
@@ -53,7 +67,96 @@ public class ItembookFragment extends Fragment {
 
         getIDFromListView();
 
+        createItemDialog = new Dialog(getContext());
+
+        createItemBttn = (Button) view.findViewById(R.id.createItemBtn);
+
+        createItemBttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createItemDialog.setContentView(R.layout.popup_createitem);
+
+                createItemName = (EditText) createItemDialog.findViewById(R.id.itemNameTextView);
+                createItemType = (EditText) createItemDialog.findViewById(R.id.itemTypeTextView);
+                createItemSource = (EditText) createItemDialog.findViewById(R.id.itemSourceTextView);
+                createItemDesc = (EditText) createItemDialog.findViewById(R.id.itemDescTextView);
+
+                createItemDialog.show();
+
+                createItemName.setText("");
+                createItemType.setText("");
+                createItemSource.setText("");
+                createItemDesc.setText("");
+
+                createItemAddItem = (Button) createItemDialog.findViewById(R.id.itemCreateAddBtn);
+                createItemClose = (Button) createItemDialog.findViewById(R.id.closeCreateItemBtn);
+
+                createItemClose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        createItemDialog.dismiss();
+                    }
+                });
+
+                createItemAddItem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        String newEntryName;
+                        String newEntryType;
+                        String newEntrySource;
+                        String newEntryDesc;
+
+                        newEntryName = createItemName.getText().toString();
+                        newEntryType = createItemType.getText().toString();
+                        newEntrySource = createItemSource.getText().toString();
+                        newEntryDesc = createItemDesc.getText().toString();
+
+                        if(newEntryName.length() == 0) {
+                            toastMessage("Enter an item name.");
+                        }
+
+                        else {
+                            addNewItem(newEntryName, newEntryDesc, newEntrySource, newEntryType);
+                            adapter.add(newEntryName);
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
+            }
+        });
+
         return view;
+    }
+
+        public void addNewItem(String itemName, String descr, String source1, String type1) {
+        boolean insertData = myDatabaseAccess.addItemToItembook(itemName, descr, source1, type1);
+
+        if (insertData) {
+            toastMessage("Item Successfully Created!");
+        } else {
+            toastMessage("Something went wrong");
+        }
+    }
+
+    private void getItemInfo(int id, Dialog myDialog) {
+        Cursor data = myDatabaseAccess.getData();
+
+        itemSource = (TextView) myDialog.findViewById(R.id.itemSourceTextView);
+        itemType = (TextView) myDialog.findViewById(R.id.itemTypeTextView);
+        itemDesc = (TextView) myDialog.findViewById(R.id.itemDescTextView);
+        itemNameTextView = (TextView) myDialog.findViewById(R.id.itemNameTextView);
+
+
+        while (data.moveToNext()) {
+            if(data.getInt(0) == id)
+            {
+                itemSource.setText(data.getString(3));
+                itemType.setText(data.getString(4));
+                itemDesc.setText(data.getString(2));
+                itemNameTextView.setText(data.getString(1));
+            }
+        }
     }
 
     private void addItemToInventories(int charID, int itemID)
@@ -69,17 +172,17 @@ public class ItembookFragment extends Fragment {
                 boolean inventoriesAdded = myDatabaseAccess.addToInventories(charID, itemID, 1);
 
                 if(inventoriesAdded) {
-                    toastMessage("Data successfully added to inventories table!");
+                    toastMessage("Item added to inventory!");
                 }
                 else {
-                    toastMessage("Something went wrong");
+                    toastMessage("Something went wrong...");
                 }
             }
 
             else {
                 itemCount = myDatabaseAccess.getExistingItemCount(itemID);
                 myDatabaseAccess.addToInventoriesCount(itemID, itemCount+1); //add one to itemCount
-                toastMessage("Update Count Success!");
+                toastMessage("Updated QTY of item!");
             }
     }
 
@@ -101,9 +204,17 @@ public class ItembookFragment extends Fragment {
 
                     myDialog.setContentView(R.layout.popup_iteminfo);
 
-                    itemNameTextView = (TextView) myDialog.findViewById(R.id.itemNameTextView);
-                    itemNameTextView.setText(name);
+                    getItemInfo(itemID, myDialog);
+
                     addItemBttn = (Button) myDialog.findViewById(R.id.itemAddBtn);
+                    closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
+
+                    closeBttn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            myDialog.dismiss();
+                        }
+                    });
 
                     final int finalItemID = itemID;
                     addItemBttn.setOnClickListener(new View.OnClickListener() {
