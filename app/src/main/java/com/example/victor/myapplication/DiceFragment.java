@@ -1,5 +1,7 @@
-//DiceFragment holds the dice roller logic that creates and displays a random number based on the
-//dice selected. If multiple dice are selected it will add them and display the sum.
+/*
+This class holds the dice roller logic that creates and displays a random number based on the
+dice selected. If multiple dice are selected it will add them and display the sum.
+*/
 
 package com.example.victor.myapplication;
 
