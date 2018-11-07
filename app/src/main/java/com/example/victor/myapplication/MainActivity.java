@@ -63,8 +63,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new DiceFragment()).commit();
                 break;
-            case R.id.nav_share:
-                Toast.makeText(this, "send", Toast.LENGTH_SHORT).show();
+            case R.id.nav_items:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ItembookFragment()).commit();
+                //Toast.makeText(this, "send", Toast.LENGTH_SHORT).show(); for reference only
+                break;
+            case R.id.nav_spells:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SpellsFragment()).commit();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

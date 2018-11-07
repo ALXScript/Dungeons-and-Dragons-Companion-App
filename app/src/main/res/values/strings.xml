@@ -7,7 +7,23 @@
     <string name="itemBook">Item Book</string>
     <string name="inv">Inventory</string>
     <string name="stats">Stats</string>
+    <string name="addItem">Add Item</string>
+    <string name="removeItem">Remove Item</string>
+    <string name="viewItem">View Item</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="home">Home</string>
+    <string name="items">Items</string>
+    <string name="spells">Spells</string>
+    <string name="rollDice">Roll Dice</string>
+    <string name="database">Database</string>
+    <string name="close">(X)</string>
+    <string name="createItem">Create Item</string>
+    <string name="enterName">enter name</string>
+    <string name="enterType">enter type</string>
+    <string name="enterSource">enter source</string>
+    <string name="enterDesc">enter description</string>
+    <string name="createSpell">Create Spell</string>
+    <string name="addSpell">Add Spell</string>
+    <string name="removeSpell">Remove Spell</string>
 </resources>
