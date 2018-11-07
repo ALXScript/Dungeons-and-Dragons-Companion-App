@@ -1,19 +1,13 @@
 package com.example.victor.myapplication;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Spinner;
-
-import com.example.victor.myapplication.DClass;
-import com.example.victor.myapplication.Race;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,7 +16,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 
 //extends AppCompatActivity needed to be able to go from one activity to another
@@ -116,7 +109,7 @@ public class createChar extends AppCompatActivity
         String json = null;
 
         try{
-            InputStream is = getAssets().open("Dragonborn.json");
+            InputStream is = getAssets().open("RaceJSONs/Dragonborn.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -212,55 +205,55 @@ public class createChar extends AppCompatActivity
                 testView.setText("Nothing Selected");
                 break;
             case "Dwarf":
-                readAndParse("Dwarf.json");
+                readAndParse("RaceJSONs/Dwarf.json");
                 break;
             case "Hill Dwarf":
-                readAndParse("Dwarf_Hill.json");
+                readAndParse("RaceJSONs/Dwarf_Hill.json");
                 break;
             case "Mountain Dwarf":
-                readAndParse("Dwarf_Mountain.json");
+                readAndParse("RaceJSONs/Dwarf_Mountain.json");
                 break;
             case "Elf":
-                readAndParse("Elf.json");
+                readAndParse("RaceJSONs/Elf.json");
                 break;
             case "High Elf":
-                readAndParse("Elf_High_Elf.json");
+                readAndParse("RaceJSONs/Elf_High_Elf.json");
                 break;
             case "Dark Elf (Drow)":
-                readAndParse("Elf_Dark_Elf_Drow.json");
+                readAndParse("RaceJSONs/Elf_Dark_Elf_Drow.json");
                 break;
             case "Halfling":
-                readAndParse("Halfling.json");
+                readAndParse("RaceJSONs/Halfling.json");
                 break;
             case "Lightfoot Halfling":
-                readAndParse("Halfling_Lightfoot.json");
+                readAndParse("RaceJSONs/Halfling_Lightfoot.json");
                 break;
             case "Stout Halfling":
-                readAndParse("Halfling_Stout.json");
+                readAndParse("RaceJSONs/Halfling_Stout.json");
                 break;
             case "Human":
-                readAndParse("Human.json");
+                readAndParse("RaceJSONs/Human.json");
                 break;
             case "Dragonborn":
-                readAndParse("Dragonborn.json");
+                readAndParse("RaceJSONs/Dragonborn.json");
                 break;
             case "Gnome":
-                readAndParse("Gnome.json");
+                readAndParse("RaceJSONs/Gnome.json");
                 break;
             case "Forest Gnome":
-                readAndParse("Gnome_Forest_Gnome.json");
+                readAndParse("RaceJSONs/Gnome_Forest_Gnome.json");
                 break;
             case "Rock Gnome":
-                readAndParse("Gnome_Rock_Gnome.json");
+                readAndParse("RaceJSONs/Gnome_Rock_Gnome.json");
                 break;
             case "Half-Elf":
-                readAndParse("Half-Elf.json");
+                readAndParse("RaceJSONs/Half-Elf.json");
                 break;
             case "Half-Orc":
-                readAndParse("Half-Orc.json");
+                readAndParse("RaceJSONs/Half-Orc.json");
                 break;
             case "Tiefling":
-                readAndParse("Tiefling.json");
+                readAndParse("RaceJSONs/Tiefling.json");
                 break;
         }
     }
