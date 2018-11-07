@@ -10,7 +10,7 @@
   "AbilityScore_Intelligence": "0",
   "AbilityScore_Wisdom": "0",
   "AbilityScore_Charisma": "0",
-  "Alignment": "LG / LN / LC",
+  "Alignment": ["LG", "LN", "LC"],
   "Speed": "25",
   "Abilities": [
     {"AbilityName": "Darkvision",

@@ -7,16 +7,16 @@
   "AbilityScore_Strength": "0",
   "AbilityScore_Dexterity": "1",
   "AbilityScore_Constitution": "0",
-  "AbilityScore_Intelligence": "0",
+  "AbilityScore_Intelligence": "2",
   "AbilityScore_Wisdom": "0",
   "AbilityScore_Charisma": "0",
-  "Alignment": "null",
-  "Speed": "null",
+  "Alignment": ["LG", "LN", "LC", "TG", "TN", "TE"],
+  "Speed": "25",
   "Abilities": [
     {"AbilityName": "Natural Illusionist",
       "AbilityDescription": "You know the minor illusion cantrip. Intelligence is your spellcasting ability for it."},
     {"AbilityName": "Speak with Small Beasts",
       "AbilityDescription": "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets."}
   ],
-  "Languages": ["null"]
+  "Languages": ["Common","Gnomish"]
 }

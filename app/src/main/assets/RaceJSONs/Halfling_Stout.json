@@ -10,11 +10,11 @@
   "AbilityScore_Intelligence": "0",
   "AbilityScore_Wisdom": "0",
   "AbilityScore_Charisma": "0",
-  "Alignment": "null",
-  "Speed": "null",
+  "Alignment": ["LG"],
+  "Speed": "25",
   "Abilities": [
     {"AbilityName": "Stout Resilience",
       "AbilityDescription": "You have advantage on saving rhows against poison, and you have resistance against poison damage."}
   ],
-  "Languages": ["null"]
+  "Languages": ["Common","Halfling"]
 }
