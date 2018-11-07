@@ -10,11 +10,11 @@
   "AbilityScore_Intelligence": "0",
   "AbilityScore_Wisdom": "0",
   "AbilityScore_Charisma": "1",
-  "Alignment": "null",
-  "Speed": "null",
+  "Alignment": ["LG"],
+  "Speed": "25",
   "Abilities": [
     {"AbilityName": "Naturally Stealthy",
       "AbilityDescription": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."}
   ],
-  "Languages": ["null"]
+  "Languages": ["Common","Halfling"]
 }
