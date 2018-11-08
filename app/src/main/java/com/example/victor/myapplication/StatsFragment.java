@@ -9,22 +9,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import java.util.Objects;
 
 
 public class StatsFragment extends Fragment {
 
     ImageButton buttonLowerHealth, buttonIncreaseHealth;
     ProgressBar progressBar;
-    RecyclerView abilityScoreRecycler;
-    AbilityScoreAdapter adapter;
-    String [] abilityScoreNames;
+    RecyclerView abilityScoreRecycler, skillsRecyclerView;
+    AbilityScoreAdapter abilityScoreAdapter;
+    SkillsListAdapter skillsListAdapter;
+    String [] abilityScoreNames,skillNames;
     TextView textViewHealthValue;
     String displayHealth;
 
@@ -41,8 +38,17 @@ public class StatsFragment extends Fragment {
         abilityScoreRecycler.setHasFixedSize(true);
         abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         abilityScoreNames = getResources().getStringArray(R.array.AbilityScores);
-        adapter = new AbilityScoreAdapter(getContext(),abilityScoreNames);
-        abilityScoreRecycler.setAdapter(adapter);
+        abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames);
+        abilityScoreRecycler.setAdapter(abilityScoreAdapter);
+
+
+        skillsRecyclerView = view.findViewById(R.id.skillsRecyclerView);
+        skillsRecyclerView.setHasFixedSize(true);
+        skillsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        skillNames = getResources().getStringArray(R.array.Skills);
+        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames);
+        skillsRecyclerView.setAdapter(skillsListAdapter);
+
 
         textViewHealthValue=view.findViewById(R.id.textViewHealthValue);
 
