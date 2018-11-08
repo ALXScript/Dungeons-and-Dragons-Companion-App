@@ -22,6 +22,7 @@
         <activity android:name=".inventory"></activity>
         <activity android:name=".spellBook"></activity>
         <activity android:name=".stats"></activity>
+        <activity android:name=".charClass"></activity>
     </application>
 
 </manifest>

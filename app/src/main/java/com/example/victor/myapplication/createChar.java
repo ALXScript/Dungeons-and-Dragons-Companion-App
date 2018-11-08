@@ -1,10 +1,12 @@
 package com.example.victor.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Spinner;
@@ -22,14 +24,12 @@ import java.util.ArrayList;
 //public class createChar extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 public class createChar extends AppCompatActivity
 {
-    //variables for the buttons
-    //public Button buttonParseJSON;
-    public TextView testView;
-    //public EditText textBox;
+    //variables
+    public Button buttonToClass;
+    public TextView txtvwDisplayText;
     public Spinner spinnerRace;
     ArrayList<String> testDescription = new ArrayList<>();
     ArrayList<String> raceList = new ArrayList<>();
-
 
     //A Tag to reference the class (not that important, may not be needed)
     private static final String TAG = "createChar";
@@ -39,30 +39,16 @@ public class createChar extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        toastMessage("OnCreate");
         super.onCreate(savedInstanceState);
-
-        //references the XML in Layout Folder
         setContentView(R.layout.createchar);
 
-        toastMessage("inside createChar.java");
-
-
-        //************BEGIN CREATING VIEW VARIABLES********************
-        //buttonParseJSON = (Button) findViewById(R.id.btnParseJSON);
-        testView = (TextView) findViewById(R.id.jsonTestView);
-        //initial testView text setter
-        testView.setText("Initial Setting Text");
-
-        //testing input via textbox
-        //textBox = (EditText) findViewById(R.id.textBox);
-
+        //TextView variables
+        txtvwDisplayText = (TextView) findViewById(R.id.jsonTestView);
+        txtvwDisplayText.setText("Initial Setting Text");
 
         //spinner variables
         spinnerRace = (Spinner) findViewById(R.id.spinnerRace);
         addItemsToSpinner();
-        //spinnerRace.setOnItemClickListener((AdapterView.OnItemClickListener) this);
-
         spinnerRace.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -72,33 +58,25 @@ public class createChar extends AppCompatActivity
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                testView.setText("Nothing Selected");
+                txtvwDisplayText.setText("Nothing Selected");
             }
         });
 
-
-        /*
-        buttonParseJSON.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                //@Override
-
-                String toastMessage = "Button has been pressed";
-                toastMessage("Button has been pressed");
-
-
-                //get_JSON();
-                //testView.setText(testDescription.toString());
-                //testView.setText(parse_JSON("Dragonborn.json"));
-                //String readJSON = loadJSONFromAsset(textBox.getText().toString());
-                //testView.setText(parse_JSON(readJSON));
-                readAndParse(textBox.getText().toString());
+        //button variables
+        buttonToClass = (Button) findViewById(R.id.btnClass);
+        buttonToClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //openCharClassActivity();
+                Intent intent = new Intent(createChar.this, charClass.class);
+                startActivity(intent);
             }
-        });*/
+        });
     }
 
     public void readAndParse(String assetName) {
         String readJSON = loadJSONFromAsset(assetName);
-        testView.setText(parse_JSON(readJSON));
+        txtvwDisplayText.setText(parse_JSON(readJSON));
     }
 
     public void toastMessage(String message){
@@ -161,6 +139,10 @@ public class createChar extends AppCompatActivity
 
             String raceDescription = raceObject.getString("Description");
 
+            if(raceObject.getBoolean("isSubrace")){
+                raceDescription = raceDescription + "\n\n" + raceObject.getString("SubRaceDescription");
+            }
+
             return raceDescription;
         }
         catch(JSONException e){
@@ -202,7 +184,7 @@ public class createChar extends AppCompatActivity
 
         switch (index){
             case "Nothing Selected":
-                testView.setText("Nothing Selected");
+                txtvwDisplayText.setText("Nothing Selected");
                 break;
             case "Dwarf":
                 readAndParse("RaceJSONs/Dwarf.json");
@@ -256,5 +238,10 @@ public class createChar extends AppCompatActivity
                 readAndParse("RaceJSONs/Tiefling.json");
                 break;
         }
+    }
+
+    public void openCharClassActivity(){
+        Intent intent = new Intent(createChar.this, charClass.class);
+        startActivity(intent);
     }
 }
