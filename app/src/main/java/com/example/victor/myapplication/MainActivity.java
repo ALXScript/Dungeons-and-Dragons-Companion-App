@@ -1,5 +1,6 @@
 package com.example.victor.myapplication;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,9 +12,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.squareup.otto.Bus;
+import com.squareup.otto.Produce;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-
+    public Bus BUS; // I declared it as a variable for easy reference. Not sure if it needs to be public or private
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +26,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        BUS = BusProvider.getInstance();
+        BUS.register(this); //You must register with the BUS to produce or subscribe but not to post
+
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView =findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        BUS.post(sendCharacter());
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -76,6 +83,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    //Produce functions for a given even class are called when a different
+    // a class registers with the Bus. They are required for dynamically created things
+    // such as new fragments or activities.
+    @Produce
+    public String sendCharacter ()
+    {
+        return "Producing from Main Activity";
+    }
+
+
 
     @Override
     public void onBackPressed() {
