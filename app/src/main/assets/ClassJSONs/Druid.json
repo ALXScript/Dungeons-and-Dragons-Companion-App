@@ -1,19 +1,18 @@
 {
-    "class": "",
-    "description": "",
-    "creating_a_class": "",
-    "HP_Hit_Dice": "",
-    "HP_HP_LVL1": "0 + Constitution Modifier",
-    "HP_HP_HighLVL": "1d# (or #) + your Constitution Modifier per class level after 1st",
-    "Proficiencies_Armor": [],
-    "Proficiencies_Weapons": [],
-    "Proficiencies_Tools": [],
-    "Proficiencies_SavingThrows": [],
-    "Proficiencies_Skills": [],
+    "class": "Druid",
+    "description": "Holding high a gnarled slaff wrealhed wilh holly, an elf summons lhe fury of lhe slorm and calls down explosive bolls of lighlning to smile lhe lorch-carrying orcs who lhrealen her forest. Crouching oul of sighl on a high tree branch in lhe form of a leopard, a human peers oul of lhe jungle aI lhe slrange conslruclion of a lemple of Evil Elemenlal Air, keeping a close eye on lhe cullists' aclivilies, Swinging a blade formed of pure fire, a half-elf charges inlo a mass of skeletal soldiers, sundering lhe unnalural magic lhat gives the foul crealures the mocking semblance of life, Whelher calling on lhe elemenlal forces of nalure or emulaling the crealures of lhe animal world, druids are an embodimenl of nature's resilience, cunning, and fury, They claim no maslery over nalure. Inslead, lhey see lhemselves as exlensions of nalure's indomilable will.",
+    "creating_a_class": "When making a druid, consider why your character has such a close bond with nature. Perhaps your character lives in a society where the Old Faith slill thrives, or was raised bya druid after being abandoned in the depths of a forcst. Perhaps your character had a dramatic encounter with the spirits of nature, coming face to face with a giant eagle or dire wolf and surviving lhe experience. Maybe your character was born during an epic storm or a volcanic eruption, which was interpreled as a sign that becoming a druid was part of your character's destiny. Have you aJways been an adventurer as part of your druidic calling, or did you first spend time as a caretaker of a sacred grove or spring? Perhaps your homeland was befouled by evil, and you took up an adventuring life in hopes of finding a new home or purpose.",
+    "HP_Hit_Dice": "1d8 per Druid level",
+    "HP_HP_LVL1": "8 + Constitution Modifier",
+    "HP_HP_HighLVL": "1d8 (or 5) + your Constitution Modifier per Druid level after 1st",
+    "Proficiencies_Armor": ["Light Armor", "Medium Armor", "Shield"],
+    "Proficiencies_Weapons": ["Club", "Dagger", "Dart", "Javelin", "Mace", "Quarterstaff", "Scimitar", "Sickle", "Sling", "Spear"],
+    "Proficiencies_Tools": ["Herbalism Kit"],
+    "Proficiencies_SavingThrows": ["Intelligence", "Wisdon"],
+    "Proficiencies_Skills": ["2","Arcana", "Animal", "Handling", "Insight", "Meedicine", "Nature", "Perception", "Religion", "Survival"],
     "Equipment": [
-        {"EQ_Choice": [[], []]},
-        {"EQ_Choice": [[], []]},
-        {"EQ_Choice": [[], []]},
-        {"EQ_Choice": [[], []]}
+        {"EQ_Choice": [["Wood Shield"], ["Any", "Simple Weapon"]]},
+        {"EQ_Choice": [["Scimitar"], ["Any", "Simple Melee Weapon"]]},
+        {"EQ_Choice": [["Leather Armor", "Explorer Pack", "Druidic Focus"]]}
     ]
   }
