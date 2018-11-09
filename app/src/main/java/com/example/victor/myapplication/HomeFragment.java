@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment {
         charCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CreateChar.class);
+                Intent intent = new Intent(getActivity(), createChar.class);
                 startActivity(intent);
             }
         });

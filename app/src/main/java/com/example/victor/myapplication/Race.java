@@ -29,6 +29,6 @@ public class Race extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rolldice);
+        setContentView(R.layout.fragment_diceroller);
     }
 }
