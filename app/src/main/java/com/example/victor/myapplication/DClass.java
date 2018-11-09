@@ -13,18 +13,18 @@ public class DClass extends AppCompatActivity
     //function for getting the DClass
     public String getDClass(){
         return dClass;
-    };
+    }
 
     //function for setting the DClass
     public void setDClass(String setter){
         dClass = setter;
-    };
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rolldice);
+        setContentView(R.layout.fragment_diceroller);
     }
 }
 
