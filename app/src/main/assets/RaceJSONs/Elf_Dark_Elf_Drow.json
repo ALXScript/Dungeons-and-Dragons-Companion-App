@@ -1,0 +1,28 @@
+{
+  "race": "Elf",
+  "isSubrace": "true",
+  "subRace": "Dark Elf (Drow)",
+  "Description": "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it. They live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze. Elves lave nature and magic, art and artistry, music and poetry, and the good things of the world.",
+  "SubRaceDescription": "Descended from an earlier subrace of dark-skinned elves; lhedrow were banished from lhe surface world for following lhe goddess Lollh down lhe palh lo evil and corruplion. Now lhey have builllheir own civilizalion in lhe deplhs of lhe Underdark, palterned afler lhe Way of Lollh. Also called dark elves. lhe drow have black skin lhal resemb[es polished obsidian and slark while ar pale yellow hair. They commonly have very pale eyes (so pale as lObe mislaken for while) in shades of lilac, silver, pink, red, and blue. They lend lo be smaller and lhinner lhan mosl elves. Drow advenlurers are rare, and lhe race does nol exisl in ali worlds. Check wilh your Dungeon Masler lo see if you can play a drow characler.",
+  "AbilityScore_Strength": "0",
+  "AbilityScore_Dexterity": "2",
+  "AbilityScore_Constitution": "0",
+  "AbilityScore_Intelligence": "0",
+  "AbilityScore_Wisdom": "0",
+  "AbilityScore_Charisma": "1",
+  "Alignment": "null",
+  "Speed": "30",
+  "Abilities": [
+    {"AbilityName": "Superior Darkvision",
+      "AbilityDescription": "Your darkvision has a radius of 120 feet."},
+    {"AbilityName": "Sunlight Sensitivity",
+      "AbilityDescription": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight"},
+    {"AbilityName": "Drow Magic",
+      "AbilityDescription": "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell ocne per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."},
+    {"AbilityName": "Drow Weapon Training",
+      "AbilityDescription": "You have proficiency with rapier, shortswords, and hand crossbows."},
+    {"AbilityName": "",
+      "AbilityDescription": ""}
+  ],
+  "Languages": ["Common","Elvish"]
+}

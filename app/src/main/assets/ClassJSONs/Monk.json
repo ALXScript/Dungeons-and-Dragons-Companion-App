@@ -1,0 +1,18 @@
+{
+    "class": "Monk",
+    "description": "Her fists a blur as lhey detlect an incoming hail of arrows, a half-elf springs over a barrieade and lhrows herself into lhe massed ranks of hobgoblins on lhe olher side. She whirls among lhem. knocking lheir blows aside and sending them reeling. unlil allasl she slands alone. Taking a deep breath. a human eovered in tattoos seltles inlo a battle stanee. As lhe tirsl eharging ores reaeh him. he exhales and a blasl of tire roars from his moulh, engulting his foes. Moving wilh lhe silenee of lhe nighl, a blaek-c1ad halfling sleps inlo a shadow benealh an areh and emerges from anolher inky shadow on a balcony a stone's lhrow away. She slides her blade free of ils c1othwrapped seabbard and peers lhrough lhe open window aI lhe lyranl prinee. so vulnerable in lhe grip of sleep. Whalever lheir discipline, monks are uniled in lheir abilily lo magically harness lhe energy lhal tlows in lheir bodies. Whelher ehanneled as a slriking display of eombal prowess or a subI ler foeus of defensive abilily and speed, lhis energy infuses alllhal a monk does.",
+    "creating_a_class": "As you make your monk characler, Ihink about your connection lOlhe monaslery where you leamed your skills and spenl your formal ive years. Were you an orphan or a child left on lhe monaslery's threshold? Did your parents promise YOlllo the monastery in gratitude for a service performed by lhe lllonks? Did you enler Ihis secluded life lo hide from a crime you committed? Or did you choosc the monaslic life for yourself? Consider why you lefl. Did lhe head of your monastery choose you for a parliclllarly imporlant mission beyond the cloisler? Perhaps you were casl out because of some violalion of lhe communily's rules. Did you dread leaving, or were you happy lo go? ls Ihere somelhing you hope lo accomplish oulside lhe monastery? Are you eager lo relum to your home? As a result of the structured life o a monastic community and the discipline required lOhamess ki, monks are almosl always lawful in alignmenl.",
+    "HP_Hit_Dice": "1d8 per Monk level",
+    "HP_HP_LVL1": "8 + Constitution Modifier",
+    "HP_HP_HighLVL": "1d8 (or 5) + your Constitution Modifier per Monk level after 1st",
+    "Proficiencies_Armor": ["None"],
+    "Proficiencies_Weapons": ["Simple Weapon", "Shortsword"],
+    "Proficiencies_Tools": ["1", "Artisian Tool", "Musical Instrument"],
+    "Proficiencies_SavingThrows": ["Strength", "Dexterity"],
+    "Proficiencies_Skills": ["2","Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"],
+    "Equipment": [
+        {"EQ_Choice": [["Shortsword"], ["Any", "Simple Weapon"]]},
+        {"EQ_Choice": [["Dungeoneer Pack"], ["Explorer Pack"]]},
+        {"EQ_Choice": [["10", "Dart"]]}
+    ]
+  }

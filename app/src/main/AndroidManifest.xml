@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateChar"></activity>
+        <activity android:name=".createChar"></activity>
+        <activity android:name=".charClass"></activity>
     </application>
 
 </manifest>
