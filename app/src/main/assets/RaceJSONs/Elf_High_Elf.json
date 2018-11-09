@@ -1,0 +1,22 @@
+{
+  "race": "Elf",
+  "isSubrace": "true",
+  "subRace": "High Elf",
+  "Description": "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it. They live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze. Elves lave nature and magic, art and artistry, music and poetry, and the good things of the world.",
+  "SubRaceDescription": "As a high elf, you have a keeo mind and a mastery of at least lhe basics of magic. In many of the worlds of 0&0, lhere are two kinds of high elves. Ooe lype (which includes lhe gray e1ves aod valley elves of Greyhawk, the Silvaoesti of Oragoolaoce, and lhe sun elves of lhe Forgotteo Realms) is haughty and reclusive, believing lhemselves to be superior lo ooo-elves and even other elves. The other type (iocludiog the high elves of Greyhawk. the Qualinesli of Oragonlance, and the moon elves of the Forgotteo Realms) are more common and more friendly, and oflen encouolered among humans and olhe r races. The sun elves of Faeruo (also called gold elves or sunrise elves) have bronze skin and hair of copper, black, or golden blood. Thcir eyes are golden, silver, or black. Moon elves (also called silver elves or gray elves) are much paler, with alabasler skio somelimes tioged wilh blue. They oflen have hair of silver-while, black, or blue, but various shades of blond, brown, and red are not uncommon. Their eyes are blue or green and flecked with gold.",
+  "AbilityScore_Strength": "0",
+  "AbilityScore_Dexterity": "2",
+  "AbilityScore_Constitution": "0",
+  "AbilityScore_Intelligence": "1",
+  "AbilityScore_Wisdom": "0",
+  "AbilityScore_Charisma": "0",
+  "Alignment": "null",
+  "Speed": "30",
+  "Abilities": [
+    {"AbilityName": "Cantrip",
+      "AbilityDescription": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."},
+    {"AbilityName": "Extran Language",
+      "AbilityDescription": "You can speak, read, and write one extra language of your choice"}
+  ],
+  "Languages": ["Common","Elvish"]
+}

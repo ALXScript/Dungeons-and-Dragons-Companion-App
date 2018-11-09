@@ -1,0 +1,24 @@
+{
+  "race": "Tiefling",
+  "isSubrace": "false",
+  "subRace": "null",
+  "Description": "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling. And to twist the knife, tieflings know that this is because a pact struck generations ago infused the essence of Asmodeus-overlord of the Nine Hells-into their bloodline. Their appearance and their nature are not their fault but the result of an ancient sin, for which they and their children and their children's children will always be held accountable.",
+  "SubRaceDescription": "null",
+  "AbilityScore_Strength": "0",
+  "AbilityScore_Dexterity": "0",
+  "AbilityScore_Constitution": "0",
+  "AbilityScore_Intelligence": "1",
+  "AbilityScore_Wisdom": "0",
+  "AbilityScore_Charisma": "2",
+  "Alignment": ["LN", "LE", "TN", "TE", "CN", "CE"],
+  "Speed": "30",
+  "Abilities": [
+    {"AbilityName": "Darkvision",
+      "AbilityDescription": "Thanks lOyour infernal heritage, you have superior vision in dark and dim conditions. You can see in dim Iight within 60 feet of you as if it were bright 1ight. and in darkness as if it were dim light. You can't discern color in darkness. only shades of gray."},
+    {"AbilityName": "Hellish Resistance",
+      "AbilityDescription": "You have resistance to fire damage."},
+    {"AbilityName": "Infernal Legacy",
+      "AbilityDescription": "You know the thaumatuqJy cantrip. Once you reach 3rd levei, you can cast the hellish rebuke spell once per day as a 2nd-levei spell. Once you reach 5th levei, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spclls."}
+  ],
+  "Languages": ["Common","Infernal"]
+}
