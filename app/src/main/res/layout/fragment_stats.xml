@@ -14,7 +14,7 @@
         android:layout_marginTop="0dp">
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textViewPassivePerceptionValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -31,9 +31,9 @@
             android:layout_marginStart="8dp"
             android:fontFamily="cursive"
             android:text="+3"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewProficienyBonus"
-            app:layout_constraintStart_toEndOf="@+id/textViewProficienyBonus"
-            app:layout_constraintTop_toTopOf="@+id/textViewProficienyBonus" />
+            app:layout_constraintBottom_toBottomOf="@+id/textViewProficienyBonusHeader"
+            app:layout_constraintStart_toEndOf="@+id/textViewProficienyBonusHeader"
+            app:layout_constraintTop_toTopOf="@+id/textViewProficienyBonusHeader" />
 
         <TextView
             android:id="@+id/textView10"
@@ -47,7 +47,7 @@
             app:layout_constraintStart_toStartOf="@+id/constraintLayoutSkills" />
 
         <TextView
-            android:id="@+id/textViewProficienyBonus"
+            android:id="@+id/textViewProficienyBonusHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -110,8 +110,8 @@
 
         <ImageView
             android:id="@+id/imageViewMyIcon"
-            android:layout_width="89dp"
-            android:layout_height="89dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -119,7 +119,7 @@
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/contraintLayoutArmorClass"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPassivePerceptionHeader"
             app:srcCompat="@drawable/wizard"
             tools:srcCompat="@tools:sample/avatars[5]" />
 
@@ -171,7 +171,7 @@
             app:srcCompat="@drawable/minussign" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewPassivePerceptionHeader"
             android:layout_width="wrap_content"
 
             android:layout_height="0dp"
@@ -190,14 +190,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/border"
+            android:background="@drawable/banner1"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewMyIcon"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/textViewPassivePerceptionHeader"
             app:layout_constraintStart_toEndOf="@+id/recyclerViewAbilityScores"
             app:layout_constraintTop_toBottomOf="@+id/textViewHealthValue">
 
             <TextView
-                android:id="@+id/textViewTitle"
+                android:id="@+id/textViewHitDiceHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -205,7 +205,7 @@
                 android:layout_marginEnd="8dp"
                 android:fontFamily="cursive"
                 android:text="Hit Dice"
-                android:textSize="18sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.648"
@@ -213,7 +213,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewArmorClassHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -222,14 +222,14 @@
                 android:fontFamily="cursive"
                 android:text="Armor Class"
                 android:textAllCaps="false"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/textViewTitle"
+                app:layout_constraintEnd_toStartOf="@+id/textViewHitDiceHeader"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textViewMyArmorClass"
+                android:id="@+id/textViewHitDiceValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
@@ -238,26 +238,26 @@
                 android:text="2d8"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textViewTitle"
-                app:layout_constraintStart_toStartOf="@+id/textViewTitle"
-                app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+                app:layout_constraintEnd_toEndOf="@+id/textViewHitDiceHeader"
+                app:layout_constraintStart_toStartOf="@+id/textViewHitDiceHeader"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHitDiceHeader"
                 app:layout_constraintVertical_bias="0.47000003" />
 
             <TextView
-                android:id="@+id/textViewMySpeed"
+                android:id="@+id/textViewSpeedValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="cursive"
                 android:text="30"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textViewSpeed"
-                app:layout_constraintStart_toStartOf="@+id/textViewSpeed"
-                app:layout_constraintTop_toBottomOf="@+id/textViewSpeed"
+                app:layout_constraintEnd_toEndOf="@+id/textViewSpeedHeader"
+                app:layout_constraintStart_toStartOf="@+id/textViewSpeedHeader"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSpeedHeader"
                 app:layout_constraintVertical_bias="0.487" />
 
             <TextView
-                android:id="@+id/textViewSpeed"
+                android:id="@+id/textViewSpeedHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -265,26 +265,26 @@
                 android:layout_marginEnd="8dp"
                 android:fontFamily="cursive"
                 android:text="Speed"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textViewTitle"
+                app:layout_constraintStart_toEndOf="@+id/textViewHitDiceHeader"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textViewMyArmorClass2"
+                android:id="@+id/textViewArmorClassValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="cursive"
                 android:text="13"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:typeface="serif"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView5"
-                app:layout_constraintStart_toStartOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="@+id/textViewArmorClassHeader"
+                app:layout_constraintStart_toStartOf="@+id/textViewArmorClassHeader"
+                app:layout_constraintTop_toBottomOf="@+id/textViewArmorClassHeader"
                 app:layout_constraintVertical_bias="0.48" />
         </android.support.constraint.ConstraintLayout>
 
@@ -296,14 +296,14 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/parchment3"
-            app:layout_constraintBottom_toTopOf="@+id/textView11"
+            app:layout_constraintBottom_toTopOf="@+id/textViewPassivePerceptionValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toEndOf="@+id/recyclerViewAbilityScores"
-            app:layout_constraintTop_toBottomOf="@+id/textViewProficienyBonus" >
+            app:layout_constraintTop_toBottomOf="@+id/textViewProficienyBonusHeader" >
 
             <TextView
-                android:id="@+id/skillsTextView"
+                android:id="@+id/textViewSkillsHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -325,7 +325,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/skillsTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewSkillsHeader" />
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>

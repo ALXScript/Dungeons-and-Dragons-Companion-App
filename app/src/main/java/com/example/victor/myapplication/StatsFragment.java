@@ -33,12 +33,13 @@ public class StatsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
         //Load in the ability scores
+        int [] abilityScores = {9,8,7,13,4,11};
         maxHealth = 26;
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
         abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         abilityScoreNames = getResources().getStringArray(R.array.AbilityScores);
-        abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames);
+        abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames,abilityScores);
         abilityScoreRecycler.setAdapter(abilityScoreAdapter);
 
 
