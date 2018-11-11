@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_weight="1"
+        android:buttonTint="@android:color/black"
         android:clickable="false"
         android:fontFamily="cursive"
         android:text="RadioButton"
@@ -25,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_weight="1"
+        android:buttonTint="@android:color/black"
         android:clickable="false"
         android:fontFamily="cursive"
         android:text="RadioButton"
@@ -48,6 +50,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="197dp" />
+        app:layout_constraintGuide_begin="125dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         BUS = BusProvider.getInstance();
         BUS.register(this); //You must register with the BUS to produce or subscribe but not to post
+        BUS.post(sendCharacter());
+        BUS.unregister(this);
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView =findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        BUS.post(sendCharacter());
-
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
