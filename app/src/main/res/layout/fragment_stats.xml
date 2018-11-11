@@ -74,7 +74,7 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerViewAbilityScores"
-            android:layout_width="77dp"
+            android:layout_width="75dp"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -172,14 +172,15 @@
 
         <TextView
             android:id="@+id/textViewPassivePerceptionHeader"
-            android:layout_width="wrap_content"
+            android:layout_width="101dp"
 
-            android:layout_height="0dp"
+            android:layout_height="25dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="cursive"
             android:text="Level 3 Wizard"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCharacterName" />
 
@@ -187,12 +188,13 @@
             android:id="@+id/contraintLayoutArmorClass"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/banner1"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewMyIcon"
             app:layout_constraintEnd_toStartOf="@+id/textViewPassivePerceptionHeader"
+            app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toEndOf="@+id/recyclerViewAbilityScores"
             app:layout_constraintTop_toBottomOf="@+id/textViewHealthValue">
 
@@ -200,15 +202,13 @@
                 android:id="@+id/textViewHitDiceHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="cursive"
                 android:text="Hit Dice"
                 android:textSize="10sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.648"
+                app:layout_constraintEnd_toStartOf="@+id/textViewArmorClassHeader"
+                app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -217,14 +217,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="cursive"
                 android:text="Armor Class"
                 android:textAllCaps="false"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/textViewHitDiceHeader"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -232,16 +232,14 @@
                 android:id="@+id/textViewHitDiceValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:layout_marginBottom="8dp"
                 android:fontFamily="sans-serif"
                 android:text="2d8"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textViewHitDiceHeader"
                 app:layout_constraintStart_toStartOf="@+id/textViewHitDiceHeader"
                 app:layout_constraintTop_toBottomOf="@+id/textViewHitDiceHeader"
-                app:layout_constraintVertical_bias="0.47000003" />
+                app:layout_constraintVertical_bias="0.35000002" />
 
             <TextView
                 android:id="@+id/textViewSpeedValue"
@@ -249,26 +247,25 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="cursive"
                 android:text="30"
-                android:textSize="24sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textViewSpeedHeader"
                 app:layout_constraintStart_toStartOf="@+id/textViewSpeedHeader"
                 app:layout_constraintTop_toBottomOf="@+id/textViewSpeedHeader"
-                app:layout_constraintVertical_bias="0.487" />
+                app:layout_constraintVertical_bias="0.3" />
 
             <TextView
                 android:id="@+id/textViewSpeedHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="cursive"
                 android:text="Speed"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textViewHitDiceHeader"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toEndOf="@+id/textViewArmorClassHeader"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -285,7 +282,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/textViewArmorClassHeader"
                 app:layout_constraintStart_toStartOf="@+id/textViewArmorClassHeader"
                 app:layout_constraintTop_toBottomOf="@+id/textViewArmorClassHeader"
-                app:layout_constraintVertical_bias="0.48" />
+                app:layout_constraintVertical_bias="0.39" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
@@ -300,12 +297,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toEndOf="@+id/recyclerViewAbilityScores"
-            app:layout_constraintTop_toBottomOf="@+id/textViewProficienyBonusHeader" >
+            app:layout_constraintTop_toBottomOf="@+id/textViewProficienyBonusHeader">
 
             <TextView
                 android:id="@+id/textViewSkillsHeader"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
@@ -320,8 +317,7 @@
                 android:id="@+id/skillsRecyclerView"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
