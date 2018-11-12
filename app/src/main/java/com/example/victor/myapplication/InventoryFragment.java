@@ -98,7 +98,7 @@ public class InventoryFragment extends Fragment {
 
                     getItemInfo(itemID, myDialog);
 
-                    removeItemBttn = (Button) myDialog.findViewById(R.id.itemRemoveBtn);
+                    removeItemBttn = (Button) myDialog.findViewById(R.id.itemRemoveInventoryBtn);
                     closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
 
                     closeBttn.setOnClickListener(new View.OnClickListener() {
