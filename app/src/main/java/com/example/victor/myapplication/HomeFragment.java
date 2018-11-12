@@ -1,6 +1,7 @@
 package com.example.victor.myapplication;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,6 +22,9 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         charCreateBtn = view.findViewById(R.id.creatCharBtn);
+
+        getActivity().setRequestedOrientation(
+                ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         charCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
