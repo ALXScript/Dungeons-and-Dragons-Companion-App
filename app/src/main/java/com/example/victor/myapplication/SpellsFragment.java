@@ -37,6 +37,9 @@ public class SpellsFragment extends Fragment {
     TextView spellSource;
     TextView spellType;
     TextView spellDesc;
+    Dialog areYouSureDialog;
+    Button yesAreYouSureBtn;
+    Button noAreYouSureBtn;
     //Create Item Variables
     Dialog createSpellDialog;
     Button createSpellBttn;
@@ -120,6 +123,7 @@ public class SpellsFragment extends Fragment {
                             adapter.add(newEntryName);
                             adapter.notifyDataSetChanged();
                         }
+                        createSpellDialog.dismiss();
                     }
                 });
             }
@@ -171,7 +175,7 @@ public class SpellsFragment extends Fragment {
             boolean spellbooksAdded = myDatabaseAccess.addToSpellbooks(charID, spellID, 1);
 
             if(spellbooksAdded) {
-                toastMessage("Item added to spellbook!");
+                toastMessage("Spell added to spellbook!");
             }
             else {
                 toastMessage("Something went wrong...");
@@ -224,14 +228,36 @@ public class SpellsFragment extends Fragment {
                         }
                     });
 
+                    areYouSureDialog = new Dialog(getContext());
+
                     removeSpellBttn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            myDatabaseAccess.deleteSpellFromSpells(finalspellID);
-                            adapter.remove(adapter.getItem(i));
-                            adapter.notifyDataSetChanged();
-                            myDialog.dismiss();
-                            toastMessage("Spell removed from spells!");
+                            areYouSureDialog.setContentView(R.layout.popup_areyousure);
+
+                            yesAreYouSureBtn = (Button) areYouSureDialog.findViewById(R.id.yesAreYouSureBtn);
+                            noAreYouSureBtn = (Button) areYouSureDialog.findViewById(R.id.noAreYouSureBtn);
+
+                            yesAreYouSureBtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    myDatabaseAccess.deleteSpellFromSpells(finalspellID);
+                                    adapter.remove(adapter.getItem(i));
+                                    adapter.notifyDataSetChanged();
+                                    areYouSureDialog.dismiss();
+                                    myDialog.dismiss();
+                                    toastMessage("Spell removed from spells!");
+                                }
+                            });
+
+                            noAreYouSureBtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    areYouSureDialog.dismiss();
+                                }
+                            });
+
+                            areYouSureDialog.show();
                         }
                     });
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
-    android:layout_height="350dp"
+    android:layout_height="400dp"
     android:layout_gravity="center"
     android:background="@color/colorTan"
     android:orientation="vertical"
@@ -12,7 +12,9 @@
         android:layout_width="44dp"
         android:layout_height="38dp"
         android:layout_gravity="end"
-        android:text="@string/close" />
+        android:layout_marginEnd="10dp"
+        android:text="@string/close"
+        android:textSize="14sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,6 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -33,29 +37,35 @@
         android:id="@+id/itemTypeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/itemSourceTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/itemDescTextView"
         android:layout_width="match_parent"
-        android:layout_height="84dp" />
+        android:layout_height="84dp"
+        android:gravity="center_horizontal" />
 
     <Button
         android:id="@+id/itemAddBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/addItem" />
+        android:text="@string/addItem"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/itemRemoveBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/removeItem" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/removeItem"
+        android:textSize="14sp" />
 
 </LinearLayout>

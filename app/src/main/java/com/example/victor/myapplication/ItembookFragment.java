@@ -37,6 +37,9 @@ public class ItembookFragment extends Fragment {
     TextView itemSource;
     TextView itemType;
     TextView itemDesc;
+    Dialog areYouSureDialog;
+    Button yesAreYouSureBtn;
+    Button noAreYouSureBtn;
 //Create Item Variables
     Dialog createItemDialog;
     Button createItemBttn;
@@ -120,6 +123,7 @@ public class ItembookFragment extends Fragment {
                             adapter.add(newEntryName);
                             adapter.notifyDataSetChanged();
                         }
+                        createItemDialog.dismiss();
                     }
                 });
             }
@@ -224,14 +228,36 @@ public class ItembookFragment extends Fragment {
                         }
                     });
 
+                    areYouSureDialog = new Dialog(getContext());
+
                     removeItemBttn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            myDatabaseAccess.deleteItemFromItembook(finalItemID);
-                            adapter.remove(adapter.getItem(i));
-                            adapter.notifyDataSetChanged();
-                            myDialog.dismiss();
-                            toastMessage("Item removed from items!");
+                            areYouSureDialog.setContentView(R.layout.popup_areyousure);
+
+                            yesAreYouSureBtn = (Button) areYouSureDialog.findViewById(R.id.yesAreYouSureBtn);
+                            noAreYouSureBtn = (Button) areYouSureDialog.findViewById(R.id.noAreYouSureBtn);
+
+                            yesAreYouSureBtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    myDatabaseAccess.deleteItemFromItembook(finalItemID);
+                                    adapter.remove(adapter.getItem(i));
+                                    adapter.notifyDataSetChanged();
+                                    areYouSureDialog.dismiss();
+                                    myDialog.dismiss();
+                                    toastMessage("Item removed from items!");
+                                }
+                            });
+
+                            noAreYouSureBtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    areYouSureDialog.dismiss();
+                                }
+                            });
+
+                            areYouSureDialog.show();
                         }
                     });
 

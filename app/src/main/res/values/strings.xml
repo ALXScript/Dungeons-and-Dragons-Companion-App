@@ -45,7 +45,7 @@
 
     <!--Items and Spells Database-->
     <string name="database">Database</string>
-    <string name="close">(X)</string>
+    <string name="close">X</string>
     <string name="enterSource">enter source</string>
     <string name="enterDesc">enter description</string>
     <string name="enterName">enter name</string>
@@ -54,14 +54,19 @@
     <string name="items">Items</string>
     <string name="inv">Inventory</string>
     <string name="itemBook">Item Book</string>
-    <string name="addItem">Add Item</string>
+    <string name="addItem">Add Item to inventory</string>
     <string name="createItem">Create Item</string>
-    <string name="removeItem">Remove Item</string>
+    <string name="removeItem">Remove Item from db</string>
     <string name="viewItem">View Item</string>
 
     <string name="spells">Spells</string>
     <string name="spellBook">Spell Book</string>
-    <string name="addSpell">Add Spell</string>
+    <string name="addSpell">Add Spell to spellbook</string>
     <string name="createSpell">Create Spell</string>
-    <string name="removeSpell">Remove Spell</string>
+    <string name="removeSpell">Remove spell from DB</string>
+    <string name="areYouSure">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="removeItemFromInventory">Remove Item from inventory</string>
+    <string name="removeSpellFromSpellbook">Remove Spell from spellbook</string>
 </resources>

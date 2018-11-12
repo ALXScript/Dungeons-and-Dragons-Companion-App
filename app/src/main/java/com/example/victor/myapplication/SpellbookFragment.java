@@ -98,7 +98,7 @@ public class SpellbookFragment extends Fragment {
 
                     getSpellInfo(spellID, myDialog);
 
-                    removeSpellBttn = (Button) myDialog.findViewById(R.id.spellRemoveBtn);
+                    removeSpellBttn = (Button) myDialog.findViewById(R.id.spellRemoveSpellbookBtn);
                     closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
 
                     closeBttn.setOnClickListener(new View.OnClickListener() {
