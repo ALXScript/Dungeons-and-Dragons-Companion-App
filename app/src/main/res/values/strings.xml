@@ -69,4 +69,5 @@
     <string name="no">No</string>
     <string name="removeItemFromInventory">Remove Item from inventory</string>
     <string name="removeSpellFromSpellbook">Remove Spell from spellbook</string>
+    <string name="deleteWarning">WARNING! This will permanently delete this item/spell from the entire phone for all characters.</string>
 </resources>
