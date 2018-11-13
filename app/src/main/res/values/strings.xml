@@ -43,6 +43,42 @@
         <item>Survival</item>
     </string-array>
 
+    <string-array name="RaceList">
+        <item>Dwarf</item>
+        <item>Hill Dwarf</item>
+        <item>Mountain Dwarf</item>
+        <item>Elf</item>
+        <item>High Elf</item>
+        <item>Wood Elf</item>
+        <item>Dark Elf (Drow)</item>
+        <item>Halfling</item>
+        <item>Lightfoot Halfling</item>
+        <item>Stout Halfling</item>
+        <item>Human</item>
+        <item>Dragonborn</item>
+        <item>Gnome</item>
+        <item>Forest Gnome</item>
+        <item>Rock Gnome</item>
+        <item>Half-Elf</item>
+        <item>Half-Orc</item>
+        <item>Tiefling</item>
+    </string-array>
+
+    <string-array name="ClassList">
+        <item>Barbarian</item>
+        <item>Bard</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Monk</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </string-array>
+
     <string name="home">Home</string>
     <string name="items">Items</string>
     <string name="spells">Spells</string>
@@ -57,4 +93,7 @@
     <string name="createSpell">Create Spell</string>
     <string name="addSpell">Add Spell</string>
     <string name="removeSpell">Remove Spell</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
