@@ -12,6 +12,13 @@
     <string name="charCreat">Create Char</string>
     <string name="selChar">Select Char</string>
     <string name="stats">Stats</string>
+    <string name="abilityScore">Ability Score</string>
+    <string name="skills">Skills</string>
+    <string name="passivePerception">Passive Perception</string>
+    <string name="proficiencyBonus">Proficiency Bonus</string>
+    <string name="speed">Speed</string>
+    <string name="hitDice">Hit Dice</string>
+
 
     <string-array name="AbilityScores">
         <item>Str</item>

@@ -6,7 +6,9 @@ package com.example.victor.myapplication;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
         this.myContext = myContext;
         AbilityScoreNames = AbilityScoreStrings;
         AbilityScores = abilityScores;
+    
     }
 
 
@@ -47,13 +50,18 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
     public void onBindViewHolder(@NonNull AbilityScoreViewHolder abilityScoreViewHolder, int i) {
 
         int abilityScore = AbilityScores[i];
-        int abilityScoreModifier = (abilityScore-10)/2;
-
         String abilityScoreModifierText ="";
-        if (abilityScoreModifier>0) abilityScoreModifierText="+";
+        String abilityScoreText = Integer.toString(abilityScore);
+
+        //Correction for output of AbilityScore Modifier
+        if (abilityScore>=10) abilityScoreModifierText="+";
+        else abilityScore--;
+
+        int abilityScoreModifier = (abilityScore-10)/2;
         abilityScoreModifierText+= Integer.toString(abilityScoreModifier);
+
         abilityScoreViewHolder.textViewAbilityScoreName.setText(AbilityScoreNames[i]);
-        abilityScoreViewHolder.textViewAbilityScoreValue.setText(Integer.toString(abilityScore));
+        abilityScoreViewHolder.textViewAbilityScoreValue.setText(abilityScoreText);
         abilityScoreViewHolder.textViewAbilityScoreModifier.setText(abilityScoreModifierText);
     }
 
@@ -73,5 +81,5 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
             textViewAbilityScoreValue = itemView.findViewById(R.id.textViewAbilityScoreValue);
             textViewAbilityScoreModifier = itemView.findViewById(R.id.textViewAbilityScoreModifier);
         }
-    };
+    }
 }
