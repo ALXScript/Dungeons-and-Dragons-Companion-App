@@ -3,7 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorTan">
+    android:background="@drawable/parchment1">
+    <!--android:background="@color/colorTan">-->
+
 
     <ListView
         android:id="@+id/listViewSpellbook"
