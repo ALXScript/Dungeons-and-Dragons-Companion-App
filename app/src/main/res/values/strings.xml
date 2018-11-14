@@ -3,13 +3,13 @@
     <string name="charCreat">Create Char</string>
     <string name="selChar">Select Char</string>
     <string name="diceRoll">Roll Dice</string>
-    <string name="spellBook">Spell Book</string>
-    <string name="itemBook">Item Book</string>
-    <string name="inv">Inventory</string>
+
+
+
     <string name="stats">Stats</string>
-    <string name="addItem">Add Item</string>
-    <string name="removeItem">Remove Item</string>
-    <string name="viewItem">View Item</string>
+
+
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -80,15 +80,15 @@
     </string-array>
 
     <string name="home">Home</string>
-    <string name="items">Items</string>
-    <string name="spells">Spells</string>
+
+
     <string name="rollDice">Roll Dice</string>
     <string name="database">Database</string>
-    <string name="close">X</string>
-    <string name="enterSource">enter source</string>
-    <string name="enterDesc">enter description</string>
+
+
+
     <string name="close">(X)</string>
-    <string name="createItem">Create Item</string>
+
     <string name="enterName">enter name</string>
     <string name="enterType">enter type</string>
 
@@ -102,9 +102,9 @@
 
     <string name="spells">Spells</string>
     <string name="spellBook">Spell Book</string>
-    <string name="addSpell">Add Spell to spellbook</string>
-    <string name="createSpell">Create Spell</string>
-    <string name="removeSpell">Remove spell from DB</string>
+
+
+
     <string name="areYouSure">Are you sure?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
