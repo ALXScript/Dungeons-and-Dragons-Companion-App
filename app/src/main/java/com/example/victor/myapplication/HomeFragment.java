@@ -34,14 +34,16 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
                 */
 
-                Toast.makeText(getActivity(), "Button Pressed", Toast.LENGTH_SHORT);
+                //Toast.makeText(getActivity(), "Button Pressed", Toast.LENGTH_SHORT);
 
                 //Fragment frag = new fragment_createchar_race();
-                FragmentManager fragManager = getFragmentManager();
-                fragManager.beginTransaction().replace(R.id.fragment_container, new fragment_createchar_race()).commit();
+                //FragmentManager fragManager = getFragmentManager();
+                //fragManager.beginTransaction().replace(R.id.fragment_container, new fragment_createchar_race()).commit();
 
-                //Intent intent = new Intent(getActivity(), fragment_createchar_race.class);
-                //startActivity(intent);
+
+                Intent intent = new Intent(getActivity(), CreateChar.class);
+                startActivity(intent);
+
             }
         });
 
