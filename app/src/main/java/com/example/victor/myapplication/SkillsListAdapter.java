@@ -62,7 +62,7 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
             leftSkillsRadioButton= itemView.findViewById(R.id.leftSkillsRadioButton);
             rightSkillsRadioButton= itemView.findViewById(R.id.rightSkillsRadioButton);
         }
-    }
+    };
 
 
 }

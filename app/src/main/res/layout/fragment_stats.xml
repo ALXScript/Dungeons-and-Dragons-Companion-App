@@ -20,7 +20,6 @@
             android:layout_marginStart="20dp"
             android:fontFamily="cursive"
             android:text="+5"
-            android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="@+id/textView10"
             app:layout_constraintStart_toEndOf="@+id/textView10"
             app:layout_constraintTop_toTopOf="@+id/textView10" />
@@ -32,7 +31,6 @@
             android:layout_marginStart="8dp"
             android:fontFamily="cursive"
             android:text="+3"
-            android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="@+id/textViewProficienyBonusHeader"
             app:layout_constraintStart_toEndOf="@+id/textViewProficienyBonusHeader"
             app:layout_constraintTop_toTopOf="@+id/textViewProficienyBonusHeader" />
@@ -45,7 +43,6 @@
             android:layout_marginBottom="32dp"
             android:fontFamily="cursive"
             android:text="Passive Perception"
-            android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/constraintLayoutSkills" />
 
@@ -57,7 +54,6 @@
             android:layout_marginTop="8dp"
             android:fontFamily="cursive"
             android:text="Proficiency Bonus"
-            android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/contraintLayoutArmorClass" />
 
@@ -107,7 +103,6 @@
             android:layout_marginEnd="8dp"
             android:fontFamily="cursive"
             android:text="Xandolf"
-            android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -147,7 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_end="447dp" />
+            app:layout_constraintGuide_begin="120dp" />
 
         <ImageButton
             android:id="@+id/buttonIncreaseHealth"
@@ -177,15 +172,14 @@
 
         <TextView
             android:id="@+id/textViewPassivePerceptionHeader"
-            android:layout_width="wrap_content"
+            android:layout_width="101dp"
 
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="cursive"
             android:text="Level 3 Wizard"
             android:textAlignment="center"
-            android:textColor="@android:color/black"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCharacterName" />
@@ -211,11 +205,10 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="cursive"
                 android:text="Hit Dice"
-                android:textColor="@android:color/black"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/textViewArmorClassHeader"
-                app:layout_constraintHorizontal_bias="0.75"
+                app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -223,11 +216,12 @@
                 android:id="@+id/textViewArmorClassHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="cursive"
                 android:text="Armor Class"
                 android:textAllCaps="false"
-                android:textColor="@android:color/black"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -240,7 +234,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:text="2d8"
-                android:textColor="@android:color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textViewHitDiceHeader"
@@ -254,9 +247,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="cursive"
                 android:text="30"
-                android:textColor="@android:color/black"
                 android:textSize="14sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textViewSpeedHeader"
                 app:layout_constraintStart_toStartOf="@+id/textViewSpeedHeader"
@@ -270,11 +261,10 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="cursive"
                 android:text="Speed"
-                android:textColor="@android:color/black"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toEndOf="@+id/textViewArmorClassHeader"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -286,9 +276,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="cursive"
                 android:text="13"
-                android:textColor="@android:color/black"
                 android:textSize="24sp"
-                android:textStyle="bold"
                 android:typeface="serif"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textViewArmorClassHeader"
@@ -320,7 +308,6 @@
                 android:layout_marginEnd="8dp"
                 android:fontFamily="cursive"
                 android:text="Skills"
-                android:textColor="@android:color/black"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
