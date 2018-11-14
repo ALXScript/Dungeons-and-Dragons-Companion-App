@@ -12,6 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import android.app.Fragment;
+import android.support.v4.app.FragmentManager;
+
 import com.squareup.otto.Bus;
 import com.squareup.otto.Produce;
 
@@ -41,8 +44,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeFragment()).commit();
+            Fragment frag = new HomeFragment();
+            android.app.FragmentManager fragManager = getFragmentManager();
+            fragManager.beginTransaction().replace(R.id.fragment_container, frag).commit();
+
+            //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+            //        new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
     }
@@ -51,8 +58,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HomeFragment()).commit();
+                Fragment frag = new HomeFragment();
+                android.app.FragmentManager fragManager = getFragmentManager();
+                fragManager.beginTransaction().replace(R.id.fragment_container, frag).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                //        new HomeFragment()).commit();
                 break;
             case R.id.nav_stats:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
