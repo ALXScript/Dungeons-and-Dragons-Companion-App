@@ -34,7 +34,7 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
 
     }
 
-    //This function will populate the textView within the abilityScoreHolder
+    //This function will populate the textView within the skillsScoreHolder
     @Override
     public void onBindViewHolder(@NonNull SkillListViewHolder skillListViewHolder, int i) {
 
@@ -62,7 +62,7 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
             leftSkillsRadioButton= itemView.findViewById(R.id.leftSkillsRadioButton);
             rightSkillsRadioButton= itemView.findViewById(R.id.rightSkillsRadioButton);
         }
-    };
+    }
 
 
 }
