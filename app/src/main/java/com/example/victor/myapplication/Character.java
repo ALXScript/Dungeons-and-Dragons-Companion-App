@@ -9,16 +9,18 @@ public class Character {
 
     //Stat Variables
     private String myName;
-    private int myCurrentHP;
-    private int myMaxHP;
+    private int currentHitPoints;
+
+    private int maxHitPoints;
+
     private int myArmorClass;
     private String myHitDice;
     private int myInitiative;
     private int mySpeed;
-    private int myDSSuccesses;
-    private int myDSFailures;
-
+    private int currentDeathSaveSuccesses;
+    private int currentDeathSaveFailures;
     //Ability Scores (SDCIWC) Stats
+
     /*Array Legend
     0 - Strength
     1 - Dexterity
@@ -26,13 +28,13 @@ public class Character {
     3 - intelligence
     4 - Wisdom
     5 - Charisma*/
-    private int myAbilityScores[] = new int[6];
-
+    private int abilityScores[] = new int[6];
     //Other Stat Variables
+
     private boolean statInspiration;
     private int statProficiencyBonus;
-
     //Saving Throw Variables
+
     /* Array Legend
     0 - Strength
     1 - Dexterity
@@ -40,10 +42,10 @@ public class Character {
     3 - intelligence
     4 - Wisdom
     5 - Charisma*/
-    private boolean savingThrowActive[] = new boolean[6];
+    private boolean savingThrowProficiences[] = new boolean[6];
     private int savingThrow[] = new int[6];
-
     //Skills Variable
+
     /* Array Legend
     0 - Acrobatics (Dex)
     1 - Animal Handling (Wis)
@@ -64,10 +66,83 @@ public class Character {
     16 - Stealth (Dex)
     17 - Survival (Wis)
     */
-    private boolean skillsActive[] = new boolean[18];
+    private boolean skillProficiencies[] = new boolean[18];
     private int skills[] = new int[18];
-
     //Char Creation Variables
+
     private int mySpellBookTable;
     private int myInventoryTable;
+
+    public Character(String myName, int myMaxHealth, int abilityScores[],
+            boolean skillProficiencies[],boolean savingThrowProfs [])
+    {
+        this.myName = myName;
+        this.currentHitPoints=this.maxHitPoints=myMaxHealth;
+        this.abilityScores=abilityScores;
+        this.skillProficiencies =skillProficiencies;
+        this.savingThrowProficiences=savingThrowProfs;
+        myArmorClass=13;
+        mySpeed=30;
+
+
+    }
+
+    //Getters................................................................................
+    public String getMyName()
+    {
+        return myName;
+    }
+
+    public int getMyArmorClass()
+    {
+        return myArmorClass;
+    }
+    public int[] getAbilityScores()
+    {
+        return abilityScores;
+    }
+
+    public int getCurrentHitPoints()
+    {
+        return currentHitPoints;
+    }
+
+    public int getMaxHitPoints()
+    {
+        return maxHitPoints;
+    }
+
+    public boolean [] getSkillProficiencies(){return skillProficiencies;}
+
+    public int [] getAllAbilityScoreModifiers()
+    {
+        int abilityScoreModifiers[]=new int [6];
+        for (int i=0; i<6;i++)
+        {
+            abilityScoreModifiers[i] = (abilityScores[i]-10)/2;
+        }
+
+
+        return abilityScoreModifiers;
+    }
+
+    //Setters................................................................................
+
+
+
+
+    //Functional.............................................................................
+    public void increaseCurrentHealth(int healthGained)
+    {
+        currentHitPoints +=healthGained;
+        if (currentHitPoints > maxHitPoints) currentHitPoints = maxHitPoints;
+    }
+    public void decreaseCurrentHealth(int healthLost)
+    {
+        currentHitPoints -=healthLost;{
+        if (currentHitPoints <0) currentHitPoints =0;
+        //TODO Add death handler
+        }
+
+    }
 }

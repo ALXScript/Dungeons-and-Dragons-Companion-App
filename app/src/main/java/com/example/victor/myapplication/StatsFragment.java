@@ -13,89 +13,120 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.squareup.otto.Bus;
+import com.squareup.otto.Subscribe;
+
 
 public class StatsFragment extends Fragment {
 
-    ImageButton buttonLowerHealth, buttonIncreaseHealth;
+    Character currentPlayerCharacter;
+    ImageButton buttonLowerHitPoints, buttonIncreaseHitPoints;
     ProgressBar progressBar;
     RecyclerView abilityScoreRecycler, skillsRecyclerView;
     AbilityScoreAdapter abilityScoreAdapter;
     SkillsListAdapter skillsListAdapter;
     String [] abilityScoreNames,skillNames;
-    TextView textViewHealthValue;
-    String displayHealth;
+    TextView textViewHitPointValue;
+    TextView textViewCharacterName;
+    String displayHitPoints;
+    View view;
+    Bus BUS;
 
-
-    int currentHealth;
-    int maxHealth;
+    int currentHitPoints;
+    int maxHitPoints =0;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_stats, container, false);
+        view = inflater.inflate(R.layout.fragment_stats, container, false);
+
+        //Used to load PlayerCharacter
+        BUS = BusProvider.getInstance();
+        BUS.register(this);
+        int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
+
+        textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
+        textViewCharacterName.setText(currentPlayerCharacter.getMyName());
         //Load in the ability scores
-        int [] abilityScores = {9,8,7,13,4,11};
-        maxHealth = 26;
+        int abilityScores[] = {0,0,0,0,0,0};
+        if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
         abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         abilityScoreNames = getResources().getStringArray(R.array.AbilityScores);
-        abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames,abilityScores);
+        abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames,abilityScores,abilityScoreModifiers);
         abilityScoreRecycler.setAdapter(abilityScoreAdapter);
 
-
+        //load in skills
         skillsRecyclerView = view.findViewById(R.id.skillsRecyclerView);
-        skillsRecyclerView.setHasFixedSize(true);
+        skillsRecyclerView.setHasFixedSize(false);
+        skillsRecyclerView.setNestedScrollingEnabled(false);
         skillsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         skillNames = getResources().getStringArray(R.array.Skills);
-        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames);
+        boolean skillProficiencies []=currentPlayerCharacter.getSkillProficiencies();
+        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies);
         skillsRecyclerView.setAdapter(skillsListAdapter);
 
+        //Health bar ..............................................................................
+        textViewHitPointValue =view.findViewById(R.id.textViewHealthValue);
+        buttonLowerHitPoints =view.findViewById(R.id.buttonLowerHealth);
+        buttonIncreaseHitPoints =view.findViewById(R.id.buttonIncreaseHealth);
 
-        textViewHealthValue=view.findViewById(R.id.textViewHealthValue);
-
-        buttonLowerHealth=view.findViewById(R.id.buttonLowerHealth);
-        buttonIncreaseHealth=view.findViewById(R.id.buttonIncreaseHealth);
-
-        //Initialize Health Bar
+        //Initialize Health Bar Values
+        currentHitPoints = currentPlayerCharacter.getCurrentHitPoints();
+        maxHitPoints = currentPlayerCharacter.getMaxHitPoints();
         progressBar = view.findViewById(R.id.progressBar);
-        progressBar.setMax(maxHealth);
-        progressBar.setProgress(16);
-        currentHealth=progressBar.getProgress();
-        displayHealth = (Integer.toString(currentHealth)+ "/" + Integer.toString(maxHealth));
+        progressBar.setMax(maxHitPoints);
+        progressBar.setProgress(currentHitPoints);
+        displayHitPoints = (Integer.toString(currentHitPoints)+ "/" + Integer.toString(maxHitPoints));
 
-        textViewHealthValue.setText(displayHealth);
-        buttonLowerHealth.setOnClickListener(new View.OnClickListener()
+        //these functions need to cause a pop-up that will ask the user for a value to heal/damage
+        textViewHitPointValue.setText(displayHitPoints);
+        buttonLowerHitPoints.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
                 if (progressBar != null)
                 {
                     progressBar.incrementProgressBy(-1);
-                    currentHealth=progressBar.getProgress();
-                    displayHealth = (Integer.toString(currentHealth)+ "/" + Integer.toString(maxHealth));
-                    textViewHealthValue.setText(displayHealth);
+                    currentHitPoints =progressBar.getProgress();
+                    displayHitPoints = (Integer.toString(currentHitPoints)+ "/" + Integer.toString(maxHitPoints));
+                    textViewHitPointValue.setText(displayHitPoints);
 
 
                 }
             }
         });
 
-        buttonIncreaseHealth.setOnClickListener(new View.OnClickListener()
+        buttonIncreaseHitPoints.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
                 if ( progressBar != null)
                 {
                     progressBar.incrementProgressBy(1);
-                    currentHealth=progressBar.getProgress();
-                    displayHealth = (Integer.toString(currentHealth)+ "/" + Integer.toString(maxHealth));
-                    textViewHealthValue.setText(displayHealth);
+                    currentHitPoints =progressBar.getProgress();
+                    displayHitPoints = (Integer.toString(currentHitPoints)+ "/" + Integer.toString(maxHitPoints));
+                    textViewHitPointValue.setText(displayHitPoints);
                 }
 
             }
         });
-
-
+        //......................................................................................
         return view;
+    }//end OnCreate
+    /*
+
+     Subscription is the complement to event publishing—it lets you receive notification
+      that an event has occurred. To subscribe to an event, annotate a method with
+      @Subscribe. The method should take only a single parameter,
+      the type of which will be the event you wish to subscribe to.
+      You DONT need to call the function, the Otto Bus API will do so
+      In order to receive an event you need to register with the Bus
+      */
+    @Subscribe
+    public void getCharacter(Character sampleCharacter)
+    {
+        currentPlayerCharacter=sampleCharacter;
+
     }
 }
