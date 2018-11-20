@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         BUS = BusProvider.getInstance();
         BUS.register(this); //You must register with the BUS to produce or subscribe but not to post
         BUS.post(sendCharacter());
-        BUS.unregister(this);
+//        BUS.unregister(this);
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView =findViewById(R.id.nav_view);
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_stats:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new StatsFragment()).commit();
+
                 break;
             case R.id.nav_inventory:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -88,9 +89,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // a class registers with the Bus. They are required for dynamically created things
     // such as new fragments or activities.
     @Produce
-    public String sendCharacter ()
+    public Character sendCharacter ()
     {
-        return "Producing from Main Activity";
+        String name="Xanandorf";
+        int maxHitPoints=38;
+        int abilityScores[]={5,8,10,13,20,15};
+        boolean skillProficiencies [] = {true,false,true,false,false,true,true,true,false,true,false,true,false,true,true,false,true,false};
+        boolean savingThrowProficiencies [] = {true,true,false,false,true,false};
+        Character sampleCharacter = new Character(name,maxHitPoints,abilityScores,skillProficiencies,savingThrowProficiencies);
+
+        return sampleCharacter;
     }
 
 

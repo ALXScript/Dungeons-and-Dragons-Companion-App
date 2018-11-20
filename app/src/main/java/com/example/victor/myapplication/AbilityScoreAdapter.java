@@ -20,13 +20,14 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
 {
     private Context myContext;
     String[] AbilityScoreNames;
-    int[] AbilityScores;
+    int[] AbilityScores,abilityScoreModifiers;
 
     //Constructor
-    public AbilityScoreAdapter(Context myContext, String[] AbilityScoreStrings, int[] abilityScores ) {
+    public AbilityScoreAdapter(Context myContext, String[] AbilityScoreStrings, int[] abilityScores,int []  abilityScoreModifiers ) {
         this.myContext = myContext;
         AbilityScoreNames = AbilityScoreStrings;
         AbilityScores = abilityScores;
+        this.abilityScoreModifiers=abilityScoreModifiers;
     }
 
 
@@ -47,10 +48,10 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
     public void onBindViewHolder(@NonNull AbilityScoreViewHolder abilityScoreViewHolder, int i) {
 
         int abilityScore = AbilityScores[i];
-        int abilityScoreModifier = (abilityScore-10)/2;
+        int abilityScoreModifier = abilityScoreModifiers[i];
 
         String abilityScoreModifierText ="";
-        if (abilityScoreModifier>0) abilityScoreModifierText="+";
+        if (abilityScoreModifier>=0) abilityScoreModifierText="+";
         abilityScoreModifierText+= Integer.toString(abilityScoreModifier);
         abilityScoreViewHolder.textViewAbilityScoreName.setText(AbilityScoreNames[i]);
         abilityScoreViewHolder.textViewAbilityScoreValue.setText(Integer.toString(abilityScore));

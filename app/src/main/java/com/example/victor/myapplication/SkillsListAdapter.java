@@ -15,10 +15,14 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
 {
     private Context myContext;
     String [] skillNames;
+    boolean [] skillProficiencies;
+    int [] skillModifiers;
     //Constructor
-    public SkillsListAdapter(Context myContext, String[] skillStrings ) {
+    public SkillsListAdapter(Context myContext, String[] skillStrings,boolean [] skillProficiencies){
         this.myContext = myContext;
         skillNames = skillStrings;
+        this.skillProficiencies=skillProficiencies;
+//        this.skillModifiers=skillModifiers;
     }
 
 
@@ -38,15 +42,21 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
     @Override
     public void onBindViewHolder(@NonNull SkillListViewHolder skillListViewHolder, int i) {
 
-        skillListViewHolder.leftSkillsRadioButton.setText(skillNames[i]);
-        skillListViewHolder.rightSkillsRadioButton.setText(skillNames[i+9]);
-        if(i%3==0)
-            skillListViewHolder.rightSkillsRadioButton.setChecked(true);
-        if(i%5==0)
+
+        String s1 = String.format("%1$-" + 20 + "s", skillNames[i]);
+        String s2 = String.format("%1$-" + 20 + "s", skillNames[i+9],"width");
+        s1+="+1";
+        s2+="+4";
+        skillListViewHolder.leftSkillsRadioButton.setText(s1);
+        skillListViewHolder.rightSkillsRadioButton.setText(s2);
+        if(skillProficiencies[i])
             skillListViewHolder.leftSkillsRadioButton.setChecked(true);
+        if(skillProficiencies[i+9])
+            skillListViewHolder.rightSkillsRadioButton.setChecked(true);
+
     }
 
-    //There are 6 different Ability Scores
+    //There are 18 different Skills. Each view has two of them on the same line
     @Override
     public int getItemCount() {
         return 9;

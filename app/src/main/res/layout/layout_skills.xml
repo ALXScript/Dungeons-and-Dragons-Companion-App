@@ -16,6 +16,7 @@
         android:clickable="false"
         android:fontFamily="cursive"
         android:text="RadioButton"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
         app:layout_constraintStart_toStartOf="@+id/frameLayout"
         app:layout_constraintTop_toTopOf="@+id/frameLayout" />
@@ -30,6 +31,7 @@
         android:clickable="false"
         android:fontFamily="cursive"
         android:text="RadioButton"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/frameLayout" />
