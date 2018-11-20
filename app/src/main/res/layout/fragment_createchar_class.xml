@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".fragment_createchar_class">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/txtvwSelectClass"

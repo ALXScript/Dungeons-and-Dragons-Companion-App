@@ -6,21 +6,22 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 
-public class CreateChar extends AppCompatActivity
+public class CreateCharUsedToWork extends AppCompatActivity
 {
-    private static final String TAG = "createChar";
+    //private static final String TAG = "CreateChar";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createcharacter);
+        super.onCreate(savedInstanceState);
 
-        /*
+
+
         Fragment frag = new fragment_createchar_race();
         FragmentManager fragManager = getFragmentManager();
         fragManager.beginTransaction().replace(R.id.fragment_container, frag).commit();
-        */
+
     }
 }
 

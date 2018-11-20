@@ -117,6 +117,5 @@
     <string name="addSpell">Add Spell</string>
     <string name="removeSpell">Remove Spell</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

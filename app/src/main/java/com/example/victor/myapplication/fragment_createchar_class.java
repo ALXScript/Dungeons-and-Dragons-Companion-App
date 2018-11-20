@@ -76,7 +76,7 @@ public class fragment_createchar_class extends Fragment {
                 //Intent intent = new Intent(createChar.this, charClass.class);
                 //startActivity(intent);
 
-                toastMessage("button pressed");
+                //toastMessage("button pressed");
                 //Alternate way to change fragment window
                 //Fragment frag = new fragment_createchar_class();
                 FragmentManager fragManager = getFragmentManager();
@@ -162,12 +162,12 @@ public class fragment_createchar_class extends Fragment {
     }
 
     public void selectAndParse(AdapterView adapterView, int i){
-        toastMessage("In 'onItemSelected'");
+        //toastMessage("In 'onItemSelected'");
 
         //test
         String index = adapterView.getItemAtPosition(i).toString();
 
-        toastMessage(index);
+        //toastMessage(index);
 
         switch (index){
             case "Nothing Selected":

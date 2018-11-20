@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class HomeFragment extends Fragment {
 
@@ -36,14 +37,15 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
                 */
 
-                //Toast.makeText(getActivity(), "Button Pressed", Toast.LENGTH_SHORT);
+                //Toast.makeText(getActivity(), "Button Pressed", Toast.LENGTH_SHORT).show();
 
                 //Fragment frag = new fragment_createchar_race();
                 //FragmentManager fragManager = getFragmentManager();
                 //fragManager.beginTransaction().replace(R.id.fragment_container, new fragment_createchar_race()).commit();
 
 
-                Intent intent = new Intent(getActivity(), CreateChar.class);
+                //Intent intent = new Intent(getActivity(), CreateCharUsedToWork.class);
+                Intent intent = new Intent(getActivity(), CreateCharUsedToWork.class);
                 startActivity(intent);
 
             }

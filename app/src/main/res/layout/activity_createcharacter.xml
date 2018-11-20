@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:background="@drawable/parchment1"
 
-    tools:context=".activity_createcharacter"
+    tools:context=".CreateCharUsedToWork"
     tools:openDrawer="start">
 
 
