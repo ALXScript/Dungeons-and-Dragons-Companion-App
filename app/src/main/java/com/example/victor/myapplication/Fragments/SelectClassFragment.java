@@ -166,40 +166,40 @@ public class SelectClassFragment extends Fragment {
                 txtvwDisplayText.setText("Nothing Selected");
                 break;
             case "Barbarian":
-                readAndParse("ClassJSONs/Barbarian.json");
+                readAndParse("JSONs/ClassJSONs/Barbarian.json");
                 break;
             case "Bard":
-                readAndParse("ClassJSONs/Bard.json");
+                readAndParse("JSONs/ClassJSONs/Bard.json");
                 break;
             case "Cleric":
-                readAndParse("ClassJSONs/Cleric.json");
+                readAndParse("JSONs/ClassJSONs/Cleric.json");
                 break;
             case "Druid":
-                readAndParse("ClassJSONs/Druid.json");
+                readAndParse("JSONs/ClassJSONs/Druid.json");
                 break;
             case "Fighter":
-                readAndParse("ClassJSONs/Fighter.json");
+                readAndParse("JSONs/ClassJSONs/Fighter.json");
                 break;
             case "Monk":
-                readAndParse("ClassJSONs/Monk.json");
+                readAndParse("JSONs/ClassJSONs/Monk.json");
                 break;
             case "Paladin":
-                readAndParse("ClassJSONs/Paladin.json");
+                readAndParse("JSONs/ClassJSONs/Paladin.json");
                 break;
             case "Ranger":
-                readAndParse("ClassJSONs/Ranger.json");
+                readAndParse("JSONs/ClassJSONs/Ranger.json");
                 break;
             case "Rogue":
-                readAndParse("ClassJSONs/Rogue.json");
+                readAndParse("JSONs/ClassJSONs/Rogue.json");
                 break;
             case "Sorcerer":
-                readAndParse("ClassJSONs/Sorcerer.json");
+                readAndParse("JSONs/ClassJSONs/Sorcerer.json");
                 break;
             case "Warlock":
-                readAndParse("ClassJSONs/Warlock.json");
+                readAndParse("JSONs/ClassJSONs/Warlock.json");
                 break;
             case "Wizard":
-                readAndParse("ClassJSONs/Wizard.json");
+                readAndParse("JSONs/ClassJSONs/Wizard.json");
                 break;
         }
     }

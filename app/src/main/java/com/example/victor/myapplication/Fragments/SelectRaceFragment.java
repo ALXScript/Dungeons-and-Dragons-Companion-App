@@ -196,58 +196,58 @@ public class SelectRaceFragment extends Fragment {
                 txtvwDisplayText.setText("Nothing Selected");
                 break;
             case "Dwarf":
-                readAndParse("RaceJSONs/Dwarf.json");
+                readAndParse("JSONs/RaceJSONs/Dwarf.json");
                 break;
             case "Hill Dwarf":
-                readAndParse("RaceJSONs/Dwarf_Hill.json");
+                readAndParse("JSONs/RaceJSONs/Dwarf_Hill.json");
                 break;
             case "Mountain Dwarf":
-                readAndParse("RaceJSONs/Dwarf_Mountain.json");
+                readAndParse("JSONs/RaceJSONs/Dwarf_Mountain.json");
                 break;
             case "Elf":
-                readAndParse("RaceJSONs/Elf.json");
+                readAndParse("JSONs/RaceJSONs/Elf.json");
                 break;
             case "High Elf":
-                readAndParse("RaceJSONs/Elf_High_Elf.json");
+                readAndParse("JSONs/RaceJSONs/Elf_High_Elf.json");
                 break;
             case "Wood Elf":
-                readAndParse("RaceJSONs/Elf_Wood_Elf.json");
+                readAndParse("JSONs/RaceJSONs/Elf_Wood_Elf.json");
                 break;
             case "Dark Elf (Drow)":
-                readAndParse("RaceJSONs/Elf_Dark_Elf_Drow.json");
+                readAndParse("JSONs/RaceJSONs/Elf_Dark_Elf_Drow.json");
                 break;
             case "Halfling":
-                readAndParse("RaceJSONs/Halfling.json");
+                readAndParse("JSONs/RaceJSONs/Halfling.json");
                 break;
             case "Lightfoot Halfling":
-                readAndParse("RaceJSONs/Halfling_Lightfoot.json");
+                readAndParse("JSONs/RaceJSONs/Halfling_Lightfoot.json");
                 break;
             case "Stout Halfling":
-                readAndParse("RaceJSONs/Halfling_Stout.json");
+                readAndParse("JSONs/RaceJSONs/Halfling_Stout.json");
                 break;
             case "Human":
-                readAndParse("RaceJSONs/Human.json");
+                readAndParse("JSONs/RaceJSONs/Human.json");
                 break;
             case "Dragonborn":
-                readAndParse("RaceJSONs/Dragonborn.json");
+                readAndParse("JSONs/RaceJSONs/Dragonborn.json");
                 break;
             case "Gnome":
-                readAndParse("RaceJSONs/Gnome.json");
+                readAndParse("JSONs/RaceJSONs/Gnome.json");
                 break;
             case "Forest Gnome":
-                readAndParse("RaceJSONs/Gnome_Forest_Gnome.json");
+                readAndParse("JSONs/RaceJSONs/Gnome_Forest_Gnome.json");
                 break;
             case "Rock Gnome":
-                readAndParse("RaceJSONs/Gnome_Rock_Gnome.json");
+                readAndParse("JSONs/RaceJSONs/Gnome_Rock_Gnome.json");
                 break;
             case "Half-Elf":
-                readAndParse("RaceJSONs/Half-Elf.json");
+                readAndParse("JSONs/RaceJSONs/Half-Elf.json");
                 break;
             case "Half-Orc":
-                readAndParse("RaceJSONs/Half-Orc.json");
+                readAndParse("JSONs/RaceJSONs/Half-Orc.json");
                 break;
             case "Tiefling":
-                readAndParse("RaceJSONs/Tiefling.json");
+                readAndParse("JSONs/RaceJSONs/Tiefling.json");
                 break;
         }
     }
