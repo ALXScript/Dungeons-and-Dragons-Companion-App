@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">DnD Companion</string>
-    <string name="charCreat">Create Char</string>
-    <string name="selChar">Select Char</string>
+    <string name="charCreat">Create Character</string>
+    <string name="selChar">Select Character</string>
     <string name="diceRoll">Roll Dice</string>
 
 
