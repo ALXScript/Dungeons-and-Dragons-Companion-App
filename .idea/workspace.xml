@@ -15,127 +15,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc095677-a869-443c-88ca-fee2aef5b9bf" name="Default" comment="Fixed home fragment createChar linking.">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DND.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/example/victor/myapplication/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/example/victor/myapplication/R.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/CharacterJSONs/Character.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/CharacterJSONs/Character.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Barbarian.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Barbarian.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Bard.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Bard.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/ClassTemplate.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/ClassTemplate.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Cleric.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Cleric.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Druid.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Druid.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Fighter.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Fighter.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Monk.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Monk.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Paladin.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Paladin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Ranger.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Ranger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Rogue.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Rogue.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Sorcerer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Sorcerer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Warlock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Warlock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ClassJSONs/Wizard.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Wizard.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Dragonborn.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dragonborn.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Dwarf.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Dwarf_Hill.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf_Hill.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Dwarf_Mountain.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf_Mountain.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Elf.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Elf_Dark_Elf_Drow.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_Dark_Elf_Drow.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Elf_High_Elf.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_High_Elf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Elf_Wood_Elf.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_Wood_Elf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Gnome.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Gnome_Forest_Gnome.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome_Forest_Gnome.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Gnome_Rock_Gnome.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome_Rock_Gnome.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Half-Elf.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Half-Elf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Half-Orc.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Half-Orc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Halfling.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Halfling_Lightfoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling_Lightfoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Halfling_Stout.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling_Stout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Human.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Human.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/RaceTemplate.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/RaceTemplate.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Tiefling.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Tiefling.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/databases/dndapp.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/AbilityScoreAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Adapters/AbilityScoreAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/BusProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/BusProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/CreateCharUsedToWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/CreateCharacterActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/DClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/DatabaseAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/DatabaseAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/DatabaseHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/DiceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/InventoryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/InventoryFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/ItembookFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/AllItemsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Race.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/SkillsListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Adapters/SkillsListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/SpellbookFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SpellbookFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/SpellsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/AllSpellsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/StatsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/TestJSONParse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/charClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/fragment_createchar_class.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/fragment_createchar_race.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_createcharacter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_createcharacter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/createcharclass.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_createchar_class.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_createchar_race.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_itembook.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_items.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_spells.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_spells.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-    </list>
+    <list default="true" id="cc095677-a869-443c-88ca-fee2aef5b9bf" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -2938,7 +2818,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541983580085</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactored and Fixed File Names in progress.">
+      <created>1542759896650</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542759896650</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3038,7 +2925,8 @@
     <MESSAGE value="Added a folder for the classes with a template JSON file to be adjusted at a later time. Currently going to test if I can select only certain changes to take effect when pushing/pulling from my laptop and desktop" />
     <MESSAGE value="Fixed home fragment createChar linking." />
     <MESSAGE value="Added are you sure popup when removing item/spell from db. Also cleaned up popup display." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added are you sure popup when removing item/spell from db. Also cleaned up popup display." />
+    <MESSAGE value="Refactored and Fixed File Names in progress." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored and Fixed File Names in progress." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
