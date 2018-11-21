@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:background="@drawable/parchment1"
 
-    tools:context=".MainActivity"
+    tools:context=".Activities.MainActivity"
     tools:openDrawer="start">
 
     <LinearLayout
