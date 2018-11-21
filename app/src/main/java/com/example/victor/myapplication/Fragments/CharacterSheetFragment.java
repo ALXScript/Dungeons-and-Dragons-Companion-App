@@ -1,4 +1,4 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,11 +13,16 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.victor.myapplication.Adapters.AbilityScoreAdapter;
+import com.example.victor.myapplication.Classes.BusProvider;
+import com.example.victor.myapplication.Classes.Character;
+import com.example.victor.myapplication.R;
+import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
 
-public class StatsFragment extends Fragment {
+public class CharacterSheetFragment extends Fragment {
 
     Character currentPlayerCharacter;
     ImageButton buttonLowerHitPoints, buttonIncreaseHitPoints;
@@ -37,7 +42,7 @@ public class StatsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_stats, container, false);
+        view = inflater.inflate(R.layout.fragment_character_sheet, container, false);
 
         //Used to load PlayerCharacter
         BUS = BusProvider.getInstance();

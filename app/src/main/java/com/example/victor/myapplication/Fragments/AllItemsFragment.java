@@ -1,4 +1,4 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Fragments;
 
 import android.app.Dialog;
 import android.database.Cursor;
@@ -17,11 +17,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.victor.myapplication.Classes.DatabaseAccess;
+import com.example.victor.myapplication.R;
+
 import java.util.List;
 
 
 
-public class ItembookFragment extends Fragment {
+public class AllItemsFragment extends Fragment {
 
 //General Listview Variables
     ListView itemBookListView;
@@ -54,7 +57,7 @@ public class ItembookFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_itembook, container, false);
+        View view = inflater.inflate(R.layout.fragment_all_items, container, false);
         super.onCreate(savedInstanceState);
 
         itemBookListView = (ListView) view.findViewById(R.id.listViewItembook);

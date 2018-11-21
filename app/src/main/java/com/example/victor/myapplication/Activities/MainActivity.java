@@ -1,6 +1,5 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Activities;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,11 +9,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import android.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import com.example.victor.myapplication.Classes.BusProvider;
+import com.example.victor.myapplication.Classes.Character;
+import com.example.victor.myapplication.Fragments.DiceFragment;
+import com.example.victor.myapplication.Fragments.HomeFragment;
+import com.example.victor.myapplication.Fragments.InventoryFragment;
+import com.example.victor.myapplication.Fragments.AllItemsFragment;
+import com.example.victor.myapplication.R;
+import com.example.victor.myapplication.Fragments.SpellbookFragment;
+import com.example.victor.myapplication.Fragments.AllSpellsFragment;
+import com.example.victor.myapplication.Fragments.CharacterSheetFragment;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Produce;
 
@@ -66,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_stats:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new StatsFragment()).commit();
+                        new CharacterSheetFragment()).commit();
 
                 break;
             case R.id.nav_inventory:
@@ -83,12 +91,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_items:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ItembookFragment()).commit();
+                        new AllItemsFragment()).commit();
                 //Toast.makeText(this, "send", Toast.LENGTH_SHORT).show(); for reference only
                 break;
             case R.id.nav_spells:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SpellsFragment()).commit();
+                        new AllSpellsFragment()).commit();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

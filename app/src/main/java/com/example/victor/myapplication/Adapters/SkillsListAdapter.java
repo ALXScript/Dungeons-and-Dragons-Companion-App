@@ -1,4 +1,4 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,9 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
-import android.widget.TextView;
 
-import java.lang.reflect.Constructor;
+import com.example.victor.myapplication.R;
 
 public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.SkillListViewHolder>
 {

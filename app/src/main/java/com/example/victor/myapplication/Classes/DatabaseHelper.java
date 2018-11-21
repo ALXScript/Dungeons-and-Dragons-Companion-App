@@ -1,4 +1,4 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Classes;
 
 import android.content.Context;
 

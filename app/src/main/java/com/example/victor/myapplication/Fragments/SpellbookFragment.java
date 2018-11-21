@@ -1,4 +1,4 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Fragments;
 
 import android.app.Dialog;
 import android.database.Cursor;
@@ -15,6 +15,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.victor.myapplication.Classes.DatabaseAccess;
+import com.example.victor.myapplication.R;
 
 import java.util.List;
 

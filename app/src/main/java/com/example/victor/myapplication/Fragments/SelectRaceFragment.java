@@ -1,9 +1,6 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Fragments;
 
-import android.app.Dialog;
 import android.app.FragmentManager;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.NonNull;
@@ -18,15 +15,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.victor.myapplication.R;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 
-public class fragment_createchar_race extends Fragment {
+public class SelectRaceFragment extends Fragment {
     //variables
     Button buttonToClass;
     TextView txtvwDisplayText;
@@ -46,7 +44,7 @@ public class fragment_createchar_race extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        View view=inflater.inflate(R.layout.fragment_createchar_race,container,false);
+        View view=inflater.inflate(R.layout.fragment_select_race,container,false);
         super.onCreate(savedInstanceState);
 
         //TextView variables
@@ -89,17 +87,11 @@ public class fragment_createchar_race extends Fragment {
                 });
                 */
 
-
-
-                //openCharClassActivity();
-                //Intent intent = new Intent(createChar.this, charClass.class);
-                //startActivity(intent);
-
                 //toastMessage("button pressed");
                 //Alternate way to change fragment window
-                //Fragment frag = new fragment_createchar_class();
+                //Fragment frag = new SelectClassFragment();
                 FragmentManager fragManager = getFragmentManager();
-                fragManager.beginTransaction().replace(R.id.fragment_container, new fragment_createchar_class()).commit();
+                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectClassFragment()).commit();
             }
         });
 

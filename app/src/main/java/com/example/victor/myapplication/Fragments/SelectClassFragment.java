@@ -1,8 +1,13 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Fragments;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,35 +15,42 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.victor.myapplication.R;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-
-public class charClass extends AppCompatActivity {
-
-    //Public variables for things
-    public Button buttonToClass;
-    public TextView txtvwDisplayText;
-    public Spinner spinnerClass;
-
-    //Array List Variables
-    ArrayList<String> classList = new ArrayList<>();
 
 
+public class SelectClassFragment extends Fragment {
+    //variables
+    Button buttonToRace;
+    TextView txtvwDisplayText;
+    Spinner spinnerClass;
+
+    //array list variables
+    //ArrayList<String> testDescription = new ArrayList<>();
+    //ArrayList<String> raceList = new ArrayList<>();
+
+    //string alternatives
+    String [] stringClassList;
+    ArrayAdapter<String> classListAdapter;
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.createcharclass);
+   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
+       View view=inflater.inflate(R.layout.fragment_select_class,container,false);
+       super.onCreate(savedInstanceState);
 
-        //Text View variables
-        txtvwDisplayText = (TextView) findViewById(R.id.txtvwJSONClass);
+        //TextView variables
+        txtvwDisplayText = (TextView) view.findViewById(R.id.txtvwJSONResultClass);
         txtvwDisplayText.setText("Initial Setting Text");
 
-        //Spinner variables
-        spinnerClass = (Spinner) findViewById(R.id.spinnerClass);
+
+        //spinner variables
+        spinnerClass = (Spinner) view.findViewById(R.id.spinnerClass);
         addItemsToSpinner();
         spinnerClass.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -53,24 +65,35 @@ public class charClass extends AppCompatActivity {
             }
         });
 
-    }
 
-    //Function for posting a toast message
-    public void toastMessage(String message){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
+        //button variables
+        buttonToRace = (Button) view.findViewById(R.id.btnToRaceFragment);
+        buttonToRace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragManager = getFragmentManager();
+                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectRaceFragment()).commit();
+            }
+        });
 
-    //Function that calls functions to read and parse JSON
+       return view;
+   }
+
+
     public void readAndParse(String assetName) {
         String readJSON = loadJSONFromAsset(assetName);
         txtvwDisplayText.setText(parse_JSON(readJSON));
     }
 
-    //Function that reads JSON and returns a string of a JSON object
+    public void toastMessage(String message){
+        //Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
     public String loadJSONFromAsset(String filename) {
         String json = null;
         try {
-            InputStream is = getAssets().open(filename);
+            InputStream is = getActivity().getAssets().open(filename);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -85,7 +108,6 @@ public class charClass extends AppCompatActivity {
         return json;
     }
 
-    //Function that parses a JSON object and returns a specified portion
     public String parse_JSON(String jsonFile){
         try{
             JSONObject classObject = new JSONObject(jsonFile);
@@ -100,33 +122,44 @@ public class charClass extends AppCompatActivity {
         //return "Never went through";
     }
 
-    //function that adds items to the spinner
     public void addItemsToSpinner() {
-        //List list = new ArrayList();
-        classList.add("Nothing Selected");
-        classList.add("Barbarian");
-        classList.add("Bard");
-        classList.add("Cleric");
-        classList.add("Druid");
-        classList.add("Fighter");
-        classList.add("Monk");
-        classList.add("Paladin");
-        classList.add("Ranger");
-        classList.add("Rogue");
-        classList.add("Sorcerer");
-        classList.add("Warlock");
-        classList.add("Wizard");
-        ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, classList);
+        /*List list = new ArrayList();
+        raceList.add("Nothing Selected");
+        raceList.add("Dwarf");
+        raceList.add("Hill Dwarf");
+        raceList.add("Mountain Dwarf");
+        raceList.add("Elf");
+        raceList.add("High Elf");
+        raceList.add("Dark Elf (Drow)");
+        raceList.add("Halfling");
+        raceList.add("Lightfoot Halfling");
+        raceList.add("Stout Halfling");
+        raceList.add("Human");
+        raceList.add("Dragonborn");
+        raceList.add("Gnome");
+        raceList.add("Forest Gnome");
+        raceList.add("Rock Gnome");
+        raceList.add("Half-Elf");
+        raceList.add("Half-Orc");
+        raceList.add("Tiefling");
+        ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, raceList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerClass.setAdapter(dataAdapter);
+        spinnerRace.setAdapter(dataAdapter);*/
+
+        //alternate way to make the spinner
+        stringClassList = getResources().getStringArray(R.array.ClassList);
+        classListAdapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, stringClassList);
+        classListAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerClass.setAdapter(classListAdapter);
     }
 
-    //Function that returns a pre-selected description
     public void selectAndParse(AdapterView adapterView, int i){
-        toastMessage("In 'onItemSelected'");
+        //toastMessage("In 'onItemSelected'");
 
         //test
         String index = adapterView.getItemAtPosition(i).toString();
+
+        //toastMessage(index);
 
         switch (index){
             case "Nothing Selected":
@@ -168,7 +201,7 @@ public class charClass extends AppCompatActivity {
             case "Wizard":
                 readAndParse("ClassJSONs/Wizard.json");
                 break;
-
         }
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Fragments;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -12,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.example.victor.myapplication.Activities.CreateCharacterActivity;
+import com.example.victor.myapplication.R;
 
 public class HomeFragment extends Fragment {
 
@@ -39,13 +41,13 @@ public class HomeFragment extends Fragment {
 
                 //Toast.makeText(getActivity(), "Button Pressed", Toast.LENGTH_SHORT).show();
 
-                //Fragment frag = new fragment_createchar_race();
+                //Fragment frag = new SelectRaceFragment();
                 //FragmentManager fragManager = getFragmentManager();
-                //fragManager.beginTransaction().replace(R.id.fragment_container, new fragment_createchar_race()).commit();
+                //fragManager.beginTransaction().replace(R.id.fragment_container, new SelectRaceFragment()).commit();
 
 
-                //Intent intent = new Intent(getActivity(), CreateCharUsedToWork.class);
-                Intent intent = new Intent(getActivity(), CreateCharUsedToWork.class);
+                //Intent intent = new Intent(getActivity(), CreateCharacterActivity.class);
+                Intent intent = new Intent(getActivity(), CreateCharacterActivity.class);
                 startActivity(intent);
 
             }

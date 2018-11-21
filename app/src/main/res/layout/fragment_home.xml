@@ -7,7 +7,7 @@
 
     android:background="@drawable/parchment1"
 
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
     <Button
         android:id="@+id/selCharBtn"

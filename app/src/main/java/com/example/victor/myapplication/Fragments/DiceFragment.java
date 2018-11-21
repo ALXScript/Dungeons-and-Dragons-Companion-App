@@ -3,7 +3,7 @@ This class holds the dice roller logic that creates and displays a random number
 dice selected. If multiple dice are selected it will add them and display the sum.
 */
 
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,6 +15,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.victor.myapplication.R;
+
 import java.util.Random;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;

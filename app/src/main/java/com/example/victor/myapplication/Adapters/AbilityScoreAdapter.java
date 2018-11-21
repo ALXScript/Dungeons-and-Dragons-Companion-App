@@ -1,8 +1,8 @@
-//This file is used to populate the RecyclerView with the AbilityScores and their values.
+//This file is used to populate the RecyclerView with the abilityScores and their values.
 //Later we will need to pass it the character information to get the actual values.
 //I will look into populating other RecyclerView's on the stats page using this same adapter
 
-package com.example.victor.myapplication;
+package com.example.victor.myapplication.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -19,14 +19,14 @@ import com.example.victor.myapplication.R;
 public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapter.AbilityScoreViewHolder>
 {
     private Context myContext;
-    String[] AbilityScoreNames;
-    int[] AbilityScores,abilityScoreModifiers;
+    String[] abilityScoreNames;
+    int[] abilityScores,abilityScoreModifiers;
 
     //Constructor
     public AbilityScoreAdapter(Context myContext, String[] AbilityScoreStrings, int[] abilityScores,int []  abilityScoreModifiers ) {
         this.myContext = myContext;
-        AbilityScoreNames = AbilityScoreStrings;
-        AbilityScores = abilityScores;
+        abilityScoreNames = AbilityScoreStrings;
+        this.abilityScores = abilityScores;
         this.abilityScoreModifiers=abilityScoreModifiers;
     }
 
@@ -47,13 +47,13 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
     @Override
     public void onBindViewHolder(@NonNull AbilityScoreViewHolder abilityScoreViewHolder, int i) {
 
-        int abilityScore = AbilityScores[i];
+        int abilityScore = abilityScores[i];
         int abilityScoreModifier = abilityScoreModifiers[i];
 
         String abilityScoreModifierText ="";
         if (abilityScoreModifier>=0) abilityScoreModifierText="+";
         abilityScoreModifierText+= Integer.toString(abilityScoreModifier);
-        abilityScoreViewHolder.textViewAbilityScoreName.setText(AbilityScoreNames[i]);
+        abilityScoreViewHolder.textViewAbilityScoreName.setText(abilityScoreNames[i]);
         abilityScoreViewHolder.textViewAbilityScoreValue.setText(Integer.toString(abilityScore));
         abilityScoreViewHolder.textViewAbilityScoreModifier.setText(abilityScoreModifierText);
     }
