@@ -10,7 +10,7 @@
   "AbilityScore_Intelligence": "0",
   "AbilityScore_Wisdom": "1",
   "AbilityScore_Charisma": "0",
-  "Alignment": "null",
+  "Alignment": ["null"],
   "Speed": "35",
   "Abilities": [
     {"AbilityName": "Elf Weapon Training",

@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.victor.myapplication.R;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -25,6 +26,17 @@ import java.io.InputStream;
 
 
 public class SelectRaceFragment extends Fragment {
+    //Global Variables
+    int abilityScores[] = new int[6];
+    String alignment[] = new String[9];
+    int speed;
+    String ability[] = new String[10];
+    String abilityDescription[] = new String[10];
+    String languages[] = new String[16];
+    int alignmentLength;
+    int abilityLength;
+    int languagesLength;
+
     //variables
     Button buttonToClass;
     TextView txtvwDisplayText;
@@ -99,16 +111,19 @@ public class SelectRaceFragment extends Fragment {
     }
 
 
+    //Function that reads and parses json files and sets the text view display text to the descriptions
     public void readAndParse(String assetName) {
         String readJSON = loadJSONFromAsset(assetName);
         txtvwDisplayText.setText(parse_JSON(readJSON));
     }
 
+    //Function for quickly generating a toast message
     public void toastMessage(String message){
         //Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
+    //Function for loading the JSON
     public String loadJSONFromAsset(String filename) {
         String json = null;
         try {
@@ -127,14 +142,57 @@ public class SelectRaceFragment extends Fragment {
         return json;
     }
 
+    //Function that actually parses the JSON and returns a string of the Race Description
     public String parse_JSON(String jsonFile){
         try{
+            //make a JSON object based off of the file that is being read
             JSONObject raceObject = new JSONObject(jsonFile);
 
-            String raceDescription;
+            //************Put values inside the Global Variables*************
+            //Get the ability scores
+            abilityScores[0] = raceObject.getInt("AbilityScore_Strength");
+            abilityScores[1] = raceObject.getInt("AbilityScore_Dexterity");
+            abilityScores[2] = raceObject.getInt("AbilityScore_Constitution");
+            abilityScores[3] = raceObject.getInt("AbilityScore_Intelligence");
+            abilityScores[4] = raceObject.getInt("AbilityScore_Wisdom");
+            abilityScores[5] = raceObject.getInt("AbilityScore_Charisma");
 
-            //toastMessage(raceObject.getString("isSubrace"));
-            //toastMessage(raceObject.getString("SubRaceDescription"));
+            //Get the Alignment Array
+            JSONArray alignmentArray = raceObject.getJSONArray("Alignment");
+            alignmentLength = alignmentArray.length();
+            for(int i = 0; i < alignmentArray.length(); i++){
+                alignment[i] = alignmentArray.getString(i);
+            }
+
+            //Get the Speed
+            speed = raceObject.getInt("Speed");
+
+            //Get the abilities and ability Description
+            JSONArray abilitiesArray = raceObject.getJSONArray("Abilities");
+            abilityLength = abilitiesArray.length();
+            for(int i = 0; i < abilitiesArray.length(); i++){
+                //Create Internal Object
+                JSONObject abilitiesObject = abilitiesArray.getJSONObject(i);
+
+                //Set the stuff
+                ability[i] = abilitiesObject.getString("AbilityName");
+                abilityDescription[i] = abilitiesObject.getString("AbilityDescription");
+            }
+
+            //Get the Languages
+            JSONArray languagesArray = raceObject.getJSONArray("Languages");
+            languagesLength = languagesArray.length();
+            for(int i = 0; i < languagesArray.length(); i++){
+                if (languagesArray.getString(i) == "null"){
+                    //don't assign anything
+                }else{
+                    languages[i] = languagesArray.getString(i);
+                }
+            }
+            //***********Done putting values in Global Variables****************
+
+            //set temporary variable for parsing
+            String raceDescription;
 
             //if there is a subrace, return description + subrace description else return just the description
             if (raceObject.getBoolean("isSubrace") == true){
@@ -144,6 +202,8 @@ public class SelectRaceFragment extends Fragment {
                 raceDescription = raceObject.getString("Description");
             }
 
+            testGlobalValues();
+
             return raceDescription;
         }
         catch(JSONException e){
@@ -152,30 +212,8 @@ public class SelectRaceFragment extends Fragment {
         //return "Never went through";
     }
 
+    //Function that adds items to the spinner
     public void addItemsToSpinner() {
-        /*List list = new ArrayList();
-        raceList.add("Nothing Selected");
-        raceList.add("Dwarf");
-        raceList.add("Hill Dwarf");
-        raceList.add("Mountain Dwarf");
-        raceList.add("Elf");
-        raceList.add("High Elf");
-        raceList.add("Dark Elf (Drow)");
-        raceList.add("Halfling");
-        raceList.add("Lightfoot Halfling");
-        raceList.add("Stout Halfling");
-        raceList.add("Human");
-        raceList.add("Dragonborn");
-        raceList.add("Gnome");
-        raceList.add("Forest Gnome");
-        raceList.add("Rock Gnome");
-        raceList.add("Half-Elf");
-        raceList.add("Half-Orc");
-        raceList.add("Tiefling");
-        ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, raceList);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerRace.setAdapter(dataAdapter);*/
-
         //alternate way to make the spinner
         stringRaceList = getResources().getStringArray(R.array.RaceList);
         raceListAdapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, stringRaceList);
@@ -183,6 +221,7 @@ public class SelectRaceFragment extends Fragment {
         spinnerRace.setAdapter(raceListAdapter);
     }
 
+    //Function that reads and parses depending on what was selected on the spinner
     public void selectAndParse(AdapterView adapterView, int i){
         //toastMessage("In 'onItemSelected'");
 
@@ -250,6 +289,45 @@ public class SelectRaceFragment extends Fragment {
                 readAndParse("JSONs/RaceJSONs/Tiefling.json");
                 break;
         }
+    }
+
+    //**********************TEST FUNCTIONS************************
+    //Function that will toast out all the global variables
+    public void testGlobalValues(){
+        //Show ability scores
+        //toastMessage("Ability Score Strength = " + abilityScores[0] + "\n" + "Ability Score Dexterity = " + abilityScores[1] + "\n" + "Ability Score Constitution = " + abilityScores[2] + "\n" + "Ability Score Intelligence = " + abilityScores[3] + "\n" + "Ability Score Wisdom = " + abilityScores[4] + "\n" + "Ability Score Charisma = " + abilityScores[5] + "\n");
+
+        //Show alignment
+        /*String showAlignment = "";
+        for (int i = 0; i < alignmentLength; i++){
+            if(i == (alignmentLength - 1)){
+                showAlignment = showAlignment + alignment[i];
+
+            }else{
+                showAlignment = showAlignment + alignment[i] + "," + "\n";
+            }
+        }
+        toastMessage(showAlignment);*/
+
+        //Show Speed
+        //toastMessage("Speed = " + speed);
+
+        //show abilities and ability description
+        /*for (int i = 0; i < abilityLength; i++){
+            toastMessage("Ability Name: " + ability[i] + "\n" + "Ability Description: " + abilityDescription[i]);
+        }*/
+
+        //show languages
+        /*String showLanguage = "";
+        for (int i = 0; i < languagesLength; i++){
+            if(i == (languagesLength - 1)){
+                showLanguage = showLanguage + languages[i];
+
+            }else{
+                showLanguage = showLanguage + languages[i] + "," + "\n";
+            }
+        }
+        toastMessage(showLanguage);*/
     }
 
 }

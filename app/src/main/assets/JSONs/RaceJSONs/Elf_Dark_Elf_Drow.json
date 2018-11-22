@@ -10,7 +10,7 @@
   "AbilityScore_Intelligence": "0",
   "AbilityScore_Wisdom": "0",
   "AbilityScore_Charisma": "1",
-  "Alignment": "null",
+  "Alignment": ["null"],
   "Speed": "30",
   "Abilities": [
     {"AbilityName": "Superior Darkvision",
