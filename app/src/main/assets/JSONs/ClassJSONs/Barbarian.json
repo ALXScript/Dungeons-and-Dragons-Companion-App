@@ -13,6 +13,6 @@
     "Equipment": [
         {"EQ_Choice": [["Greataxe"], ["Any", "Melee"]]},
         {"EQ_Choice": [["Handaxe", "Handaxe"], ["Any", "Simple"]]},
-        {"EQ_Choice": [["Explorer's Pack", "Javelin", "Javelin", "Javelin", "Javelin"]]}
+        {"EQ_Choice": [["Explorer's Pack", "4", "Javelin"]]}
     ]
   }

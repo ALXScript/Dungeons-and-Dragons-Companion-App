@@ -1,5 +1,6 @@
 package com.example.victor.myapplication.Fragments;
 
+import android.app.Dialog;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.victor.myapplication.R;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -25,10 +27,40 @@ import java.io.InputStream;
 
 
 public class SelectClassFragment extends Fragment {
+    //Global Variables
+    String hitDice;
+    String hpAtLVL1;
+    String hpHighLVL;
+    String proficienciesArmor[] = new String[10];
+    String proficienciesWeapons[] = new String[10];
+    String proficienciesTools[] = new String[5];
+    String proficienciesSavingThrows[] = new String [6];
+    String proficienciesSkills[] = new String[19];
+    String equipment[] = new String[6];
+    String equipmentChoices[] = new String[10];
+    String equipmentChoicesInternal[][][] = new String[10][10][10];
+
+    //get lengths for all global variables
+    int profArmorLength;
+    int profWeaponsLength;
+    int profToolsLength;
+    int profSavingThrowsLength;
+    int profSkillsLength;
+    int equipLength;
+    int equipChoiceLength[] = new int[10];
+    int equipChoiceInternalLength[][] = new int[10][10];
+
+
     //variables
     Button buttonToRace;
     TextView txtvwDisplayText;
     Spinner spinnerClass;
+    Button buttonMoreInfo;
+
+    //Dialog popup test
+    Dialog testDialog;
+    TextView txtvwPassAttributes;
+    Button btnClosePopup;
 
     //array list variables
     //ArrayList<String> testDescription = new ArrayList<>();
@@ -76,6 +108,18 @@ public class SelectClassFragment extends Fragment {
             }
         });
 
+        buttonMoreInfo = (Button) view.findViewById(R.id.btnMoreInfo);
+        buttonMoreInfo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                callPopup();
+            }
+        });
+        disableButton(buttonMoreInfo);
+
+        //********************TESTING POPUP*************************
+        testDialog = new Dialog(getContext());
+
        return view;
    }
 
@@ -111,6 +155,81 @@ public class SelectClassFragment extends Fragment {
     public String parse_JSON(String jsonFile){
         try{
             JSONObject classObject = new JSONObject(jsonFile);
+
+            //************Put values inside the Global Variables*****************
+            //Get the hit dice
+            hitDice = classObject.getString("HP_Hit_Dice");
+
+            //get the HP at level 1 (one)
+            hpAtLVL1 = classObject.getString("HP_HP_LVL1");
+
+            //Get the HP at a higher level
+            hpHighLVL = classObject.getString("HP_HP_HighLVL");
+
+            //Get the Armor Proficiencies
+            JSONArray profArmorArray = classObject.getJSONArray("Proficiencies_Armor");
+            profArmorLength = profArmorArray.length();
+            for(int i = 0; i < profArmorLength; i++){
+                proficienciesArmor[i] = profArmorArray.getString(i);
+            }
+
+            //Get the Weapon Proficiencies
+            JSONArray profWeaponsArray = classObject.getJSONArray("Proficiencies_Weapons");
+            profWeaponsLength = profWeaponsArray.length();
+            for(int i = 0; i < profWeaponsLength; i++){
+                proficienciesWeapons[i] = profWeaponsArray.getString(i);
+            }
+
+            //Get the Tools Proficiencies
+            JSONArray profToolsArray = classObject.getJSONArray("Proficiencies_Tools");
+            profToolsLength = profToolsArray.length();
+            for(int i = 0; i < profToolsLength; i++){
+                proficienciesTools[i] = profToolsArray.getString(i);
+            }
+
+            //Get the Saving Throws Proficiencies
+            JSONArray profSavingThrowsArray = classObject.getJSONArray("Proficiencies_SavingThrows");
+            profSavingThrowsLength = profSavingThrowsArray.length();
+            for(int i = 0; i < profSavingThrowsLength; i++){
+                proficienciesSavingThrows[i] = profSavingThrowsArray.getString(i);
+            }
+
+            //Get the Skills Proficiencies
+            JSONArray profSkillsArray = classObject.getJSONArray("Proficiencies_Skills");
+            profSkillsLength = profSkillsArray.length();
+            for(int i = 0; i < profSkillsLength; i++){
+                proficienciesSkills[i] = profSkillsArray.getString(i);
+            }
+
+            //get the Equipment and equipment choices
+            JSONArray equipmentArray = classObject.getJSONArray("Equipment");
+            equipLength = equipmentArray.length();
+            for(int i = 0; i < equipLength; i++){
+                //Create internal object
+                JSONObject eqChoiceObject = equipmentArray.getJSONObject(i);
+
+                JSONArray eqChoiceArray = eqChoiceObject.getJSONArray("EQ_Choice");
+                equipChoiceLength[i] = eqChoiceArray.length();
+                for(int j = 0; j < equipChoiceLength[i]; j++){
+                    //Create Internal Array
+                    JSONArray eqChoiceInternalArray = eqChoiceArray.getJSONArray(j);
+
+                    equipChoiceInternalLength[i][j] = eqChoiceInternalArray.length();
+                    for(int k = 0; k < equipChoiceInternalLength[i][j]; k++){
+                        equipmentChoicesInternal[i][j][k] = eqChoiceInternalArray.getString(k);
+                    }
+                    /*
+                    JSONArray eqChoiceInternalValuesArray = eqChoiceInternalArray.getJSONArray(j);
+                    equipChoiceInternalLength[i][j] = eqChoiceInternalValuesArray.length();
+                    for(int k = 0; k < equipChoiceInternalLength[i][j]; k++){
+                        //set the stuff
+                        equipmentChoicesInternal[j][k] = eqChoiceInternalValuesArray.getString(k);
+                    }
+                    */
+                }
+            }
+
+            //************Done putting values in Global Variables****************
 
             String classDescription = classObject.getString("description") + "\n\n" + classObject.getString("creating_a_class") ;
 
@@ -164,44 +283,187 @@ public class SelectClassFragment extends Fragment {
         switch (index){
             case "Nothing Selected":
                 txtvwDisplayText.setText("Nothing Selected");
+                disableButton(buttonMoreInfo);
                 break;
             case "Barbarian":
                 readAndParse("JSONs/ClassJSONs/Barbarian.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Bard":
                 readAndParse("JSONs/ClassJSONs/Bard.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Cleric":
                 readAndParse("JSONs/ClassJSONs/Cleric.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Druid":
                 readAndParse("JSONs/ClassJSONs/Druid.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Fighter":
                 readAndParse("JSONs/ClassJSONs/Fighter.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Monk":
                 readAndParse("JSONs/ClassJSONs/Monk.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Paladin":
                 readAndParse("JSONs/ClassJSONs/Paladin.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Ranger":
                 readAndParse("JSONs/ClassJSONs/Ranger.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Rogue":
                 readAndParse("JSONs/ClassJSONs/Rogue.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Sorcerer":
                 readAndParse("JSONs/ClassJSONs/Sorcerer.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Warlock":
                 readAndParse("JSONs/ClassJSONs/Warlock.json");
+                enableButton(buttonMoreInfo);
                 break;
             case "Wizard":
                 readAndParse("JSONs/ClassJSONs/Wizard.json");
+                enableButton(buttonMoreInfo);
                 break;
         }
+    }
+
+    //Function that makes a button invisible and disabled
+    public void disableButton(Button passButton){
+        passButton.setEnabled(false);
+        passButton.setVisibility(View.GONE);
+    }
+
+    //Function that makes a button visible and enabled
+    public void enableButton(Button passButton){
+        passButton.setEnabled(true);
+        passButton.setVisibility(View.VISIBLE);
+    }
+
+    //Function that calls the popup
+    public void callPopup(){
+        //set the content view
+        testDialog.setContentView(R.layout.popup_moreinfo_race);
+
+        //find the text view in the popup
+        txtvwPassAttributes = (TextView) testDialog.findViewById(R.id.txtvwMoreInfoRace);
+
+        //set the text view in the popup
+        txtvwPassAttributes.setText(internalJSONClass());
+
+        //find and add the close button
+        btnClosePopup = (Button) testDialog.findViewById(R.id.btnClose);
+        btnClosePopup.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                testDialog.dismiss();
+            }
+        });
+
+        testDialog.show();
+    }
+
+    //Function that puts all of the internal JSON data in a string so it can be put in a popup
+    public String internalJSONClass(){
+        String internalString;
+
+        //Add the Hit Dice
+        String strHitDice = "Hit Dice: " + hitDice + "\n\n";
+
+        //Add the HP at Level 1
+        String strHPLVL1 = "HP @ LVL 1: " + hpAtLVL1 + "\n\n";
+
+        //Add the HP at High Level
+        String strHPHIGHLVL = "HP after Level 1: " + hpHighLVL + "\n\n";
+
+        //Add armor proficiencies
+        String showProfArmor = "Armor Proficiencies: ";
+        for (int i = 0; i < profArmorLength; i++){
+            if(i == (profArmorLength - 1)){
+                showProfArmor = showProfArmor + proficienciesArmor[i] + "\n\n";
+            }else{
+                showProfArmor = showProfArmor + proficienciesArmor[i] + ", ";
+            }
+        }
+
+        //Add weapons proficiencies
+        String showProfWeapons = "Weapons Proficiencies: ";
+        for (int i = 0; i < profWeaponsLength; i++){
+            if(i == (profWeaponsLength - 1)){
+                showProfWeapons = showProfWeapons + proficienciesWeapons[i] + "\n\n";
+            }else{
+                showProfWeapons = showProfWeapons + proficienciesWeapons[i] + ", ";
+            }
+        }
+
+        //Add Tools proficiencies
+        String showProfTools = "Tool Proficiencies: ";
+        for (int i = 0; i < profToolsLength; i++){
+            if(i == (profToolsLength - 1)){
+                showProfTools = showProfTools + proficienciesTools[i] + "\n\n";
+            }else{
+                showProfTools = showProfTools + proficienciesTools[i] + ", ";
+            }
+        }
+
+        //Add Saving Throws
+        String showProfSaveThrow = "Saving Throw Proficiencies: ";
+        for (int i = 0; i < profSavingThrowsLength; i++){
+            if(i == (profSavingThrowsLength - 1)){
+                showProfSaveThrow = showProfSaveThrow + proficienciesSavingThrows[i] + "\n\n";
+            }else{
+                showProfSaveThrow = showProfSaveThrow + proficienciesSavingThrows[i] + ", ";
+            }
+        }
+
+        //Add skills proficiencies
+        String showProfSkills = "Skill Proficiencies: \nChoose (";
+        for (int i = 0; i < profSkillsLength; i++) {
+            if (i == 0){
+                showProfSkills = showProfSkills + proficienciesSkills[i] + ") from ";
+            }else if(i == (profSkillsLength - 1)) {
+                showProfSkills = showProfSkills + proficienciesSkills[i] + "\n\n";
+            }else{
+                showProfSkills = showProfSkills + proficienciesSkills[i] + ", ";
+            }
+        }
+
+        //Add Equipment choices
+        String showEquipment = "Equipment:\n";
+        for (int i = 0; i < equipLength; i++){
+            showEquipment = showEquipment + "Choice " + (i + 1) + ": ";
+
+            for (int j = 0; j < equipChoiceLength[i]; j++){
+                for(int k = 0; k < equipChoiceInternalLength[i][j]; k++){
+                    if (k == (equipChoiceInternalLength[i][j] - 1)){
+                        showEquipment = showEquipment + equipmentChoicesInternal[i][j][k];
+                    }else{
+                        showEquipment = showEquipment + equipmentChoicesInternal[i][j][k] + ", ";
+                    }
+                }
+
+                if(j == (equipChoiceLength[i] - 1)){
+                    showEquipment = showEquipment + "\n";
+                }else{
+                    showEquipment = showEquipment + " or ";
+                }
+
+            }
+
+            showEquipment = showEquipment + "\n";
+        }
+
+
+        internalString = strHitDice + strHPLVL1 + strHPHIGHLVL + showProfArmor + showProfWeapons + showProfTools + showProfSaveThrow + showProfSkills + showEquipment;
+        return internalString;
     }
 
 }

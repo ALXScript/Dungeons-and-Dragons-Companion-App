@@ -44,19 +44,16 @@
     </string-array>
 
     <string-array name="RaceList">
-        <item>Dwarf</item>
+        <item>Nothing Selected</item>
         <item>Hill Dwarf</item>
         <item>Mountain Dwarf</item>
-        <item>Elf</item>
         <item>High Elf</item>
         <item>Wood Elf</item>
         <item>Dark Elf (Drow)</item>
-        <item>Halfling</item>
         <item>Lightfoot Halfling</item>
         <item>Stout Halfling</item>
         <item>Human</item>
         <item>Dragonborn</item>
-        <item>Gnome</item>
         <item>Forest Gnome</item>
         <item>Rock Gnome</item>
         <item>Half-Elf</item>
@@ -65,6 +62,7 @@
     </string-array>
 
     <string-array name="ClassList">
+        <item>Nothing Selected</item>
         <item>Barbarian</item>
         <item>Bard</item>
         <item>Cleric</item>
