@@ -26,5 +26,5 @@
     {"AbilityName": "Extra Language",
       "AbilityDescription": "You can speak, read, and write one extra language of your choice"}
   ],
-  "Languages": ["Common","Elvish"]
+  "Languages": ["Common","Elvish", "Extra"]
 }

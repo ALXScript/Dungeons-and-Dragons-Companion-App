@@ -13,10 +13,8 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc095677-a869-443c-88ca-fee2aef5b9bf" name="Default" comment="POP UPS NOW WORK FOR BOTH RACE AND CLASS SELECTION&#10;&#10;Pop Ups properly display nested information from JSON files&#10;&#10;Nested information from the JSON files are savable, more tinkering with saved data and JSON files will be required in the future&#10;&#10;Changed some JSON file content, Still need to spell check Class JSONs&#10;&#10;Added some XML images/icons to use as Right and Left Buttons (More to be added later)">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/left_arrow_24dp.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/right_arrow_24dp.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_moreinfo_race.xml" />
+    <list default="true" id="cc095677-a869-443c-88ca-fee2aef5b9bf" name="Default" comment="Progress Made:&#10;&#10;Added new Fragments for choosing properties after you select what race or class&#10;&#10;Race properties page now dynamically creates a spinner if needed for selecting what extra language you would like your character to learn.&#10;&#10;Language Spinner itself is dynamic in that if your race already knows a specific language, then that language won't show up when you want to select a new language to learn.&#10;&#10;&#10;Changes made:&#10;&#10;Modified the JSON for purposes needed to make the dynamic spinner work&#10;&#10;Created a class to pass data between fragments in one argument instead of many (still deciding whether i want it or not)&#10;&#10;May have messed with the CharacterSheetFragment but I forgot what I did. Probably minor changes for the pass data class">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/CharacterDataPasser.java" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" />
@@ -25,29 +23,60 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_appcompat_v7_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_appcompat_v7_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_coordinatorlayout_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_coordinatorlayout_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_design_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_design_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_drawerlayout_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_drawerlayout_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_print_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_print_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_recyclerview_v7_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_recyclerview_v7_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_support_compat_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_support_compat_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_support_fragment_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_support_fragment_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_swiperefreshlayout_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_swiperefreshlayout_28_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_transition_28_0_0.xml" afterPath="$PROJECT_DIR$/.idea/renamedlibraries/Gradle__com_android_support_transition_28_0_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Barbarian.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Barbarian.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dragonborn.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dragonborn.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf_Hill.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf_Hill.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf_Mountain.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Dwarf_Mountain.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_Dark_Elf_Drow.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_Dark_Elf_Drow.json" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_High_Elf.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_High_Elf.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_Wood_Elf.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf_Wood_Elf.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome_Forest_Gnome.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome_Forest_Gnome.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome_Rock_Gnome.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Gnome_Rock_Gnome.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Half-Elf.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Half-Elf.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Half-Orc.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Half-Orc.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling_Lightfoot.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling_Lightfoot.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling_Stout.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Halfling_Stout.json" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Human.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Human.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Tiefling.json" afterPath="$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Tiefling.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
@@ -79,95 +108,79 @@
           <file leaf-file-name="SelectRaceFragment.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1485">
-                  <caret line="362" column="36" lean-forward="false" selection-start-line="362" selection-start-column="36" selection-end-line="362" selection-end-column="36" />
+                <state relative-caret-position="190">
+                  <caret line="138" column="32" lean-forward="false" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
                   <folding>
-                    <element signature="class#2261:2660" expanded="false" />
-                    <element signature="e#2867#3703#0" expanded="true" />
-                    <element signature="e#3702#3703#0" expanded="true" />
-                    <element signature="e#3820#3963#0" expanded="true" />
-                    <element signature="e#3962#3963#0" expanded="true" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="class#2371:2770" expanded="false" />
+                    <element signature="e#2977#4549#0" expanded="true" />
+                    <element signature="e#4548#4549#0" expanded="true" />
+                    <element signature="e#4666#4809#0" expanded="true" />
+                    <element signature="e#4808#4809#0" expanded="true" />
                     <element signature="method#readAndParse#0;class#SelectRaceFragment#0" expanded="false" />
                     <element signature="method#toastMessage#0;class#SelectRaceFragment#0" expanded="false" />
                     <element signature="method#loadJSONFromAsset#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#addItemsToSpinner#0;class#SelectRaceFragment#0" expanded="false" />
+                    <element signature="method#parse_JSON#0;class#SelectRaceFragment#0" expanded="false" />
                     <element signature="method#selectAndParse#0;class#SelectRaceFragment#0" expanded="false" />
                     <element signature="method#disableButton#0;class#SelectRaceFragment#0" expanded="false" />
                     <element signature="method#enableButton#0;class#SelectRaceFragment#0" expanded="false" />
                     <element signature="method#callPopup#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="e#13066#13218#0" expanded="true" />
-                    <element signature="e#13217#13218#0" expanded="true" />
                     <element signature="method#internalJSONRace#0;class#SelectRaceFragment#0" expanded="false" />
                     <element signature="method#testGlobalValues#0;class#SelectRaceFragment#0" expanded="false" />
+                    <element signature="method#getAbilityScores#0;class#SelectRaceFragment#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SelectClassFragment.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java">
+          <file leaf-file-name="SelectRacePropertiesFragment.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-46">
-                  <caret line="392" column="75" lean-forward="false" selection-start-line="392" selection-start-column="75" selection-end-line="392" selection-end-column="75" />
+                <state relative-caret-position="1118">
+                  <caret line="122" column="113" lean-forward="false" selection-start-line="122" selection-start-column="113" selection-end-line="122" selection-end-column="113" />
                   <folding>
-                    <element signature="class#2705:3104" expanded="false" />
-                    <element signature="method#readAndParse#0;class#SelectClassFragment#0" expanded="false" />
-                    <element signature="method#toastMessage#0;class#SelectClassFragment#0" expanded="false" />
-                    <element signature="method#loadJSONFromAsset#0;class#SelectClassFragment#0" expanded="false" />
-                    <element signature="method#addItemsToSpinner#0;class#SelectClassFragment#0" expanded="false" />
-                    <element signature="method#selectAndParse#0;class#SelectClassFragment#0" expanded="false" />
-                    <element signature="method#disableButton#0;class#SelectClassFragment#0" expanded="false" />
-                    <element signature="method#enableButton#0;class#SelectClassFragment#0" expanded="false" />
-                    <element signature="method#callPopup#0;class#SelectClassFragment#0" expanded="false" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#checkLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+                    <element signature="method#setSelectableLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+                    <element signature="method#toastMessage#0;class#SelectRacePropertiesFragment#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <file leaf-file-name="CharacterDataPasser.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/CharacterDataPasser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="64" column="30" lean-forward="false" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+                <state relative-caret-position="382">
+                  <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+                  <folding>
+                    <element signature="method#getAllAbilityScoreModifiers#0;class#CharacterDataPasser#0" expanded="false" />
+                    <element signature="e#3211#3212#0" expanded="true" />
+                    <element signature="e#3244#3245#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fragment_select_race_properties.xml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race_properties.xml">
+              <provider editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
+              </provider>
+              <provider selected="true" editor-type-id="android-designer2">
+                <state />
               </provider>
             </entry>
           </file>
           <file leaf-file-name="fragment_select_race.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml">
               <provider editor-type-id="text-editor">
-                <state relative-caret-position="595">
+                <state relative-caret-position="697">
                   <caret line="41" column="50" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="41" selection-end-column="50" />
                   <folding />
-                </state>
-              </provider>
-              <provider selected="true" editor-type-id="android-designer2">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fragment_select_class.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml">
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-                  <folding />
-                </state>
-              </provider>
-              <provider selected="true" editor-type-id="android-designer2">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="popup_moreinfo_race.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_moreinfo_race.xml">
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-                  <folding>
-                    <element signature="e#967#982#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
               <provider selected="true" editor-type-id="android-designer2">
@@ -179,23 +192,12 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="SelectRaceFragment.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java">
+          <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-165">
-                  <caret line="360" column="0" lean-forward="false" selection-start-line="360" selection-start-column="0" selection-end-line="360" selection-end-column="0" />
-                  <folding>
-                    <element signature="class#2261:2660" expanded="false" />
-                    <element signature="method#readAndParse#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#toastMessage#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#loadJSONFromAsset#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#addItemsToSpinner#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#selectAndParse#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#disableButton#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#enableButton#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#callPopup#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#testGlobalValues#0;class#SelectRaceFragment#0" expanded="false" />
-                  </folding>
+                <state relative-caret-position="113">
+                  <caret line="80" column="27" lean-forward="false" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -207,9 +209,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -228,6 +230,10 @@
       <find>ClassJSONs</find>
       <find>Languages</find>
       <find>popup</find>
+      <find>sendCharacter</find>
+      <find>bus</find>
+      <find>toastMessage</find>
+      <find>toastmessage</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/src/main/res/layout</dir>
@@ -2500,11 +2506,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/createchar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/charClass.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/createcharclass.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Race.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/DClass.java" />
         <option value="$PROJECT_DIR$/local.properties" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_diceroller.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_itembook.xml" />
@@ -2535,7 +2536,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_skills.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/SkillsListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/StatsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/StatsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/fragment_createchar_class.java" />
@@ -2547,10 +2547,16 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/right_arrow_24dp.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/left_arrow_24dp.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race_properties.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/CharacterDataPasser.java" />
       </list>
     </option>
   </component>
@@ -2576,52 +2582,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="myapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="myapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Fragments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -2669,23 +2629,64 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Dungeons-and-Dragons-Companion-App" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dungeons-and-Dragons-Companion-App" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="myapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="myapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="myapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Fragments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -2915,10 +2916,17 @@
       <option name="project" value="LOCAL" />
       <updated>1542855710389</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="POP UPS NOW WORK FOR BOTH RACE AND CLASS SELECTION&#10;&#10;Pop Ups properly display nested information from JSON files&#10;&#10;Nested information from the JSON files are savable, more tinkering with saved data and JSON files will be required in the future&#10;&#10;Changed some JSON file content, Still need to spell check Class JSONs&#10;&#10;Added some XML images/icons to use as Right and Left Buttons (More to be added later)">
+      <created>1542939883775</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542939883775</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -2932,23 +2940,23 @@
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32717392" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32717392" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.50323623" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40618336" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.4935275" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8921875" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41195652" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17910448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.49676377" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -2962,39 +2970,39 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40618336" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5272727" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.32928804" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.50323623" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.670712" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8921875" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.6634304" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32608697" sideWeight="0.49676377" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328125" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32717392" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40618336" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.49271846" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3125" sideWeight="0.60194176" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20873787" sideWeight="0.47272727" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.4935275" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17910448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -3017,51 +3025,16 @@
     <MESSAGE value="Attempt 2 to push" />
     <MESSAGE value="Able to get all of the ability scores, alignment, speed, abilities, and languages from the Races and save them into variables made in SelectRace Java. Also changed some stuff in the RaceJSONs that weren't parsing, they work now" />
     <MESSAGE value="POP UPS NOW WORK FOR BOTH RACE AND CLASS SELECTION&#10;&#10;Pop Ups properly display nested information from JSON files&#10;&#10;Nested information from the JSON files are savable, more tinkering with saved data and JSON files will be required in the future&#10;&#10;Changed some JSON file content, Still need to spell check Class JSONs&#10;&#10;Added some XML images/icons to use as Right and Left Buttons (More to be added later)" />
-    <option name="LAST_COMMIT_MESSAGE" value="POP UPS NOW WORK FOR BOTH RACE AND CLASS SELECTION&#10;&#10;Pop Ups properly display nested information from JSON files&#10;&#10;Nested information from the JSON files are savable, more tinkering with saved data and JSON files will be required in the future&#10;&#10;Changed some JSON file content, Still need to spell check Class JSONs&#10;&#10;Added some XML images/icons to use as Right and Left Buttons (More to be added later)" />
+    <MESSAGE value="Progress Made:&#10;&#10;Added new Fragments for choosing properties after you select what race or class&#10;&#10;Race properties page now dynamically creates a spinner if needed for selecting what extra language you would like your character to learn.&#10;&#10;Language Spinner itself is dynamic in that if your race already knows a specific language, then that language won't show up when you want to select a new language to learn.&#10;&#10;&#10;Changes made:&#10;&#10;Modified the JSON for purposes needed to make the dynamic spinner work&#10;&#10;Created a class to pass data between fragments in one argument instead of many (still deciding whether i want it or not)&#10;&#10;May have messed with the CharacterSheetFragment but I forgot what I did. Probably minor changes for the pass data class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress Made:&#10;&#10;Added new Fragments for choosing properties after you select what race or class&#10;&#10;Race properties page now dynamically creates a spinner if needed for selecting what extra language you would like your character to learn.&#10;&#10;Language Spinner itself is dynamic in that if your race already knows a specific language, then that language won't show up when you want to select a new language to learn.&#10;&#10;&#10;Changes made:&#10;&#10;Modified the JSON for purposes needed to make the dynamic spinner work&#10;&#10;Created a class to pass data between fragments in one argument instead of many (still deciding whether i want it or not)&#10;&#10;May have messed with the CharacterSheetFragment but I forgot what I did. Probably minor changes for the pass data class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/SpellbookFragment.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_stats.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_createspell.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_createitem.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/forest.jpg.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/forest.jpg" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/ItembookFragment.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/createchar.xml" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -3076,16 +3049,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Dragonborn.json" />
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Dwarf_Mountain.json" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/MainActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_createcharacter.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_areyousure.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -3125,13 +3088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3139,22 +3095,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_inventory.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3165,7 +3109,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3176,7 +3119,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3187,7 +3129,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3198,7 +3139,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3213,22 +3153,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3236,7 +3164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3269,7 +3196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="9" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3277,9 +3203,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <element signature="e#967#982#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3288,7 +3212,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="510">
           <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
           <folding />
         </state>
@@ -3297,54 +3221,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="41" column="50" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="41" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="64" column="30" lean-forward="false" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="362" column="36" lean-forward="false" selection-start-line="362" selection-start-column="36" selection-end-line="362" selection-end-column="36" />
-          <folding>
-            <element signature="class#2261:2660" expanded="false" />
-            <element signature="e#2867#3703#0" expanded="true" />
-            <element signature="e#3702#3703#0" expanded="true" />
-            <element signature="e#3820#3963#0" expanded="true" />
-            <element signature="e#3962#3963#0" expanded="true" />
-            <element signature="method#readAndParse#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="method#toastMessage#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="method#loadJSONFromAsset#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="method#addItemsToSpinner#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="method#selectAndParse#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="method#disableButton#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="method#enableButton#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="method#callPopup#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="e#13066#13218#0" expanded="true" />
-            <element signature="e#13217#13218#0" expanded="true" />
-            <element signature="method#internalJSONRace#0;class#SelectRaceFragment#0" expanded="false" />
-            <element signature="method#testGlobalValues#0;class#SelectRaceFragment#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
+        <state relative-caret-position="838">
           <caret line="392" column="75" lean-forward="false" selection-start-line="392" selection-start-column="75" selection-end-line="392" selection-end-column="75" />
           <folding>
             <element signature="class#2705:3104" expanded="false" />
@@ -3356,6 +3235,187 @@
             <element signature="method#disableButton#0;class#SelectClassFragment#0" expanded="false" />
             <element signature="method#enableButton#0;class#SelectClassFragment#0" expanded="false" />
             <element signature="method#callPopup#0;class#SelectClassFragment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/CreateCharacterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_createcharacter.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="50" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="41" column="34" lean-forward="false" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="50" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="41" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race_properties.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="148" column="0" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="148" selection-end-column="0" />
+          <folding>
+            <element signature="method#getAllAbilityScoreModifiers#0;class#Character#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="80" column="27" lean-forward="false" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1118">
+          <caret line="122" column="113" lean-forward="false" selection-start-line="122" selection-start-column="113" selection-end-line="122" selection-end-column="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+            <element signature="method#setSelectableLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+            <element signature="method#toastMessage#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="138" column="32" lean-forward="false" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#2371:2770" expanded="false" />
+            <element signature="e#2977#4549#0" expanded="true" />
+            <element signature="e#4548#4549#0" expanded="true" />
+            <element signature="e#4666#4809#0" expanded="true" />
+            <element signature="e#4808#4809#0" expanded="true" />
+            <element signature="method#readAndParse#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#toastMessage#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#loadJSONFromAsset#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#parse_JSON#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#selectAndParse#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#disableButton#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#enableButton#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#callPopup#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#internalJSONRace#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#testGlobalValues#0;class#SelectRaceFragment#0" expanded="false" />
+            <element signature="method#getAbilityScores#0;class#SelectRaceFragment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/CharacterDataPasser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="method#getAllAbilityScoreModifiers#0;class#CharacterDataPasser#0" expanded="false" />
+            <element signature="e#3211#3212#0" expanded="true" />
+            <element signature="e#3244#3245#0" expanded="true" />
           </folding>
         </state>
       </provider>

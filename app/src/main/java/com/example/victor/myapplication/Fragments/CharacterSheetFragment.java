@@ -21,6 +21,7 @@ import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
+import com.example.victor.myapplication.Fragments.SelectRaceFragment;
 
 public class CharacterSheetFragment extends Fragment {
 
@@ -37,6 +38,8 @@ public class CharacterSheetFragment extends Fragment {
     View view;
     Bus BUS;
 
+    SelectRaceFragment passRaceAttributes;
+
     int currentHitPoints;
     int maxHitPoints =0;
     @Nullable
@@ -49,10 +52,12 @@ public class CharacterSheetFragment extends Fragment {
         BUS.register(this);
         int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
 
+        int abilityScores[] = passRaceAttributes.getAbilityScores();
+
         textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
         textViewCharacterName.setText(currentPlayerCharacter.getMyName());
         //Load in the ability scores
-        int abilityScores[] = {0,0,0,0,0,0};
+        //int abilityScores[] = {0,0,0,0,0,0};
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);

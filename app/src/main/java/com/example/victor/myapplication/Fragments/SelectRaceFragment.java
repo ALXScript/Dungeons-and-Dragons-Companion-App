@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.victor.myapplication.Classes.Character;
 import com.example.victor.myapplication.R;
 
 import org.json.JSONArray;
@@ -93,23 +95,34 @@ public class SelectRaceFragment extends Fragment {
         buttonToClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                /*
-                buttonClose = (Button) popupTest.findViewById(R.id.btnPopupTest);
-
-                buttonClose.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popupTest.dismiss();
-                    }
-                });
-                */
-
-                //toastMessage("button pressed");
                 //Alternate way to change fragment window
-                //Fragment frag = new SelectClassFragment();
+                /*
+                Fragment frag = new SelectClassFragment();
                 FragmentManager fragManager = getFragmentManager();
                 fragManager.beginTransaction().replace(R.id.fragment_container, new SelectClassFragment()).commit();
+                */
+
+                //Set the fragment before the move is made
+                Fragment frag = new SelectRacePropertiesFragment();
+                FragmentManager fragManager = getFragmentManager();
+                android.app.FragmentTransaction fragTrans = fragManager.beginTransaction();
+
+                //set the bundles
+                Bundle sendData = new Bundle();
+                sendData.putIntArray("passAbilityScores", abilityScores);
+                sendData.putStringArray("passAlignment", alignment);
+                sendData.putInt("passAlignmentLength", alignmentLength);
+                sendData.putInt("passSpeed", speed);
+                sendData.putStringArray("passAbility", ability);
+                sendData.putInt("passAbilityLength", abilityLength);
+                sendData.putStringArray("passLanguages", languages);
+                sendData.putInt("passLanguagesLength", languagesLength);
+
+                //begin transaction with arguments
+                frag.setArguments(sendData);
+                fragTrans.replace(R.id.fragment_container, frag);
+                fragTrans.commit();
+
             }
         });
 
@@ -447,6 +460,10 @@ public class SelectRaceFragment extends Fragment {
             }
         }
         toastMessage(showLanguage);
+    }
+
+    public int[] getAbilityScores(){
+        return new int[]{abilityScores[0], abilityScores[1], abilityScores[2], abilityScores[3], abilityScores[4], abilityScores[5]};
     }
 
 }

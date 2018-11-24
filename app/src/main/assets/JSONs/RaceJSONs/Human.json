@@ -10,7 +10,7 @@
   "AbilityScore_Intelligence": "1",
   "AbilityScore_Wisdom": "1",
   "AbilityScore_Charisma": "1",
-  "Alignment": ["True Neutral"],
+  "Alignment": ["Lawful Good", "Lawful Neutral", "Lawful Evil", "True Good", "True Neutral", "True Evil", "Chaotic Good", "Chaotic Neutral", "Chaotic Evil"],
   "Speed": "30",
   "Abilities": [
     {
