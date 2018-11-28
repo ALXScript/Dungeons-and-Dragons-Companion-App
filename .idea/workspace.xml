@@ -13,7 +13,9 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc095677-a869-443c-88ca-fee2aef5b9bf" name="Default" comment="">
+    <list default="true" id="cc095677-a869-443c-88ca-fee2aef5b9bf" name="Default" comment="committing any misc. changes">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassPropertiesFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class_properties.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -38,111 +40,118 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="SelectRaceFragment.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1700">
-                  <caret line="138" column="32" lean-forward="false" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
-                  <folding>
-                    <element signature="class#2371:2770" expanded="false" />
-                    <element signature="method#readAndParse#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#toastMessage#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#loadJSONFromAsset#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#parse_JSON#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#selectAndParse#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#disableButton#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#enableButton#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#callPopup#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#internalJSONRace#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#testGlobalValues#0;class#SelectRaceFragment#0" expanded="false" />
-                    <element signature="method#getAbilityScores#0;class#SelectRaceFragment#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SelectRacePropertiesFragment.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1802">
-                  <caret line="122" column="113" lean-forward="false" selection-start-line="122" selection-start-column="113" selection-end-line="122" selection-end-column="113" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#checkLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
-                    <element signature="method#setSelectableLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
-                    <element signature="method#toastMessage#0;class#SelectRacePropertiesFragment#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CharacterDataPasser.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/CharacterDataPasser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="246">
-                  <caret line="137" column="5" lean-forward="false" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
-                  <folding>
-                    <element signature="method#getAllAbilityScoreModifiers#0;class#CharacterDataPasser#0" expanded="false" />
-                    <element signature="e#3211#3212#0" expanded="true" />
-                    <element signature="e#3244#3245#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fragment_select_race_properties.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race_properties.xml">
-              <provider selected="true" editor-type-id="android-designer2">
-                <state />
-              </provider>
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fragment_select_race.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml">
-              <provider selected="true" editor-type-id="android-designer2">
-                <state />
-              </provider>
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="697">
-                  <caret line="41" column="50" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="41" selection-end-column="50" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="113">
-                  <caret line="80" column="27" lean-forward="false" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SelectRaceFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1700">
+              <caret line="138" column="32" lean-forward="false" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
+              <folding>
+                <element signature="class#2371:2770" expanded="false" />
+                <element signature="method#readAndParse#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#toastMessage#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#loadJSONFromAsset#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#parse_JSON#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#selectAndParse#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#disableButton#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#enableButton#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#callPopup#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#internalJSONRace#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#testGlobalValues#0;class#SelectRaceFragment#0" expanded="false" />
+                <element signature="method#getAbilityScores#0;class#SelectRaceFragment#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectRacePropertiesFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="49" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#checkLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+                <element signature="method#setSelectableLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+                <element signature="method#toastMessage#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_select_class_properties.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class_properties.xml">
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CharacterDataPasser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/CharacterDataPasser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="137" column="5" lean-forward="false" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
+              <folding>
+                <element signature="method#getAllAbilityScoreModifiers#0;class#CharacterDataPasser#0" expanded="false" />
+                <element signature="e#3211#3212#0" expanded="true" />
+                <element signature="e#3244#3245#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectClassPropertiesFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassPropertiesFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_select_race_properties.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race_properties.xml">
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_select_race.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml">
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" column="50" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="41" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -2437,8 +2446,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/local.properties" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_diceroller.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_itembook.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_spellbook.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_spells.xml" />
@@ -2488,6 +2495,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race_properties.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/CharacterDataPasser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class_properties.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassPropertiesFragment.java" />
       </list>
     </option>
   </component>
@@ -2513,6 +2522,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -2608,16 +2628,11 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
+              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -2861,7 +2876,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543049679455</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="committing any misc. changes">
+      <created>1543372785106</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1543372785106</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2891,7 +2913,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17910448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17910448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.49676377" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2964,7 +2986,8 @@
     <MESSAGE value="Able to get all of the ability scores, alignment, speed, abilities, and languages from the Races and save them into variables made in SelectRace Java. Also changed some stuff in the RaceJSONs that weren't parsing, they work now" />
     <MESSAGE value="POP UPS NOW WORK FOR BOTH RACE AND CLASS SELECTION&#10;&#10;Pop Ups properly display nested information from JSON files&#10;&#10;Nested information from the JSON files are savable, more tinkering with saved data and JSON files will be required in the future&#10;&#10;Changed some JSON file content, Still need to spell check Class JSONs&#10;&#10;Added some XML images/icons to use as Right and Left Buttons (More to be added later)" />
     <MESSAGE value="Progress Made:&#10;&#10;Added new Fragments for choosing properties after you select what race or class&#10;&#10;Race properties page now dynamically creates a spinner if needed for selecting what extra language you would like your character to learn.&#10;&#10;Language Spinner itself is dynamic in that if your race already knows a specific language, then that language won't show up when you want to select a new language to learn.&#10;&#10;&#10;Changes made:&#10;&#10;Modified the JSON for purposes needed to make the dynamic spinner work&#10;&#10;Created a class to pass data between fragments in one argument instead of many (still deciding whether i want it or not)&#10;&#10;May have messed with the CharacterSheetFragment but I forgot what I did. Probably minor changes for the pass data class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Progress Made:&#10;&#10;Added new Fragments for choosing properties after you select what race or class&#10;&#10;Race properties page now dynamically creates a spinner if needed for selecting what extra language you would like your character to learn.&#10;&#10;Language Spinner itself is dynamic in that if your race already knows a specific language, then that language won't show up when you want to select a new language to learn.&#10;&#10;&#10;Changes made:&#10;&#10;Modified the JSON for purposes needed to make the dynamic spinner work&#10;&#10;Created a class to pass data between fragments in one argument instead of many (still deciding whether i want it or not)&#10;&#10;May have messed with the CharacterSheetFragment but I forgot what I did. Probably minor changes for the pass data class" />
+    <MESSAGE value="committing any misc. changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="committing any misc. changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2973,14 +2996,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/CreateCharUsedToWork.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/charClass.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/activity_Test.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/activity_createcharacter.java" />
@@ -2988,13 +3003,13 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/RaceJSONs/Dwarf_Mountain.json" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/MainActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_areyousure.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/SpellsFragment.java" />
@@ -3034,53 +3049,53 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_inventory.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_iteminfoinventory.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_iteminfoinventory.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_spellinfospellbook.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_spellinfospellbook.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_test.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_test.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_spellinfo.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_spellinfo.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SpellbookFragment.java">
@@ -3098,33 +3113,33 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_iteminfo.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/right_arrow_24dp.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/right_arrow_24dp.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/left_arrow_24dp.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/left_arrow_24dp.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="83" lean-forward="false" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shopping_cart_24dp.xml">
@@ -3135,23 +3150,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_moreinfo_race.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java">
@@ -3162,13 +3177,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/CreateCharacterActivity.java">
@@ -3179,34 +3194,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_createcharacter.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/HomeFragment.java">
@@ -3227,39 +3242,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="41" column="50" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="41" selection-end-column="50" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race_properties.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/Character.java">
@@ -3277,19 +3284,6 @@
         <state relative-caret-position="113">
           <caret line="80" column="27" lean-forward="false" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="122" column="113" lean-forward="false" selection-start-line="122" selection-start-column="113" selection-end-line="122" selection-end-column="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#checkLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
-            <element signature="method#setSelectableLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
-            <element signature="method#toastMessage#0;class#SelectRacePropertiesFragment#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3322,6 +3316,51 @@
             <element signature="method#getAllAbilityScoreModifiers#0;class#CharacterDataPasser#0" expanded="false" />
             <element signature="e#3211#3212#0" expanded="true" />
             <element signature="e#3244#3245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_race_properties.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class_properties.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="49" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+            <element signature="method#setSelectableLanguages#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+            <element signature="method#toastMessage#0;class#SelectRacePropertiesFragment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassPropertiesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
