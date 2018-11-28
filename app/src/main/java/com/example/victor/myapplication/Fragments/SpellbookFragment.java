@@ -78,6 +78,8 @@ public class SpellbookFragment extends Fragment {
             }
         }
 
+        data.close();
+
         spellCount.setText("QTY: " + Integer.toString(myDatabaseAccess.getExistingSpellCount(slug)));
     }
 
@@ -94,6 +96,8 @@ public class SpellbookFragment extends Fragment {
                 while (data.moveToNext()) {
                     spellSlug = data.getString(0);
                 }
+
+                data.close();
 
                 if (spellSlug != "_") {
 

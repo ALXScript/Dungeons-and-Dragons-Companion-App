@@ -42,15 +42,15 @@ public class DatabaseAccess {
     }
 
     //Itembook database functions -----------------------------------------------------------------
-    public Cursor getData(){
-        String query = "SELECT * FROM items";
+    public Cursor getItemsData(){
+        String query = "SELECT * FROM dnditems";
         Cursor data = database.rawQuery(query, null);
         return data;
     }
 
     public List<String> getItemNames() {
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM items", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM dnditems", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             list.add(cursor.getString(1));
@@ -60,29 +60,29 @@ public class DatabaseAccess {
         return list;
     }
 
-    public Cursor getItemIDitems(String name){
-        String query = "SELECT " + "id" + " FROM " + "items" +
-                " WHERE " + "name" + " = '" + name + "'";
+    public Cursor getItemSlugitems(String listName){
+        String query = "SELECT slug FROM dnditems WHERE name = '" + listName + "'";
         Cursor data = database.rawQuery(query, null);
         return data;
     }
 
-    public void deleteItemFromItembook(int id){
-        String query = "DELETE FROM " + "items" + " WHERE "
-                + "id" + " = '" + id + "'";
+    public void deleteItemFromItembook(String listSlug){
+        String query = "DELETE FROM " + "dnditems" + " WHERE "
+                + "slug" + " = '" + listSlug + "'";
         Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + id + " from database.");
+        Log.d(TAG, "deleteName: Deleting " + listSlug + " from database.");
         database.execSQL(query);
     }
 
     public boolean addItemToItembook(String itemName, String descr, String source1, String type1) {
         ContentValues contentValues = new ContentValues();
+        contentValues.put("slug", itemName);
         contentValues.put("name", itemName);
         contentValues.put("desc", descr);
-        contentValues.put("source", source1);
+        contentValues.put("document_slug", source1);
         contentValues.put("type", type1);
 
-        long result = database.insert("items", null, contentValues);
+        long result = database.insert("dnditems", null, contentValues);
 
         //if data is inserted incorrectly it will return -1
         if (result == -1) {
@@ -93,24 +93,23 @@ public class DatabaseAccess {
     }
 
     //Inventory database functions -----------------------------------------------------------------
-    public boolean isIteminInventories(int id){
+    public boolean isIteminInventories(String slugToCheck){
 
-        String idToCheck = Integer.toString(id);
         boolean inInventories = false;
-        int idMatched = -1;
+        String slugMatched = "_"; //Dummy initialize value
 
-        String query = "SELECT " + "id" + " FROM " + "inventories" +
-                " WHERE " + "id" + " = '" + idToCheck + "'";
+        String query = "SELECT " + "slug" + " FROM " + "inventories" +
+                " WHERE " + "slug" + " = '" + slugToCheck + "'";
         Cursor data = database.rawQuery(query, null);
 
         while(data.moveToNext())
         {
-            idMatched = data.getInt(0);
+            slugMatched = data.getString(0);
         }
 
         data.close();
 
-        if(idMatched > 0)
+        if(slugMatched != "_")
             inInventories = true;
 
         return inInventories;
@@ -118,7 +117,7 @@ public class DatabaseAccess {
 
     public List<String> fillInventory() {
         List<String> list = new ArrayList<>();
-        String query = "SELECT name FROM items, inventories WHERE items.id = inventories.id";
+        String query = "SELECT name FROM dnditems, inventories WHERE dnditems.slug = inventories.slug";
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -130,15 +129,15 @@ public class DatabaseAccess {
     }
 
 
-    public boolean addToInventories(int idchar, int id, int myCount) {
+    public boolean addToInventories(int idchar, String slug, int myCount) {
 
         ContentValues contentValue = new ContentValues();
 
         contentValue.put("idchar", idchar);
-        contentValue.put("id", id);
+        contentValue.put("slug", slug);
         contentValue.put("count", myCount); //hard code to 1 for now need to add to count
 
-        Log.d(TAG, "addData: Adding " + id + " to " + "inventories");
+        Log.d(TAG, "addData: Adding " + slug + " to " + "inventories");
 
         long result = database.insert("inventories", null, contentValue);
 
@@ -150,43 +149,40 @@ public class DatabaseAccess {
         }
     }
 
-    public void addToInventoriesCount(int id, int myCount) {
+    public void addToInventoriesCount(String slugToCheck, int myCount) {
 
         String newCount = Integer.toString(myCount);
-        String idToCheck = Integer.toString(id);
 
         String query = "UPDATE " + "inventories" + " SET " + "count" +
-                " = '" + newCount + "' WHERE " + "id" + " = '" + idToCheck + "'";
+                " = '" + newCount + "' WHERE " + "slug" + " = '" + slugToCheck + "'";
 
         database.execSQL(query);
     }
 
-    public void removeFromInventoriesCount(int id, int myCount) {
+    public void removeFromInventoriesCount(String slugToCheck, int myCount) {
 
         String newCount = Integer.toString(myCount);
-        String idToCheck = Integer.toString(id);
 
         String query = "UPDATE " + "inventories" + " SET " + "count" +
-                " = '" + newCount + "' WHERE " + "id" + " = '" + idToCheck + "'";
+                " = '" + newCount + "' WHERE " + "slug" + " = '" + slugToCheck + "'";
 
         database.execSQL(query);
     }
 
-    public void deleteItemFromInv(int id){
+    public void deleteItemFromInv(String slugToCheck){
         String query = "DELETE FROM " + "inventories" + " WHERE "
-                + "id" + " = '" + id + "'";
+                + "slug" + " = '" + slugToCheck + "'";
         Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + id + " from database.");
+        Log.d(TAG, "deleteName: Deleting " + slugToCheck + " from database.");
         database.execSQL(query);
     }
 
-    public int getExistingItemCount(int id){
+    public int getExistingItemCount(String slugToCheck){
 
-        String idToCheck = Integer.toString(id);
         int finalCount = -1;
 
         String query = "SELECT " + "count" + " FROM " + "inventories" +
-                " WHERE " + "id" + " = '" + idToCheck + "'";
+                " WHERE " + "slug" + " = '" + slugToCheck + "'";
 
         Cursor data = database.rawQuery(query, null);
 
@@ -218,13 +214,13 @@ public class DatabaseAccess {
         return data;
     }
 
-    public boolean isSpellinSpellbook(String slugCheck){
+    public boolean isSpellinSpellbook(String slugToCheck){
 
         boolean inSpellbooks = false;
         String slugMatched = "_"; //Dummy initialize value
 
         String query = "SELECT " + "slug" + " FROM " + "spellbooks" +
-                " WHERE " + "slug" + " = '" + slugCheck + "'";
+                " WHERE " + "slug" + " = '" + slugToCheck + "'";
         Cursor data = database.rawQuery(query, null);
 
         while(data.moveToNext())

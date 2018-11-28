@@ -164,7 +164,7 @@ public class AllSpellsFragment extends Fragment {
             }
         }
 
-
+        data.close();
     }
 
 
@@ -202,12 +202,14 @@ public class AllSpellsFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 String name = adapterView.getItemAtPosition(i).toString();
 
-                Cursor data = myDatabaseAccess.getSpellSlugSpells(name); //get the id associated with that name
+                Cursor data = myDatabaseAccess.getSpellSlugSpells(name); //get the slug associated with that name
                 String spellSlug = "_";
 
                 while(data.moveToNext()){
                     spellSlug = data.getString(0);
                 }
+
+                data.close();
 
                 if(spellSlug != "_"){
 
