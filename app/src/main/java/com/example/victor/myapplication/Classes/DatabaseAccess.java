@@ -202,7 +202,7 @@ public class DatabaseAccess {
     //Spells database functions -----------------------------------------------------------------
     public List<String> getSpellNames() {
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM spells", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM dndspells", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             list.add(cursor.getString(1));
@@ -212,45 +212,43 @@ public class DatabaseAccess {
         return list;
     }
 
-    public Cursor getSpellIDSpells(String name){
-        String query = "SELECT " + "id" + " FROM " + "spells" +
-                " WHERE " + "name" + " = '" + name + "'";
+    public Cursor getSpellSlugSpells(String listName){
+        String query = "SELECT slug FROM dndspells WHERE name = '" + listName + "'";
         Cursor data = database.rawQuery(query, null);
         return data;
     }
 
-    public boolean isSpellinSpellbook(int id){
+    public boolean isSpellinSpellbook(String slugCheck){
 
-        String idToCheck = Integer.toString(id);
         boolean inSpellbooks = false;
-        int idMatched = -1;
+        String slugMatched = "_"; //Dummy initialize value
 
-        String query = "SELECT " + "id" + " FROM " + "spellbooks" +
-                " WHERE " + "id" + " = '" + idToCheck + "'";
+        String query = "SELECT " + "slug" + " FROM " + "spellbooks" +
+                " WHERE " + "slug" + " = '" + slugCheck + "'";
         Cursor data = database.rawQuery(query, null);
 
         while(data.moveToNext())
         {
-            idMatched = data.getInt(0);
+            slugMatched = data.getString(0);
         }
 
         data.close();
 
-        if(idMatched > 0)
+        if(slugMatched != "_")
             inSpellbooks = true;
 
         return inSpellbooks;
     }
 
-    public boolean addToSpellbooks(int idchar, int id, int myCount) {
+    public boolean addToSpellbooks(int idchar, String slug, int myCount) {
 
         ContentValues contentValue = new ContentValues();
 
         contentValue.put("idchar", idchar);
-        contentValue.put("id", id);
+        contentValue.put("slug", slug);
         contentValue.put("count", myCount);
 
-        Log.d(TAG, "addData: Adding " + id + " to " + "spellbooks");
+        Log.d(TAG, "addData: Adding " + slug + " to " + "spellbooks");
 
         long result = database.insert("spellbooks", null, contentValue);
 
@@ -262,13 +260,12 @@ public class DatabaseAccess {
         }
     }
 
-    public int getExistingSpellCount(int id){
+    public int getExistingSpellCount(String slugToCheck){
 
-        String idToCheck = Integer.toString(id);
         int finalCount = -1;
 
         String query = "SELECT " + "count" + " FROM " + "spellbooks" +
-                " WHERE " + "id" + " = '" + idToCheck + "'";
+                " WHERE " + "slug" + " = '" + slugToCheck + "'";
 
         Cursor data = database.rawQuery(query, null);
 
@@ -281,25 +278,25 @@ public class DatabaseAccess {
         return finalCount;
     }
 
-    public void addToSpellbooksCount(int id, int myCount) {
+    public void addToSpellbooksCount(String slugToCheck, int myCount) {
 
-        String newCount = Integer.toString(myCount);
-        String idToCheck = Integer.toString(id);
+        String newCount = Integer.toString(myCount);;
 
         String query = "UPDATE " + "spellbooks" + " SET " + "count" +
-                " = '" + newCount + "' WHERE " + "id" + " = '" + idToCheck + "'";
+                " = '" + newCount + "' WHERE " + "slug" + " = '" + slugToCheck + "'";
 
         database.execSQL(query);
     }
 
     public boolean addSpellToSpells(String spellName, String descr, String source1, String type1) {
         ContentValues contentValues = new ContentValues();
+        contentValues.put("slug", spellName);
         contentValues.put("name", spellName);
         contentValues.put("desc", descr);
-        contentValues.put("source", source1);
-        contentValues.put("type", type1);
+        contentValues.put("page", source1);
+        contentValues.put("school", type1);
 
-        long result = database.insert("spells", null, contentValues);
+        long result = database.insert("dndspells", null, contentValues);
 
         //if data is inserted incorrectly it will return -1
         if (result == -1) {
@@ -310,22 +307,22 @@ public class DatabaseAccess {
     }
 
     public Cursor getSpellsData(){
-        String query = "SELECT * FROM spells";
+        String query = "SELECT * FROM dndspells";
         Cursor data = database.rawQuery(query, null);
         return data;
     }
 
-    public void deleteSpellFromSpells(int id){
-        String query = "DELETE FROM " + "spells" + " WHERE "
-                + "id" + " = '" + id + "'";
+    public void deleteSpellFromSpells(String listSlug){
+        String query = "DELETE FROM " + "dndspells" + " WHERE "
+                + "slug" + " = '" + listSlug + "'";
         Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + id + " from database.");
+        Log.d(TAG, "deleteName: Deleting " + listSlug + " from database.");
         database.execSQL(query);
     }
 
     public List<String> fillSpellbook() {
         List<String> list = new ArrayList<>();
-        String query = "SELECT name FROM spells, spellbooks WHERE spells.id = spellbooks.id";
+        String query = "SELECT name FROM dndspells, spellbooks WHERE dndspells.slug = spellbooks.slug";
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -336,22 +333,21 @@ public class DatabaseAccess {
         return list;
     }
 
-    public void removeFromSpellbooksCount(int id, int myCount) {
+    public void removeFromSpellbooksCount(String slugToCheck, int myCount) {
 
         String newCount = Integer.toString(myCount);
-        String idToCheck = Integer.toString(id);
 
         String query = "UPDATE " + "spellbooks" + " SET " + "count" +
-                " = '" + newCount + "' WHERE " + "id" + " = '" + idToCheck + "'";
+                " = '" + newCount + "' WHERE " + "slug" + " = '" + slugToCheck + "'";
 
         database.execSQL(query);
     }
 
-    public void deleteItemFromSpellbook(int id){
+    public void deleteItemFromSpellbook(String slugToCheck){
         String query = "DELETE FROM " + "spellbooks" + " WHERE "
-                + "id" + " = '" + id + "'";
+                + "slug" + " = '" + slugToCheck + "'";
         Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + id + " from database.");
+        Log.d(TAG, "deleteName: Deleting " + slugToCheck + " from database.");
         database.execSQL(query);
     }
 
