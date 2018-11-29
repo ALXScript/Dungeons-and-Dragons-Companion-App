@@ -70,7 +70,7 @@ public class AllItemsFragment extends Fragment {
 
         myDialog = new Dialog(getContext()); //Used for item info popup
 
-        getIDFromListView(); //Based on item clicked in listview
+        getNameFromListView(); //Based on item clicked in listview
 
         createItemDialog = new Dialog(getContext()); //Used for create item popup
 
@@ -145,8 +145,8 @@ public class AllItemsFragment extends Fragment {
         }
     }
 
-    private void getItemInfo(int id, Dialog myDialog) {
-        Cursor data = myDatabaseAccess.getData();
+    private void getItemInfo(String slug, Dialog myDialog) {
+        Cursor data = myDatabaseAccess.getItemsData();
 
         itemSource = (TextView) myDialog.findViewById(R.id.itemSourceTextView);
         itemType = (TextView) myDialog.findViewById(R.id.itemTypeTextView);
@@ -155,27 +155,29 @@ public class AllItemsFragment extends Fragment {
 
 
         while (data.moveToNext()) {
-            if(data.getInt(0) == id)
+            if(slug.equals(data.getString(0)))
             {
-                itemSource.setText(data.getString(3));
-                itemType.setText(data.getString(4));
-                itemDesc.setText(data.getString(2));
+                itemSource.setText(data.getString(6));
+                itemType.setText(data.getString(2));
+                itemDesc.setText(data.getString(3));
                 itemNameTextView.setText(data.getString(1));
             }
         }
+
+        data.close();
     }
 
-    private void addItemToInventories(int charID, int itemID)
+    private void addItemToInventories(int charID, String itemSlug)
     {
             boolean inInventories; //initially assume no duplicate items
             int itemCount;
 
-            inInventories = myDatabaseAccess.isIteminInventories(itemID);
+            inInventories = myDatabaseAccess.isIteminInventories(itemSlug);
 
 
             if(inInventories == false) {    //item not in inventories list yet
 
-                boolean inventoriesAdded = myDatabaseAccess.addToInventories(charID, itemID, 1);
+                boolean inventoriesAdded = myDatabaseAccess.addToInventories(charID, itemSlug, 1);
 
                 if(inventoriesAdded) {
                     toastMessage("Item added to inventory!");
@@ -186,31 +188,33 @@ public class AllItemsFragment extends Fragment {
             }
 
             else {
-                itemCount = myDatabaseAccess.getExistingItemCount(itemID);
-                myDatabaseAccess.addToInventoriesCount(itemID, itemCount+1); //add one to itemCount
+                itemCount = myDatabaseAccess.getExistingItemCount(itemSlug);
+                myDatabaseAccess.addToInventoriesCount(itemSlug, itemCount+1); //add one to itemCount
                 toastMessage("Updated QTY of item!");
             }
     }
 
-    private void getIDFromListView() {
+    private void getNameFromListView() {
         //set an onItemClickListener to the ListView
         itemBookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 String name = adapterView.getItemAtPosition(i).toString();
 
-                Cursor data = myDatabaseAccess.getItemIDitems(name); //get the id associated with that name
-                int itemID = -1;
+                Cursor data = myDatabaseAccess.getItemSlugitems(name); //get the slug associated with that name
+                String itemSlug = "_";
 
                 while(data.moveToNext()){
-                    itemID = data.getInt(0);
+                    itemSlug = data.getString(0);
                 }
 
-                if(itemID > -1){
+                data.close();
+
+                if(itemSlug != "_"){
 
                     myDialog.setContentView(R.layout.popup_iteminfo); //popup for item info
 
-                    getItemInfo(itemID, myDialog);
+                    getItemInfo(itemSlug, myDialog);
 
                     addItemBttn = (Button) myDialog.findViewById(R.id.itemAddBtn);
                     closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
@@ -223,11 +227,11 @@ public class AllItemsFragment extends Fragment {
                         }
                     });
 
-                    final int finalItemID = itemID;
+                    final String finalItemSlug = itemSlug;
                     addItemBttn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            addItemToInventories(1, finalItemID);
+                            addItemToInventories(1, finalItemSlug);
                         }
                     });
 
@@ -244,7 +248,7 @@ public class AllItemsFragment extends Fragment {
                             yesAreYouSureBtn.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    myDatabaseAccess.deleteItemFromItembook(finalItemID);
+                                    myDatabaseAccess.deleteItemFromItembook(finalItemSlug);
                                     adapter.remove(adapter.getItem(i));
                                     adapter.notifyDataSetChanged();
                                     areYouSureDialog.dismiss();
