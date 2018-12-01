@@ -20,7 +20,7 @@
         <item>Cha</item>
     </string-array>
 
-
+    <string name="AbilityScoreName">Ability Score Name</string>
     <string name = "Strength">Strength</string>
     <string name = "Dexterity">Dexterity</string>
     <string name = "Constitution">Constitution</string>

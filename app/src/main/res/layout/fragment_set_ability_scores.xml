@@ -14,12 +14,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textViewSetAbilityScoresHeader">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -29,10 +29,9 @@
                 android:id="@+id/textViewAbilityScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hello_blank_fragment"
+                android:text="@string/AbilityScoreName"
                 tools:layout_width="126dp"
-                tools:padding="8dp"
-                tools:text="Ability Score Name" />
+                tools:padding="8dp" />
 
             <TextView
                 android:id="@+id/textViewAbilityScoreValueHeader"
@@ -264,5 +263,37 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <Button
+        android:id="@+id/buttonGoToSelectClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Prev"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSetAbilityScoresHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewSetAbilityScoresHeader" />
+
+    <Button
+        android:id="@+id/buttonGoToEnterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="NEXT"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSetAbilityScoresHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewSetAbilityScoresHeader" />
+
+    <TextView
+        android:id="@+id/textViewSetAbilityScoresHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Enter Your Ability Scores"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGoToEnterName"
+        app:layout_constraintStart_toEndOf="@+id/buttonGoToSelectClass"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
