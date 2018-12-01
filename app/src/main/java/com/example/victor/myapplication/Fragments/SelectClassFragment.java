@@ -26,10 +26,10 @@ import java.io.InputStream;
 
 public class SelectClassFragment extends Fragment {
     //variables
-    Button buttonToRace;
+    Button buttonToRace, buttonToSetAbilityScores;
     TextView txtvwDisplayText;
     Spinner spinnerClass;
-
+    FragmentManager fragmentManager;
     //array list variables
     //ArrayList<String> testDescription = new ArrayList<>();
     //ArrayList<String> raceList = new ArrayList<>();
@@ -73,6 +73,16 @@ public class SelectClassFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager fragManager = getFragmentManager();
                 fragManager.beginTransaction().replace(R.id.fragment_container, new SelectRaceFragment()).commit();
+            }
+        });
+
+        buttonToSetAbilityScores = view.findViewById(R.id.buttonToSetAbilityScores);
+        buttonToSetAbilityScores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragManager = getFragmentManager();
+                //fragmentManager = getFragmentManager();
+                fragManager.beginTransaction().replace(R.id.fragment_container, new SetAbilityScoresFragment()).commit();
             }
         });
 
