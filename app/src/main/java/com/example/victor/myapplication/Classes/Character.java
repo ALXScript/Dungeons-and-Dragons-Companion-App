@@ -121,8 +121,6 @@ public class Character {
         {
             abilityScoreModifiers[i] = (abilityScores[i]-10)/2;
         }
-
-
         return abilityScoreModifiers;
     }
 

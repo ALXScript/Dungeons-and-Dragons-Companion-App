@@ -54,7 +54,7 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
         if (abilityScoreModifier>=0) abilityScoreModifierText="+";
         abilityScoreModifierText+= Integer.toString(abilityScoreModifier);
         abilityScoreViewHolder.textViewAbilityScoreName.setText(abilityScoreNames[i]);
-        abilityScoreViewHolder.textViewAbilityScoreValue.setText(Integer.toString(abilityScore));
+//        abilityScoreViewHolder.textViewAbilityScoreValue.setText(Integer.toString(abilityScore));
         abilityScoreViewHolder.textViewAbilityScoreModifier.setText(abilityScoreModifierText);
     }
 
@@ -71,7 +71,7 @@ public class AbilityScoreAdapter extends RecyclerView.Adapter<AbilityScoreAdapte
         public AbilityScoreViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewAbilityScoreName = itemView.findViewById(R.id.textViewAbilityScoreName);
-            textViewAbilityScoreValue = itemView.findViewById(R.id.textViewAbilityScoreValue);
+//            textViewAbilityScoreValue = itemView.findViewById(R.id.textViewAbilityScoreValue);
             textViewAbilityScoreModifier = itemView.findViewById(R.id.textViewAbilityScoreModifier);
         }
     };

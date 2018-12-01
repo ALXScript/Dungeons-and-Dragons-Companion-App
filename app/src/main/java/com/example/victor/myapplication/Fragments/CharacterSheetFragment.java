@@ -56,7 +56,8 @@ public class CharacterSheetFragment extends Fragment {
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
-        abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.);
         abilityScoreNames = getResources().getStringArray(R.array.AbilityScores);
         abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames,abilityScores,abilityScoreModifiers);
         abilityScoreRecycler.setAdapter(abilityScoreAdapter);
@@ -70,6 +71,7 @@ public class CharacterSheetFragment extends Fragment {
         boolean skillProficiencies []=currentPlayerCharacter.getSkillProficiencies();
         skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies);
         skillsRecyclerView.setAdapter(skillsListAdapter);
+
 
         //Health bar ..............................................................................
         textViewHitPointValue =view.findViewById(R.id.textViewHealthValue);
