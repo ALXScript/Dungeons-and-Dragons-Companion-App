@@ -50,7 +50,7 @@ public class CharacterSheetFragment extends Fragment {
         int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
 
         textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
-        textViewCharacterName.setText(currentPlayerCharacter.getMyName());
+        textViewCharacterName.setText(currentPlayerCharacter.getName());
         //Load in the ability scores
         int abilityScores[] = {0,0,0,0,0,0};
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
@@ -68,7 +68,7 @@ public class CharacterSheetFragment extends Fragment {
         skillsRecyclerView.setNestedScrollingEnabled(false);
         skillsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         skillNames = getResources().getStringArray(R.array.Skills);
-        boolean skillProficiencies []=currentPlayerCharacter.getSkillProficiencies();
+        boolean skillProficiencies []=currentPlayerCharacter.getAllSkillProficiencies();
         skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies);
         skillsRecyclerView.setAdapter(skillsListAdapter);
 

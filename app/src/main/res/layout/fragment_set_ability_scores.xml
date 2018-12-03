@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
                 android:layout_marginEnd="44dp"
-                android:text="Score"
+                android:text="    Score"
                 app:layout_constraintEnd_toStartOf="@+id/editTextIntScore"
                 tools:layout_editor_absoluteY="111dp"
                 tools:padding="8dp" />
