@@ -121,6 +121,7 @@ public class SelectRaceFragment extends Fragment {
                 //begin transaction with arguments
                 frag.setArguments(sendData);
                 fragTrans.replace(R.id.fragment_container, frag);
+                fragTrans.addToBackStack(null);
                 fragTrans.commit();
 
             }

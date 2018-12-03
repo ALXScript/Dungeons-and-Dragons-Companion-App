@@ -39,6 +39,7 @@ public class SelectClassFragment extends Fragment {
     String equipment[] = new String[6];
     String equipmentChoices[] = new String[10];
     String equipmentChoicesInternal[][][] = new String[10][10][10];
+    String subClasses[] = new String[10];
 
     //get lengths for all global variables
     int profArmorLength;
@@ -49,10 +50,12 @@ public class SelectClassFragment extends Fragment {
     int equipLength;
     int equipChoiceLength[] = new int[10];
     int equipChoiceInternalLength[][] = new int[10][10];
+    int subClassLength;
 
 
     //variables
-    Button buttonToRace;
+    Button buttonToRaceProperties;
+    Button buttonToClassProperties;
     TextView txtvwDisplayText;
     Spinner spinnerClass;
     Button buttonMoreInfo;
@@ -99,12 +102,21 @@ public class SelectClassFragment extends Fragment {
 
 
         //button variables
-        buttonToRace = (Button) view.findViewById(R.id.btnToRaceFragment);
-        buttonToRace.setOnClickListener(new View.OnClickListener() {
+        buttonToRaceProperties = (Button) view.findViewById(R.id.btnToRacePropertiesFragment);
+        buttonToRaceProperties.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
+
+
+        buttonToClassProperties = (Button) view.findViewById(R.id.btnToClassPropertiesFragment);
+        buttonToClassProperties.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 FragmentManager fragManager = getFragmentManager();
-                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectRaceFragment()).commit();
+                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectClassPropertiesFragment()).addToBackStack(null).commit();
             }
         });
 
@@ -157,6 +169,13 @@ public class SelectClassFragment extends Fragment {
             JSONObject classObject = new JSONObject(jsonFile);
 
             //************Put values inside the Global Variables*****************
+            //Read SubClass
+            JSONArray readSubClass = classObject.getJSONArray("subClass");
+            subClassLength = readSubClass.length();
+            for(int i = 0; i < subClassLength; i++){
+                subClasses[i] = readSubClass.getString(i);
+            }
+
             //Get the hit dice
             hitDice = classObject.getString("HP_Hit_Dice");
 
@@ -375,6 +394,16 @@ public class SelectClassFragment extends Fragment {
     public String internalJSONClass(){
         String internalString;
 
+        //Add SubClasses
+        String showSubClasses = "Sub Classes: ";
+        for (int i = 0; i < subClassLength; i++){
+            if(i == (subClassLength - 1)){
+                showSubClasses = showSubClasses + subClasses[i] + "\n\n";
+            }else{
+                showSubClasses = showSubClasses + subClasses[i] + ", ";
+            }
+        }
+
         //Add the Hit Dice
         String strHitDice = "Hit Dice: " + hitDice + "\n\n";
 
@@ -462,7 +491,7 @@ public class SelectClassFragment extends Fragment {
         }
 
 
-        internalString = strHitDice + strHPLVL1 + strHPHIGHLVL + showProfArmor + showProfWeapons + showProfTools + showProfSaveThrow + showProfSkills + showEquipment;
+        internalString = showSubClasses + strHitDice + strHPLVL1 + strHPHIGHLVL + showProfArmor + showProfWeapons + showProfTools + showProfSaveThrow + showProfSkills + showEquipment;
         return internalString;
     }
 

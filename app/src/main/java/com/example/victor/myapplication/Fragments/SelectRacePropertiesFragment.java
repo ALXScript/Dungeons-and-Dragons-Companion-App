@@ -1,5 +1,6 @@
 package com.example.victor.myapplication.Fragments;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.View;
@@ -41,6 +42,10 @@ public class SelectRacePropertiesFragment extends Fragment {
     int selectableLanguagesLength;
     ArrayAdapter<String> languageListAdapter;
 
+    //Get the button
+    Button buttonToRace;
+    Button buttonToClass;
+
 
 
     @Nullable
@@ -67,6 +72,57 @@ public class SelectRacePropertiesFragment extends Fragment {
 
         //Generation based off of languages goes here
         if (checkLanguages(languages, languagesLength)){
+            //button variables
+
+
+            buttonToRace = (Button) view.findViewById(R.id.btnToRaceFragment);
+            buttonToRace.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    getActivity().onBackPressed();
+                }
+            });
+
+
+            //button variables
+            buttonToClass = (Button) view.findViewById(R.id.btnToSelectClass);
+            buttonToClass.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Alternate way to change fragment window
+                    /*
+                    Fragment frag = new SelectClassFragment();
+                    FragmentManager fragManager = getFragmentManager();
+                    fragManager.beginTransaction().replace(R.id.fragment_container, new SelectClassFragment()).commit();
+                    */
+
+                    //Set the fragment before the move is made
+                    Fragment frag = new SelectClassFragment();
+                    FragmentManager fragManager = getFragmentManager();
+                    android.app.FragmentTransaction fragTrans = fragManager.beginTransaction();
+
+                    /*
+                    //set the bundles
+                    Bundle sendData = new Bundle();
+                    sendData.putIntArray("passAbilityScores", abilityScores);
+                    sendData.putStringArray("passAlignment", alignment);
+                    sendData.putInt("passAlignmentLength", alignmentLength);
+                    sendData.putInt("passSpeed", speed);
+                    sendData.putStringArray("passAbility", ability);
+                    sendData.putInt("passAbilityLength", abilityLength);
+                    sendData.putStringArray("passLanguages", languages);
+                    sendData.putInt("passLanguagesLength", languagesLength);
+                    */
+
+                    //begin transaction with arguments
+                    //frag.setArguments(sendData);
+                    fragTrans.replace(R.id.fragment_container, frag);
+                    fragTrans.addToBackStack(null);
+                    fragTrans.commit();
+
+                }
+            });
+
             //create the layout
             LinearLayout LI = view.findViewById(R.id.racePropertiesLayout);
             LinearLayout.LayoutParams LP = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -85,6 +141,17 @@ public class SelectRacePropertiesFragment extends Fragment {
             chooseLanguageSpinner.setAdapter(languageListAdapter);
 
             LI.addView(chooseLanguageSpinner);
+        }
+        //else takes the user directly to the next page
+        else{
+            //Set the fragment before the move is made
+            Fragment frag = new SelectClassFragment();
+            FragmentManager fragManager = getFragmentManager();
+            android.app.FragmentTransaction fragTrans = fragManager.beginTransaction();
+
+            //begin transaction with arguments
+            fragTrans.replace(R.id.fragment_container, frag);
+            fragTrans.commit();
         }
 
         return view;
