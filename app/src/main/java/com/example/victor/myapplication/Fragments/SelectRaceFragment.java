@@ -1,12 +1,11 @@
 package com.example.victor.myapplication.Fragments;
 
 import android.app.Dialog;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +16,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.victor.myapplication.Classes.Character;
+import com.example.victor.myapplication.Classes.BusProvider;
+import com.example.victor.myapplication.Classes.Race;
 import com.example.victor.myapplication.R;
+import com.squareup.otto.Bus;
+import com.squareup.otto.Produce;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,7 +49,7 @@ public class SelectRaceFragment extends Fragment {
     Button buttonMoreInfo;
     TextView txtvwDisplayText;
     Spinner spinnerRace;
-
+    Bus BUS;
     //Dialog popupTest;
     Dialog testDialog;
     TextView txtvwPassAttributes;
@@ -66,7 +68,7 @@ public class SelectRaceFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view=inflater.inflate(R.layout.fragment_select_race,container,false);
         super.onCreate(savedInstanceState);
-
+        BUS=BusProvider.getInstance();
         //TextView variables
         txtvwDisplayText = (TextView) view.findViewById(R.id.txtvwJSONResultRace);
         txtvwDisplayText.setText("Initial Setting Text");
@@ -424,6 +426,21 @@ public class SelectRaceFragment extends Fragment {
         return internalString;
     }
 
+    //Here is a function that will produce a race.
+    // Pass it a string that holds the name of the race you are trying to pass.
+    // You will want to call it in the format when you switch to the next stage
+    //  BUS.register(this)
+    //  BUS.post(sendRace("RACENAME"))
+    //  BUS.unregister(this)
+    @Produce
+    public Race sendRace(String raceName)
+    {
+        Race race= new Race();
+        race.setRaceName(raceName);
+        return race;
+    }
+
+
     //**********************TEST FUNCTIONS************************
     //Function that will toast out all the global variables
     public void testGlobalValues(){
@@ -466,5 +483,6 @@ public class SelectRaceFragment extends Fragment {
     public int[] getAbilityScores(){
         return new int[]{abilityScores[0], abilityScores[1], abilityScores[2], abilityScores[3], abilityScores[4], abilityScores[5]};
     }
+
 
 }
