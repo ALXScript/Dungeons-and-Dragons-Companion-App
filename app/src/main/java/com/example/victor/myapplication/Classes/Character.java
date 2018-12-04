@@ -83,6 +83,8 @@ public class Character {
         this.raceName=myRace;
         armorClass = 13;
         mySpeed = 30;
+        maxHitPoints=currentHitPoints=10;
+
     }
 
     //Getters................................................................................
