@@ -1,6 +1,7 @@
 package com.example.victor.myapplication.Fragments;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -38,14 +39,13 @@ public class SelectClassPropertiesFragment extends Fragment {
         });
 
         buttonToNameSelection = (Button) view.findViewById(R.id.btnToSelectName);
-     /*   buttonToNameSelection.setOnClickListener(new View.OnClickListener() {
+        buttonToNameSelection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fragManager = getFragmentManager();
                 fragManager.beginTransaction().replace(R.id.fragment_container, new SelectNameFragment()).addToBackStack(null).commit();
             }
         });
-*/
         return view;
     }
 
