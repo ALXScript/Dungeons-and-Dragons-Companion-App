@@ -14,14 +14,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.victor.myapplication.Adapters.AbilityScoreAdapter;
+import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.example.victor.myapplication.Classes.BusProvider;
 import com.example.victor.myapplication.Classes.Character;
 import com.example.victor.myapplication.R;
-import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
-
-import com.example.victor.myapplication.Fragments.SelectRaceFragment;
 
 public class CharacterSheetFragment extends Fragment {
 
@@ -32,7 +30,7 @@ public class CharacterSheetFragment extends Fragment {
     AbilityScoreAdapter abilityScoreAdapter;
     SkillsListAdapter skillsListAdapter;
     String [] abilityScoreNames,skillNames;
-    TextView textViewHitPointValue;
+    TextView textViewHitPointValue, textViewClassName;
     TextView textViewCharacterName;
     String displayHitPoints;
     View view;
@@ -57,6 +55,9 @@ public class CharacterSheetFragment extends Fragment {
 
         textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
         textViewCharacterName.setText(currentPlayerCharacter.getName());
+
+        textViewClassName=view.findViewById(R.id.textViewClassName);
+        textViewClassName.setText(currentPlayerCharacter.getClassName());
         //Load in the ability scores
         //int abilityScores[] = {0,0,0,0,0,0};
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();

@@ -123,7 +123,7 @@
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/contraintLayoutArmorClass"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPassivePerceptionHeader"
+            app:layout_constraintTop_toBottomOf="@+id/textViewClassName"
             app:srcCompat="@drawable/wizard"
             tools:srcCompat="@tools:sample/avatars[5]" />
 
@@ -175,7 +175,7 @@
             app:srcCompat="@drawable/minussign" />
 
         <TextView
-            android:id="@+id/textViewPassivePerceptionHeader"
+            android:id="@+id/textViewClassName"
             android:layout_width="101dp"
 
             android:layout_height="25dp"
@@ -197,7 +197,7 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/banner1"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewMyIcon"
-            app:layout_constraintEnd_toStartOf="@+id/textViewPassivePerceptionHeader"
+            app:layout_constraintEnd_toStartOf="@+id/textViewClassName"
             app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewHealthValue">
