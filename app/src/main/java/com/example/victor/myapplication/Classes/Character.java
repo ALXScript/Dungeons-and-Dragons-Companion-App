@@ -9,6 +9,9 @@ public class Character {
 
     //Stat Variables
     private String name;
+    private String className;
+    private String raceName;
+
     private int currentHitPoints;
 
     private int maxHitPoints;
@@ -124,6 +127,11 @@ public class Character {
         return abilityScoreModifiers;
     }
 
+    public String getClassName()
+    {return className;}
+
+    public String getRaceName()
+    {return raceName;}
     //Setters................................................................................
 
 
