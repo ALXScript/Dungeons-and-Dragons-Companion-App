@@ -5,22 +5,23 @@ public class Character {
     //Imported Classes variables classes
 
 
-    //myRace.setRace();
-
     //Stat Variables
-    private String myName;
+    private String name;
+    private String className;
+    private String raceName;
+
     private int currentHitPoints;
 
     private int maxHitPoints;
 
-    private int myArmorClass;
+    private int armorClass;
     private String myHitDice;
     private int myInitiative;
     private int mySpeed;
     private int currentDeathSaveSuccesses;
     private int currentDeathSaveFailures;
-    //Ability Scores (SDCIWC) Stats
 
+    //Ability Scores (SDCIWC) Stats
     /*Array Legend
     0 - Strength
     1 - Dexterity
@@ -33,6 +34,7 @@ public class Character {
 
     private boolean statInspiration;
     private int statProficiencyBonus;
+
     //Saving Throw Variables
 
     /* Array Legend
@@ -66,36 +68,35 @@ public class Character {
     16 - Stealth (Dex)
     17 - Survival (Wis)
     */
-    private boolean skillProficiencies[] = new boolean[18];
+    private boolean skillProficiencies[] ={ true,false,true,false,false,true,true,true,false,true,false,true,false,true,true,false,true,false};
     private int skills[] = new int[18];
     //Char Creation Variables
 
     private int mySpellBookTable;
     private int myInventoryTable;
 
-    public Character(String myName, int myMaxHealth, int abilityScores[],
-            boolean skillProficiencies[],boolean savingThrowProfs [])
+    public Character(String name, int abilityScores[], String myRace, String myClass)
     {
-        this.myName = myName;
-        this.currentHitPoints=this.maxHitPoints=myMaxHealth;
-        this.abilityScores=abilityScores;
-        this.skillProficiencies =skillProficiencies;
-        this.savingThrowProficiences=savingThrowProfs;
-        myArmorClass=13;
-        mySpeed=30;
+        this.name = name;
+        this.abilityScores = abilityScores;
+        this.className=myClass;
+        this.raceName=myRace;
+        armorClass = 13;
+        mySpeed = 30;
+        maxHitPoints=currentHitPoints=10;
 
-
+        statProficiencyBonus=2;
     }
 
     //Getters................................................................................
-    public String getMyName()
+    public String getName()
     {
-        return myName;
+        return name;
     }
 
-    public int getMyArmorClass()
+    public int getArmorClass()
     {
-        return myArmorClass;
+        return armorClass;
     }
     public int[] getAbilityScores()
     {
@@ -112,20 +113,39 @@ public class Character {
         return maxHitPoints;
     }
 
-    public boolean [] getSkillProficiencies(){return skillProficiencies;}
+    public boolean [] getAllSkillProficiencies(){return skillProficiencies;}
+
+    public int [] getAllSkillModifiers()
+    {
+        int [] abilityScoresModifiers = getAllAbilityScoreModifiers();
+        skills[3]=abilityScoresModifiers[0];
+        skills[0]=skills[15]=skills[16]=abilityScoresModifiers[1];
+        skills[2]=skills[5]=skills[8]=skills[10]=skills[14]=abilityScoresModifiers[3];
+        skills[1]=skills[6]=skills[9]=skills[11]=skills[17]=abilityScoresModifiers[4];
+        skills[4]=skills[7]=skills[12]=skills[13]=abilityScoresModifiers[5];
+
+        for (int i=0;i<18; i++)
+        {
+            if (skillProficiencies[i]) skills[i]+=statProficiencyBonus;
+        }
+        return skills;
+    }
 
     public int [] getAllAbilityScoreModifiers()
     {
-        int abilityScoreModifiers[]=new int [6];
+        int abilityScoreModifiers[]= new int [6];
         for (int i=0; i<6;i++)
         {
             abilityScoreModifiers[i] = (abilityScores[i]-10)/2;
         }
-
-
         return abilityScoreModifiers;
     }
 
+    public String getClassName()
+    {return className;}
+
+    public String getRaceName()
+    {return raceName;}
     //Setters................................................................................
 
 
@@ -134,12 +154,12 @@ public class Character {
     //Functional.............................................................................
     public void increaseCurrentHealth(int healthGained)
     {
-        currentHitPoints +=healthGained;
+        currentHitPoints += healthGained;
         if (currentHitPoints > maxHitPoints) currentHitPoints = maxHitPoints;
     }
     public void decreaseCurrentHealth(int healthLost)
     {
-        currentHitPoints -=healthLost;{
+        currentHitPoints -= healthLost;{
         if (currentHitPoints <0) currentHitPoints =0;
         //TODO Add death handler
         }

@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import com.example.victor.myapplication.Classes.AbilityScoreSender;
 import com.example.victor.myapplication.Classes.BusProvider;
 import com.example.victor.myapplication.Classes.Character;
 import com.example.victor.myapplication.Fragments.DiceFragment;
@@ -25,14 +26,17 @@ import com.example.victor.myapplication.Fragments.AllSpellsFragment;
 import com.example.victor.myapplication.Fragments.CharacterSheetFragment;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Produce;
+import com.squareup.otto.Subscribe;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     public Bus BUS; // I declared it as a variable for easy reference. Not sure if it needs to be public or private
+    public int [] abilityScores = {5,8,10,13,20,15};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -110,15 +114,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public Character sendCharacter ()
     {
         String name="Xanandorf";
-        int maxHitPoints=38;
-        int abilityScores[]={5,8,10,13,20,15};
-        boolean skillProficiencies [] = {true,false,true,false,false,true,true,true,false,true,false,true,false,true,true,false,true,false};
-        boolean savingThrowProficiencies [] = {true,true,false,false,true,false};
-        Character sampleCharacter = new Character(name,maxHitPoints,abilityScores,skillProficiencies,savingThrowProficiencies);
+        Character sampleCharacter = new Character(name,abilityScores,"raceName","className");
 
         return sampleCharacter;
     }
 
+    @Subscribe
+    void setAbilityScores(AbilityScoreSender abilityScoreSender)
+    {
+        abilityScores=abilityScoreSender.getAbilityScores();
+    }
 
 
     @Override
