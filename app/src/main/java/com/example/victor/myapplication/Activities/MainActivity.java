@@ -114,11 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public Character sendCharacter ()
     {
         String name="Xanandorf";
-        int maxHitPoints=38;
-//        int abilityScores[]={5,8,10,13,20,15};
-        boolean skillProficiencies [] = {true,false,true,false,false,true,true,true,false,true,false,true,false,true,true,false,true,false};
-        boolean savingThrowProficiencies [] = {true,true,false,false,true,false};
-        Character sampleCharacter = new Character(name,maxHitPoints,abilityScores,skillProficiencies,savingThrowProficiencies);
+        Character sampleCharacter = new Character(name,abilityScores,"raceName","className");
 
         return sampleCharacter;
     }
