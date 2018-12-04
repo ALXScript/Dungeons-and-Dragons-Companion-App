@@ -14,14 +14,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.victor.myapplication.Adapters.AbilityScoreAdapter;
+import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.example.victor.myapplication.Classes.BusProvider;
 import com.example.victor.myapplication.Classes.Character;
 import com.example.victor.myapplication.R;
-import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
-
-import com.example.victor.myapplication.Fragments.SelectRaceFragment;
 
 public class CharacterSheetFragment extends Fragment {
 
@@ -32,7 +30,7 @@ public class CharacterSheetFragment extends Fragment {
     AbilityScoreAdapter abilityScoreAdapter;
     SkillsListAdapter skillsListAdapter;
     String [] abilityScoreNames,skillNames;
-    TextView textViewHitPointValue;
+    TextView textViewHitPointValue, textViewClassName;
     TextView textViewCharacterName;
     String displayHitPoints;
     View view;
@@ -52,16 +50,21 @@ public class CharacterSheetFragment extends Fragment {
         BUS.register(this);
         int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
 
-        int abilityScores[] = passRaceAttributes.getAbilityScores();
+        int abilityScores[] = currentPlayerCharacter.getAbilityScores();
+        int skillModifiers[] = currentPlayerCharacter.getAllSkillModifiers();
 
         textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
-        textViewCharacterName.setText(currentPlayerCharacter.getMyName());
+        textViewCharacterName.setText(currentPlayerCharacter.getName());
+
+        textViewClassName=view.findViewById(R.id.textViewClassName);
+        textViewClassName.setText(currentPlayerCharacter.getClassName());
         //Load in the ability scores
         //int abilityScores[] = {0,0,0,0,0,0};
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
-        abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.);
         abilityScoreNames = getResources().getStringArray(R.array.AbilityScores);
         abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames,abilityScores,abilityScoreModifiers);
         abilityScoreRecycler.setAdapter(abilityScoreAdapter);
@@ -72,9 +75,10 @@ public class CharacterSheetFragment extends Fragment {
         skillsRecyclerView.setNestedScrollingEnabled(false);
         skillsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         skillNames = getResources().getStringArray(R.array.Skills);
-        boolean skillProficiencies []=currentPlayerCharacter.getSkillProficiencies();
-        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies);
+        boolean skillProficiencies []=currentPlayerCharacter.getAllSkillProficiencies();
+        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies,skillModifiers);
         skillsRecyclerView.setAdapter(skillsListAdapter);
+
 
         //Health bar ..............................................................................
         textViewHitPointValue =view.findViewById(R.id.textViewHealthValue);

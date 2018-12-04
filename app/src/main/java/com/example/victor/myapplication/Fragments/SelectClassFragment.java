@@ -1,9 +1,9 @@
 package com.example.victor.myapplication.Fragments;
 
 import android.app.Dialog;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -16,7 +16,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.victor.myapplication.Classes.BusProvider;
+import com.example.victor.myapplication.Classes.DnDClass;
+import com.example.victor.myapplication.Classes.Race;
 import com.example.victor.myapplication.R;
+import com.squareup.otto.Bus;
+import com.squareup.otto.Produce;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,7 +64,7 @@ public class SelectClassFragment extends Fragment {
     TextView txtvwDisplayText;
     Spinner spinnerClass;
     Button buttonMoreInfo;
-
+    Bus BUS;
     //Dialog popup test
     Dialog testDialog;
     TextView txtvwPassAttributes;
@@ -78,6 +83,7 @@ public class SelectClassFragment extends Fragment {
    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
        View view=inflater.inflate(R.layout.fragment_select_class,container,false);
        super.onCreate(savedInstanceState);
+        BUS=BusProvider.getInstance();
 
         //TextView variables
         txtvwDisplayText = (TextView) view.findViewById(R.id.txtvwJSONResultClass);
@@ -493,6 +499,20 @@ public class SelectClassFragment extends Fragment {
 
         internalString = showSubClasses + strHitDice + strHPLVL1 + strHPHIGHLVL + showProfArmor + showProfWeapons + showProfTools + showProfSaveThrow + showProfSkills + showEquipment;
         return internalString;
+    }
+
+    //Here is a function that will produce a race.
+    // Pass it a string that holds the name of the race you are trying to pass.
+    // You will want to call it in the format when you switch to the next stage
+    //  BUS.register(this)
+    //  BUS.post(sendDnDClass("CLASSNAME"))
+    //  BUS.unregister(this)
+    @Produce
+    public DnDClass sendDnDClass(String className)
+    {
+        DnDClass dnDClass = new DnDClass();
+        dnDClass.setClassName(className);
+        return dnDClass;
     }
 
 }
