@@ -1,29 +1,27 @@
 package com.example.victor.myapplication.Activities;
 
+import android.app.Fragment;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-
-import android.app.Fragment;
-import android.support.v4.app.FragmentManager;
 
 import com.example.victor.myapplication.Classes.AbilityScoreSender;
 import com.example.victor.myapplication.Classes.BusProvider;
 import com.example.victor.myapplication.Classes.Character;
+import com.example.victor.myapplication.Fragments.AllItemsFragment;
+import com.example.victor.myapplication.Fragments.AllSpellsFragment;
+import com.example.victor.myapplication.Fragments.CharacterSheetFragment;
 import com.example.victor.myapplication.Fragments.DiceFragment;
 import com.example.victor.myapplication.Fragments.HomeFragment;
 import com.example.victor.myapplication.Fragments.InventoryFragment;
-import com.example.victor.myapplication.Fragments.AllItemsFragment;
-import com.example.victor.myapplication.R;
 import com.example.victor.myapplication.Fragments.SpellbookFragment;
-import com.example.victor.myapplication.Fragments.AllSpellsFragment;
-import com.example.victor.myapplication.Fragments.CharacterSheetFragment;
+import com.example.victor.myapplication.R;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Produce;
 import com.squareup.otto.Subscribe;
@@ -105,6 +103,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        BUS.unregister(this);
+        super.onDestroy();
     }
 
     //Produce functions for a given even class are called when a different
