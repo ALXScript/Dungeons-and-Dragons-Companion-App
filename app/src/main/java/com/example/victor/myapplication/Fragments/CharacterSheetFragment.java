@@ -55,13 +55,14 @@ public class CharacterSheetFragment extends Fragment {
         int abilityScores[] = passRaceAttributes.getAbilityScores();
 
         textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
-        textViewCharacterName.setText(currentPlayerCharacter.getMyName());
+        textViewCharacterName.setText(currentPlayerCharacter.getName());
         //Load in the ability scores
         //int abilityScores[] = {0,0,0,0,0,0};
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
-        abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.);
         abilityScoreNames = getResources().getStringArray(R.array.AbilityScores);
         abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames,abilityScores,abilityScoreModifiers);
         abilityScoreRecycler.setAdapter(abilityScoreAdapter);
@@ -72,9 +73,10 @@ public class CharacterSheetFragment extends Fragment {
         skillsRecyclerView.setNestedScrollingEnabled(false);
         skillsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         skillNames = getResources().getStringArray(R.array.Skills);
-        boolean skillProficiencies []=currentPlayerCharacter.getSkillProficiencies();
+        boolean skillProficiencies []=currentPlayerCharacter.getAllSkillProficiencies();
         skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies);
         skillsRecyclerView.setAdapter(skillsListAdapter);
+
 
         //Health bar ..............................................................................
         textViewHitPointValue =view.findViewById(R.id.textViewHealthValue);

@@ -1,13 +1,11 @@
 <resources>
     <string name="app_name">DnD Companion</string>
-    <string name="charCreat">Create Char</string>
-    <string name="selChar">Select Char</string>
+    <string name="charCreat">Create Character</string>
+    <string name="selChar">Select Character</string>
     <string name="diceRoll">Roll Dice</string>
 
 
-
     <string name="stats">Stats</string>
-
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -21,6 +19,14 @@
         <item>Wis</item>
         <item>Cha</item>
     </string-array>
+
+    <string name="AbilityScoreName">Ability Score Name</string>
+    <string name = "Strength">Strength</string>
+    <string name = "Dexterity">Dexterity</string>
+    <string name = "Constitution">Constitution</string>
+    <string name = "Intelligence">Intelligence</string>
+    <string name = "Wisdom">Wisdom</string>
+    <string name = "Charisma">Charisma</string>
 
     <string-array name="Skills">
         <item>Acrobatics</item>
@@ -103,7 +109,6 @@
     <string name="database">Database</string>
 
 
-
     <string name="close">(X)</string>
 
     <string name="enterName">enter name</string>
@@ -119,7 +124,6 @@
 
     <string name="spells">Spells</string>
     <string name="spellBook">Spell Book</string>
-
 
 
     <string name="areYouSure">Are you sure?</string>

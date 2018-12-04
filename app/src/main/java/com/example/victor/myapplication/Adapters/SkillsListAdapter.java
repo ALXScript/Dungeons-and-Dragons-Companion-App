@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.example.victor.myapplication.R;
 
@@ -42,12 +43,14 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
     public void onBindViewHolder(@NonNull SkillListViewHolder skillListViewHolder, int i) {
 
 
-        String s1 = String.format("%1$-" + 20 + "s", skillNames[i]);
-        String s2 = String.format("%1$-" + 20 + "s", skillNames[i+9],"width");
-        s1+="+1";
-        s2+="+4";
-        skillListViewHolder.leftSkillsRadioButton.setText(s1);
-        skillListViewHolder.rightSkillsRadioButton.setText(s2);
+        String leftSkillName = skillNames[i];
+        String rightSkillName = skillNames[i+9];
+        String leftSkillModifier ="+1";
+        String rightSkillModifier ="+4";
+        skillListViewHolder.leftSkillsRadioButton.setText(leftSkillModifier);
+        skillListViewHolder.leftSkillsTextView.setText(leftSkillName);
+        skillListViewHolder.rightSkillsRadioButton.setText(rightSkillModifier);
+        skillListViewHolder.rightSkillsTextView.setText(rightSkillName);
         if(skillProficiencies[i])
             skillListViewHolder.leftSkillsRadioButton.setChecked(true);
         if(skillProficiencies[i+9])
@@ -64,12 +67,14 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
     //The View holder is a single instance of the layout used in the recycler.
     public class SkillListViewHolder extends RecyclerView.ViewHolder{
         RadioButton leftSkillsRadioButton,rightSkillsRadioButton;
-
+        TextView leftSkillsTextView, rightSkillsTextView;
         public SkillListViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            leftSkillsRadioButton= itemView.findViewById(R.id.leftSkillsRadioButton);
-            rightSkillsRadioButton= itemView.findViewById(R.id.rightSkillsRadioButton);
+            leftSkillsRadioButton = itemView.findViewById(R.id.leftSkillsRadioButton);
+            rightSkillsRadioButton = itemView.findViewById(R.id.rightSkillsRadioButton);
+            leftSkillsTextView =itemView.findViewById(R.id.leftSkillTextView);
+            rightSkillsTextView = itemView.findViewById(R.id.rightSkillTextView);
         }
     }
 
