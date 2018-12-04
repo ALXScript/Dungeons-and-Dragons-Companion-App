@@ -55,12 +55,12 @@ public class SpellbookFragment extends Fragment {
 
         myDialog = new Dialog(getContext()); //for spell infospellbook popup
 
-        getIDFromListView();
+        getSlugFromListView();
 
         return view;
     }
 
-    private void getSpellInfo(int id, Dialog myDialog) {
+    private void getSpellInfo(String slug, Dialog myDialog) {
         Cursor data = myDatabaseAccess.getSpellsData();
 
         spellSource = (TextView) myDialog.findViewById(R.id.spellSourceTextView);
@@ -70,7 +70,7 @@ public class SpellbookFragment extends Fragment {
         spellCount = (TextView) myDialog.findViewById(R.id.spellCountTextView);
 
         while (data.moveToNext()) {
-            if (data.getInt(0) == id) {
+            if (slug.equals(data.getString(0))) {
                 spellSource.setText(data.getString(3));
                 spellType.setText(data.getString(4));
                 spellDesc.setText(data.getString(2));
@@ -78,28 +78,32 @@ public class SpellbookFragment extends Fragment {
             }
         }
 
-        spellCount.setText("QTY: " + Integer.toString(myDatabaseAccess.getExistingSpellCount(id)));
+        data.close();
+
+        spellCount.setText("QTY: " + Integer.toString(myDatabaseAccess.getExistingSpellCount(slug)));
     }
 
-    private void getIDFromListView() {
+    private void getSlugFromListView() {
         //set an onItemClickListener to the ListView
         spellbookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 String name = adapterView.getItemAtPosition(i).toString();
 
-                Cursor data = myDatabaseAccess.getSpellIDSpells(name); //get the id associated with that name
-                int spellID = -1;
+                Cursor data = myDatabaseAccess.getSpellSlugSpells(name); //get the slug associated with that name
+                String spellSlug = "_";
 
                 while (data.moveToNext()) {
-                    spellID = data.getInt(0);
+                    spellSlug = data.getString(0);
                 }
 
-                if (spellID > -1) {
+                data.close();
+
+                if (spellSlug != "_") {
 
                     myDialog.setContentView(R.layout.popup_spellinfospellbook);
 
-                    getSpellInfo(spellID, myDialog);
+                    getSpellInfo(spellSlug, myDialog);
 
                     removeSpellBttn = (Button) myDialog.findViewById(R.id.spellRemoveSpellbookBtn);
                     closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
@@ -111,19 +115,19 @@ public class SpellbookFragment extends Fragment {
                         }
                     });
 
-                    final int finalSpellID = spellID;
+                    final String finalSpellSlug = spellSlug;
                     removeSpellBttn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            int spellCount = myDatabaseAccess.getExistingSpellCount(finalSpellID);
+                            int spellCount = myDatabaseAccess.getExistingSpellCount(finalSpellSlug);
 
                             if(spellCount > 1) {
-                                myDatabaseAccess.removeFromSpellbooksCount(finalSpellID, spellCount-1); //remove 1 from count
-                                getSpellInfo(finalSpellID, myDialog);
+                                myDatabaseAccess.removeFromSpellbooksCount(finalSpellSlug, spellCount-1); //remove 1 from count
+                                getSpellInfo(finalSpellSlug, myDialog);
                             }
 
                             else {
-                                myDatabaseAccess.deleteItemFromSpellbook(finalSpellID);
+                                myDatabaseAccess.deleteItemFromSpellbook(finalSpellSlug);
                                 adapter.remove(adapter.getItem(i));
                                 adapter.notifyDataSetChanged();
                                 myDialog.dismiss();

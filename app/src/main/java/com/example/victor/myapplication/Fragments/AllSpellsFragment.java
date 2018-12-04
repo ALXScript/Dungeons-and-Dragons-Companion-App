@@ -70,7 +70,7 @@ public class AllSpellsFragment extends Fragment {
 
         myDialog = new Dialog(getContext()); //Used for spell info popup
 
-        getIDFromListView(); //Based on spell clicked in listview
+        getNameFromListView(); //Based on spell clicked in listview
 
         createSpellDialog = new Dialog(getContext()); //Used for create spell popup
 
@@ -145,7 +145,7 @@ public class AllSpellsFragment extends Fragment {
         }
     }
 
-    private void getSpellInfo(int id, Dialog myDialog) {
+    private void getSpellInfo(String slug, Dialog myDialog) {
         Cursor data = myDatabaseAccess.getSpellsData();
 
         spellSource = (TextView) myDialog.findViewById(R.id.spellSourceTextView);
@@ -153,29 +153,32 @@ public class AllSpellsFragment extends Fragment {
         spellDesc = (TextView) myDialog.findViewById(R.id.spellDescTextView);
         spellNameTextView = (TextView) myDialog.findViewById(R.id.spellNameTextView);
 
-
-        while (data.moveToNext()) {
-            if(data.getInt(0) == id)
+        while(data.moveToNext())
+        {
+            if(slug.equals(data.getString(0)))
             {
-                spellSource.setText(data.getString(3));
-                spellType.setText(data.getString(4));
+                spellSource.setText(data.getString(4));
+                spellType.setText(data.getString(13));
                 spellDesc.setText(data.getString(2));
                 spellNameTextView.setText(data.getString(1));
             }
         }
+
+        data.close();
     }
 
-    private void addSpellToSpellbooks(int charID, int spellID)
+
+    private void addSpellToSpellbooks(int charID, String spellSlug)
     {
         boolean inSpellbook;
         int spellCount;
 
-        inSpellbook = myDatabaseAccess.isSpellinSpellbook(spellID);
+        inSpellbook = myDatabaseAccess.isSpellinSpellbook(spellSlug);
 
 
         if(inSpellbook == false) {    //item not in inventories list yet
 
-            boolean spellbooksAdded = myDatabaseAccess.addToSpellbooks(charID, spellID, 1);
+            boolean spellbooksAdded = myDatabaseAccess.addToSpellbooks(charID, spellSlug, 1);
 
             if(spellbooksAdded) {
                 toastMessage("Spell added to spellbook!");
@@ -186,31 +189,33 @@ public class AllSpellsFragment extends Fragment {
         }
 
         else {
-            spellCount = myDatabaseAccess.getExistingSpellCount(spellID);
-            myDatabaseAccess.addToSpellbooksCount(spellID, spellCount+1); //add one to spellCount
+            spellCount = myDatabaseAccess.getExistingSpellCount(spellSlug);
+            myDatabaseAccess.addToSpellbooksCount(spellSlug, spellCount+1); //add one to spellCount
             toastMessage("Updated QTY of spell!");
         }
     }
 
-    private void getIDFromListView() {
+    private void getNameFromListView() {
         //set an onItemClickListener to the ListView
         spellsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 String name = adapterView.getItemAtPosition(i).toString();
 
-                Cursor data = myDatabaseAccess.getSpellIDSpells(name); //get the id associated with that name
-                int spellID = -1;
+                Cursor data = myDatabaseAccess.getSpellSlugSpells(name); //get the slug associated with that name
+                String spellSlug = "_";
 
                 while(data.moveToNext()){
-                    spellID = data.getInt(0);
+                    spellSlug = data.getString(0);
                 }
 
-                if(spellID > -1){
+                data.close();
 
-                    myDialog.setContentView(R.layout.popup_spellinfo); //popup for item info
+                if(spellSlug != "_"){
 
-                    getSpellInfo(spellID, myDialog);
+                    myDialog.setContentView(R.layout.popup_spellinfo); //popup for spell info
+
+                    getSpellInfo(spellSlug, myDialog);
 
                     addSpellBttn = (Button) myDialog.findViewById(R.id.spellAddBtn);
                     closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
@@ -223,11 +228,11 @@ public class AllSpellsFragment extends Fragment {
                         }
                     });
 
-                    final int finalspellID = spellID;
+                    final String finalSpellSlug = spellSlug;
                     addSpellBttn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            addSpellToSpellbooks(1, finalspellID);
+                            addSpellToSpellbooks(1, finalSpellSlug);
                         }
                     });
 
@@ -244,7 +249,7 @@ public class AllSpellsFragment extends Fragment {
                             yesAreYouSureBtn.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    myDatabaseAccess.deleteSpellFromSpells(finalspellID);
+                                    myDatabaseAccess.deleteSpellFromSpells(finalSpellSlug);
                                     adapter.remove(adapter.getItem(i));
                                     adapter.notifyDataSetChanged();
                                     areYouSureDialog.dismiss();
@@ -268,7 +273,7 @@ public class AllSpellsFragment extends Fragment {
                 }
 
                 else{
-                    toastMessage("No ID associated with that name");
+                    toastMessage("No slug associated with that name");
                 }
 
             }
