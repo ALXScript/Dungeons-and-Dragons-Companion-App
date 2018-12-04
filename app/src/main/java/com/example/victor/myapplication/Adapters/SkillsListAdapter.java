@@ -18,11 +18,11 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
     boolean [] skillProficiencies;
     int [] skillModifiers;
     //Constructor
-    public SkillsListAdapter(Context myContext, String[] skillStrings,boolean [] skillProficiencies){
+    public SkillsListAdapter(Context myContext, String[] skillStrings,boolean [] skillProficiencies, int [] skillModifiers){
         this.myContext = myContext;
         skillNames = skillStrings;
         this.skillProficiencies=skillProficiencies;
-//        this.skillModifiers=skillModifiers;
+        this.skillModifiers=skillModifiers;
     }
 
 
@@ -45,8 +45,20 @@ public class SkillsListAdapter extends RecyclerView.Adapter<SkillsListAdapter.Sk
 
         String leftSkillName = skillNames[i];
         String rightSkillName = skillNames[i+9];
-        String leftSkillModifier ="+1";
-        String rightSkillModifier ="+4";
+        int left = skillModifiers[i];
+        int right = skillModifiers[i+9];
+        String leftSkillModifier="";
+        String rightSkillModifier="";
+        if(left>=0)
+        {
+            leftSkillModifier ="+";
+        }
+        if(right>=0)
+        {
+            rightSkillModifier ="+";
+        }
+        leftSkillModifier+=Integer.toString(left);
+        rightSkillModifier+=Integer.toString(right);
         skillListViewHolder.leftSkillsRadioButton.setText(leftSkillModifier);
         skillListViewHolder.leftSkillsTextView.setText(leftSkillName);
         skillListViewHolder.rightSkillsRadioButton.setText(rightSkillModifier);

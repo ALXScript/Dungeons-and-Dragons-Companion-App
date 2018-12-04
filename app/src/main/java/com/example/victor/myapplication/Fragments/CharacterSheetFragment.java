@@ -52,7 +52,8 @@ public class CharacterSheetFragment extends Fragment {
         BUS.register(this);
         int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
 
-        int abilityScores[] = passRaceAttributes.getAbilityScores();
+        int abilityScores[] = currentPlayerCharacter.getAbilityScores();
+        int skillModifiers[] = currentPlayerCharacter.getAllSkillModifiers();
 
         textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
         textViewCharacterName.setText(currentPlayerCharacter.getName());
@@ -74,7 +75,7 @@ public class CharacterSheetFragment extends Fragment {
         skillsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         skillNames = getResources().getStringArray(R.array.Skills);
         boolean skillProficiencies []=currentPlayerCharacter.getAllSkillProficiencies();
-        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies);
+        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies,skillModifiers);
         skillsRecyclerView.setAdapter(skillsListAdapter);
 
 
