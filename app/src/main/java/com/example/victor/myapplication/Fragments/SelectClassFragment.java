@@ -123,13 +123,13 @@ public class SelectClassFragment extends Fragment {
             }
         });
 
+        //Register the BUS
+        BUS.register(this);
 
         buttonToClassProperties = (Button) view.findViewById(R.id.btnToClassPropertiesFragment);
         buttonToClassProperties.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //Register the BUS
-                BUS.register(this);
 
                 //Post to the BUS before transfering fragments
                 className=busClassName;
