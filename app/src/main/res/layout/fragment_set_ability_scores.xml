@@ -266,20 +266,22 @@
 
     <Button
         android:id="@+id/buttonGoToSelectClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
-        android:text="Prev"
+        android:background="@drawable/left_arrow_24dp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewSetAbilityScoresHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewSetAbilityScoresHeader" />
 
     <Button
         android:id="@+id/buttonGoToEnterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginEnd="8dp"
-        android:text="NEXT"
+        android:background="@drawable/right_arrow_24dp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewSetAbilityScoresHeader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewSetAbilityScoresHeader" />

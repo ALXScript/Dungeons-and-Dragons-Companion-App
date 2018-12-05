@@ -112,7 +112,9 @@ public class SelectClassFragment extends Fragment {
         buttonToRaceProperties.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().onBackPressed();
+                //getActivity().onBackPressed();
+                //getFragmentManager().removeOnBackStackChangedListener(super.this);
+                getFragmentManager().popBackStack();
             }
         });
 
