@@ -28,18 +28,20 @@
             android:icon="@drawable/ic_widgets_black_24dp"
             android:title="@string/rollDice" />
     </group>
+
     <item android:title="@string/database">
+
         <menu>
-            <item
-                android:id="@+id/nav_items"
-                android:icon="@drawable/ic_local_library_black_24dp"
-                android:title="@string/items" />
-            <item
-                android:id="@+id/nav_spells"
-                android:icon="@drawable/ic_local_library_black_24dp"
-                android:title="@string/spells" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_items"
+                    android:icon="@drawable/ic_local_library_black_24dp"
+                    android:title="@string/items" />
+                <item
+                    android:id="@+id/nav_spells"
+                    android:icon="@drawable/ic_local_library_black_24dp"
+                    android:title="@string/spells" />
+            </group>
         </menu>
     </item>
-
-
 </menu>

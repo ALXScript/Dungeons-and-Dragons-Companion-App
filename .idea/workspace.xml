@@ -13,7 +13,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac22607e-4232-4f9d-992c-8d0c2129c351" name="Default" comment="">
+    <list default="true" id="cc095677-a869-443c-88ca-fee2aef5b9bf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -23,8 +23,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DnD-Companion-App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DnD-Companion-App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_diceroller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_diceroller.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/drawer_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/drawer_menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -52,30 +56,12 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SelectClassFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="fragment_diceroller.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_diceroller.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="123" column="11" lean-forward="true" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectNameFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectNameFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_select_name.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_name.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+            <state relative-caret-position="190">
+              <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -83,20 +69,62 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="drawer_menu.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer_menu.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="632">
+              <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiceFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2244">
+              <caret line="24" column="75" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectClassFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1530">
+              <caret line="73" column="60" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="local.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="272">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="1190">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
@@ -142,7 +170,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="XandersBranch" />
       </map>
     </option>
   </component>
@@ -2405,8 +2433,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/SpellsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/InventoryFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/SpellbookFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/popup_spellinfospellbook.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/popup_iteminfoinventory.xml" />
@@ -2450,20 +2476,22 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRacePropertiesFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassPropertiesFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectNameFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SetAbilityScoresFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/BusProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java" />
-        <option value="$PROJECT_DIR$/local.properties" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_diceroller.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/drawer_menu.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="148" />
-    <option name="y" value="46" />
-    <option name="width" value="2232" />
-    <option name="height" value="1754" />
+    <option name="x" value="1920" />
+    <option name="y" value="43" />
+    <option name="width" value="3200" />
+    <option name="height" value="1757" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -2471,12 +2499,51 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
+      <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
+              <item name="DnD-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="DnD-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="DnD-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="myapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DnD-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="myapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Fragments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DnD-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="DnD-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="DnD-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="DnD-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -2502,49 +2569,23 @@
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="Dungeons-and-Dragons-Companion-App" type="cbb8eebc:String" user="Dungeons-and-Dragons-Companion-App" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="res" type="cbb8eebc:String" user="res" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="DnD-Companion-App" type="cbb8eebc:String" user="DnD-Companion-App" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="DnD-Companion-App" type="cbb8eebc:String" user="DnD-Companion-App" />
-              <item name="DnD-Companion-App" type="cbb8eebc:String" user="DnD-Companion-App" />
+              <item name="Dungeons-and-Dragons-Companion-App" type="cbb8eebc:String" user="Dungeons-and-Dragons-Companion-App" />
+              <item name="Dungeons-and-Dragons-Companion-App" type="cbb8eebc:String" user="Dungeons-and-Dragons-Companion-App" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView">
+      <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
-              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="Dungeons-and-Dragons-Companion-App" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -2555,7 +2596,7 @@
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SearchEverywhereHistoryKey" value="set&#9;FILE&#9;file:///home/victor/AndroidStudioProjects/DnD-Companion-App/app/src/main/java/com/example/victor/myapplication/Fragments/SetAbilityScoresFragment.java&#10;fragment&#9;FILE&#9;file:///home/xander/AndroidStudioProjects/DND/app/src/main/res/layout/fragment_stats.xml" />
-    <property name="device.picker.selection" value="Nexus_7_2012_API_28" />
+    <property name="device.picker.selection" value="Pixel_XL_API_28" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -2847,7 +2888,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543980714171</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="&#10;actually fixed bugs">
+      <created>1543982006334</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1543982006334</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2860,7 +2908,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="-6" width="1451" height="1013" extended-state="6" />
+    <frame x="1920" y="43" width="3200" height="1757" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
@@ -2874,54 +2922,31 @@
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32915717" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4935275" weight="0.32934782" />
-      <window_info anchor="bottom" id="Logcat" order="8" weight="0.41116172" />
-      <window_info id="Captures" order="5" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27207467" />
-      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.49676377" weight="0.078587696" />
-      <window_info anchor="right" id="Gradle" order="6" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Device File Explorer" order="9" side_tool="true" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50323623" side_tool="true" weight="0.32608697" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2901671" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Flutter Inspector" order="8" />
-      <window_info anchor="right" id="Preview" order="10" weight="0.40618336" />
-      <window_info id="Build Variants" order="2" side_tool="true" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4935275" weight="0.32934782" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="bottom" id="Logcat" order="8" weight="0.52689654" />
-      <window_info anchor="right" id="Device File Explorer" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.047586676" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" />
-      <window_info anchor="right" id="Flutter Outline" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32915717" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32934782" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.49676377" weight="0.31611148" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4978678" visible="true" weight="0.32717392" />
       <window_info id="Captures" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24582262" />
+      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.49676377" visible="true" weight="0.31543168" />
+      <window_info anchor="right" id="Gradle" order="6" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Device File Explorer" order="9" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.047586676" />
+      <window_info anchor="right" id="Flutter Inspector" order="8" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4978678" visible="true" weight="0.32717392" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Flutter Outline" order="3" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.49676377" weight="0.31611148" />
+      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.49676377" visible="true" weight="0.32608697" />
       <window_info id="Designer" order="3" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -2930,30 +2955,30 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Flutter Inspector" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" />
+      <window_info id="Captures" order="5" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50323623" side_tool="true" weight="0.32608697" />
       <window_info anchor="right" id="Preview" order="10" weight="0.40618336" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
       <window_info anchor="right" id="Device File Explorer" order="9" side_tool="true" />
-      <window_info id="Captures" order="5" />
-      <window_info anchor="bottom" id="Logcat" order="8" weight="0.52689654" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32915717" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4935275" weight="0.32934782" />
+      <window_info anchor="bottom" id="Logcat" order="8" weight="0.8921875" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3296875" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4935275" weight="0.3296875" />
       <window_info anchor="right" id="Gradle" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2901671" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17910448" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4978678" visible="true" weight="0.32717392" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32934782" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3296875" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.047586676" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2983,44 +3008,7 @@
     <MESSAGE value="&#10;actually fixed bugs" />
     <option name="LAST_COMMIT_MESSAGE" value="&#10;actually fixed bugs" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java</url>
-          <line>92</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="24" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/JSONs/ClassJSONs/Cleric.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/JSONs/RaceJSONs/Elf.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_inventory.xml">
-      <provider editor-type-id="text-editor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_iteminfoinventory.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -3111,16 +3099,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_createcharacter.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -3166,16 +3144,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectName.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_name.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_name.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -3259,7 +3228,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/app/FragmentManager.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/app/FragmentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="1307" selection-start-line="1307" selection-end-line="1307" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/AllSpellsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -3288,7 +3263,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/os/Looper.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/os/Looper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/InventoryFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="761">
@@ -3296,13 +3277,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/d0243779b4a848dfd91dee553f047b77/jars/classes.jar!/android/support/v4/app/FragmentManagerImpl.class" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/d0243779b4a848dfd91dee553f047b77/jars/classes.jar!/android/support/v4/app/Fragment.class" />
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/app/Fragment.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/MainActivity.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/d0243779b4a848dfd91dee553f047b77/jars/classes.jar!/android/support/v4/app/FragmentManagerImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="534">
+          <caret line="821" selection-start-line="821" selection-end-line="821" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/d0243779b4a848dfd91dee553f047b77/jars/classes.jar!/android/support/v4/app/Fragment.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-456">
+          <caret line="1141" selection-start-line="1141" selection-end-line="1141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/app/Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="2521" selection-start-line="2521" selection-end-line="2521" />
         </state>
       </provider>
     </entry>
@@ -3322,26 +3314,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="101" column="26" selection-start-line="100" selection-end-line="101" selection-end-column="26" />
-          <folding>
-            <element signature="method#toastMessage#0;class#SelectRaceFragment#0" />
-            <element signature="method#loadJSONFromAsset#0;class#SelectRaceFragment#0" />
-            <element signature="method#parse_JSON#0;class#SelectRaceFragment#0" />
-            <element signature="method#addItemsToSpinner#0;class#SelectRaceFragment#0" />
-            <element signature="method#disableButton#0;class#SelectRaceFragment#0" />
-            <element signature="method#enableButton#0;class#SelectRaceFragment#0" />
-            <element signature="method#callPopup#0;class#SelectRaceFragment#0" />
-            <element signature="method#internalJSONRace#0;class#SelectRaceFragment#0" />
-            <element signature="method#testGlobalValues#0;class#SelectRaceFragment#0" />
-          </folding>
+        <state relative-caret-position="2448">
+          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectNameFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="297">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -3361,26 +3342,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        <state relative-caret-position="741">
+          <caret line="125" column="65" selection-start-line="125" selection-start-column="65" selection-end-line="125" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local.properties">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="1190">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectClassFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="123" column="11" lean-forward="true" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
+        <state relative-caret-position="1530">
+          <caret line="73" column="60" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2244">
+          <caret line="24" column="75" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_diceroller.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
   </component>
