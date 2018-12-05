@@ -38,7 +38,7 @@ public class SelectRaceFragment extends Fragment {
     String ability[] = new String[10];
     String abilityDescription[] = new String[10];
     String languages[] = new String[16];
-
+    String raceName="NA";
     //Get lengths for all global variables
     int alignmentLength;
     int abilityLength;
@@ -64,7 +64,7 @@ public class SelectRaceFragment extends Fragment {
     ArrayAdapter<String> raceListAdapter;
 
     //define the bus Race object
-    String busRaceName;
+    String busRaceName="NA";
 
 
     @Nullable
@@ -114,7 +114,8 @@ public class SelectRaceFragment extends Fragment {
                 BUS.register(this);
 
                 //Send the Race Name to the BUS
-                BUS.post(sendRace(busRaceName));
+                raceName = busRaceName;
+                BUS.post(sendRace());
 
                 //Unregister the BUS
 //                BUS.unregister(this);
@@ -463,7 +464,7 @@ public class SelectRaceFragment extends Fragment {
     //  BUS.post(sendRace("RACENAME"))
     //  BUS.unregister(this)
     @Produce
-    public Race sendRace(String raceName)
+    public Race sendRace()
     {
         Race race= new Race();
         race.setRaceName(raceName);

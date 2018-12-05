@@ -45,7 +45,7 @@ public class SelectClassFragment extends Fragment {
     String equipmentChoices[] = new String[10];
     String equipmentChoicesInternal[][][] = new String[10][10][10];
     String subClasses[] = new String[10];
-
+    String className="NA";
     //get lengths for all global variables
     int profArmorLength;
     int profWeaponsLength;
@@ -79,7 +79,7 @@ public class SelectClassFragment extends Fragment {
     ArrayAdapter<String> classListAdapter;
 
     //bus variables
-    String busClassName;
+    String busClassName="NA";
 
     @Nullable
     @Override
@@ -132,7 +132,8 @@ public class SelectClassFragment extends Fragment {
                 BUS.register(this);
 
                 //Post to the BUS before transfering fragments
-                BUS.post(sendDnDClass(busClassName));
+                className=busClassName;
+                BUS.post(sendDnDClass());
 
                 //Unregister the BUS
 //                BUS.unregister(this);
@@ -537,7 +538,7 @@ public class SelectClassFragment extends Fragment {
     //  BUS.post(sendDnDClass("CLASSNAME"))
     //  BUS.unregister(this)
     @Produce
-    public DnDClass sendDnDClass(String className)
+    public DnDClass sendDnDClass()
     {
         DnDClass dnDClass = new DnDClass();
         dnDClass.setClassName(className);

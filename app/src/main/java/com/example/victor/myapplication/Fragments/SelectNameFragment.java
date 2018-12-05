@@ -30,6 +30,7 @@ public class SelectNameFragment extends Fragment {
     Race race;
     String name,raceName,className;
     int [] abilityScores={0,0,0,0,0,0};
+    Character newCharacter;
     //AbilityScoreSender abilityScores;
     Bus BUS;
     @Nullable
@@ -44,7 +45,7 @@ public class SelectNameFragment extends Fragment {
 
         //Get Instance of the BUS
         BUS = BusProvider.getInstance();
-
+        BUS.register(this);
         //Define Variables
         editTextCharacterName = view.findViewById(R.id.editTextCharacterName);
 
@@ -66,13 +67,11 @@ public class SelectNameFragment extends Fragment {
                 name = editTextCharacterName.getText().toString();
 
                 //Register the BUS
-                BUS.register(this);
+//                BUS.register(this);
 
-                //Create a new instance of a character, using the parameters from the Posterboard on the BUS
-                Character newCharacter = new Character(name, abilityScores, raceName, className);
 
                 //Post the character we just created to the BUS
-                BUS.post(sendCharacter(newCharacter));
+                BUS.post(sendCharacter());
 
 //                BUS.unregister(this);
 
@@ -104,20 +103,23 @@ public class SelectNameFragment extends Fragment {
     @Subscribe
     public void getClass(DnDClass dnDClass)
     {
-        className=dnDClass.getClassName();
+        className = dnDClass.getClassName();
     }
     @Subscribe void getRace (Race race)
     {
-        raceName=race.getRaceName();
+        raceName = race.getRaceName();
     }
     @Subscribe void getAbilityScores(AbilityScoreSender abilityScoreSender)
     { abilityScores=abilityScoreSender.getAbilityScores();}
     //This is the produce function. It takes in an already created charater
     //Make sure you call it while the BUS is registered and inside a BUS.post()
     @Produce
-    public Character sendCharacter (Character character)
+    public Character sendCharacter ()
     {
-        return character;
+        //Create a new instance of a character, using the parameters from the Posterboard on the BUS
+        Character newCharacter = new Character(name, abilityScores, raceName, className);
+
+        return newCharacter;
     }
 }
 

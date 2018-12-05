@@ -170,7 +170,7 @@ public class SetAbilityScoresFragment extends Fragment {
                 BUS.register(this);
 
                 //Send the ability scores to the BUS
-                BUS.post(sendAbilityScores(abilityScores));
+                BUS.post(sendAbilityScores());
 
                 //Unregister the BUS
 //                BUS.unregister(this);
@@ -205,7 +205,7 @@ public class SetAbilityScoresFragment extends Fragment {
 //    I should make sure that all the values are valid first.
 //    the procedure is to register with the BUS. Post the producing function Then unregistering.
     @Produce
-    AbilityScoreSender sendAbilityScores(int [] abilityScores)
+    AbilityScoreSender sendAbilityScores()
     {
         AbilityScoreSender abilityScoreSender = new AbilityScoreSender(abilityScores);
         return abilityScoreSender;
