@@ -105,12 +105,12 @@ public class SelectNameFragment extends Fragment {
         className = dnDClass.getClassName();
     }
     @Subscribe
-    void getRace (Race race)
+    public void getRace (Race race)
     {
         raceName = race.getRaceName();
     }
     @Subscribe
-    void getAbilityScores(AbilityScoreSender abilityScoreSender)
+    public void getAbilityScores(AbilityScoreSender abilityScoreSender)
     { abilityScores = abilityScoreSender.getAbilityScores();}
     //This is the produce function. It takes in an already created charater
     //Make sure you call it while the BUS is registered and inside a BUS.post()
@@ -123,5 +123,3 @@ public class SelectNameFragment extends Fragment {
         return newCharacter;
     }
 }
-
-
