@@ -59,7 +59,6 @@ public class SelectClassFragment extends Fragment {
 
 
     //variables
-    Button buttonToRaceProperties;
     Button buttonToClassProperties;
     TextView txtvwDisplayText;
     Spinner spinnerClass;
@@ -112,17 +111,6 @@ public class SelectClassFragment extends Fragment {
         });
 
 
-        //button variables
-        buttonToRaceProperties = (Button) view.findViewById(R.id.btnToRacePropertiesFragment);
-        buttonToRaceProperties.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //getActivity().onBackPressed();
-                //getFragmentManager().removeOnBackStackChangedListener(super.this);
-                getFragmentManager().popBackStack();
-            }
-        });
-
         //Register the BUS
         BUS.register(this);
 
@@ -139,8 +127,20 @@ public class SelectClassFragment extends Fragment {
 //                BUS.unregister(this);
 
                 //go to class properties fragment
+                Fragment frag = new SelectClassPropertiesFragment();
                 FragmentManager fragManager = getFragmentManager();
-                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectClassPropertiesFragment()).commit();
+                android.app.FragmentTransaction fragTrans = fragManager.beginTransaction();
+
+                //Set the Bundle
+                Bundle sendData = new Bundle();
+                sendData.putInt("subClassLength", subClassLength);
+                sendData.putStringArray("subClasses", subClasses);
+
+                frag.setArguments(sendData);
+                fragTrans.replace(R.id.fragment_container, frag);
+                fragTrans.commit();
+
+                //fragManager.beginTransaction().replace(R.id.fragment_container, new SelectClassPropertiesFragment()).commit();
             }
         });
 
@@ -327,65 +327,78 @@ public class SelectClassFragment extends Fragment {
             case "Nothing Selected":
                 txtvwDisplayText.setText("Nothing Selected");
                 disableButton(buttonMoreInfo);
+                disableButton(buttonToClassProperties);
                 break;
             case "Barbarian":
                 readAndParse("JSONs/ClassJSONs/Barbarian.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Barbarian";
                 break;
             case "Bard":
                 readAndParse("JSONs/ClassJSONs/Bard.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Bard";
                 break;
             case "Cleric":
                 readAndParse("JSONs/ClassJSONs/Cleric.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Cleric";
                 break;
             case "Druid":
                 readAndParse("JSONs/ClassJSONs/Druid.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Druid";
                 break;
             case "Fighter":
                 readAndParse("JSONs/ClassJSONs/Fighter.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Fighter";
                 break;
             case "Monk":
                 readAndParse("JSONs/ClassJSONs/Monk.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Monk";
                 break;
             case "Paladin":
                 readAndParse("JSONs/ClassJSONs/Paladin.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Paladin";
                 break;
             case "Ranger":
                 readAndParse("JSONs/ClassJSONs/Ranger.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Ranger";
                 break;
             case "Rogue":
                 readAndParse("JSONs/ClassJSONs/Rogue.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Rogue";
                 break;
             case "Sorcerer":
                 readAndParse("JSONs/ClassJSONs/Sorcerer.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Sorcerer";
                 break;
             case "Warlock":
                 readAndParse("JSONs/ClassJSONs/Warlock.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Warlock";
                 break;
             case "Wizard":
                 readAndParse("JSONs/ClassJSONs/Wizard.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClassProperties);
                 busClassName = "Wizard";
                 break;
         }

@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -40,7 +41,6 @@ public class SelectRacePropertiesFragment extends Fragment {
     ArrayAdapter<String> languageListAdapter;
 
     //Get the button
-    Button buttonToRace;
     Button buttonToClass;
 
     @Nullable
@@ -66,18 +66,7 @@ public class SelectRacePropertiesFragment extends Fragment {
         //Generation based off of Abilities goes here
 
         //Generation based off of languages goes here
-        if (checkLanguages(languages, languagesLength)){
-            //button variables
-            buttonToRace = (Button) view.findViewById(R.id.btnToRaceFragment);
-            buttonToRace.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v){
-                    //getActivity().onBackPressed();
-                    getFragmentManager().popBackStack();
-                }
-            });
-
-
+        if (checkLanguages(languages, languagesLength)) {
             //button variables
             buttonToClass = (Button) view.findViewById(R.id.btnToSelectClass);
             buttonToClass.setOnClickListener(new View.OnClickListener() {
@@ -135,9 +124,8 @@ public class SelectRacePropertiesFragment extends Fragment {
             chooseLanguageSpinner.setAdapter(languageListAdapter);
 
             LI.addView(chooseLanguageSpinner);
-        }
-        //else takes the user directly to the next page
-        else{
+            //else takes the user directly to the next page
+        }else{
             //Set the fragment before the move is made
             Fragment frag = new SelectClassFragment();
             FragmentManager fragManager = getFragmentManager();
@@ -225,5 +213,17 @@ public class SelectRacePropertiesFragment extends Fragment {
     public void toastMessage(String message){
         //Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    //Function that makes a button invisible and disabled
+    public void disableButton(Button passButton){
+        passButton.setEnabled(false);
+        passButton.setVisibility(View.GONE);
+    }
+
+    //Function that makes a button visible and enabled
+    public void enableButton(Button passButton){
+        passButton.setEnabled(true);
+        passButton.setVisibility(View.VISIBLE);
     }
 }

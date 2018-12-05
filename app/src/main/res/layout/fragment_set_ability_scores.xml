@@ -265,17 +265,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <Button
-        android:id="@+id/buttonGoToSelectClass"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/left_arrow_24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewSetAbilityScoresHeader"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewSetAbilityScoresHeader" />
-
-    <Button
         android:id="@+id/buttonGoToEnterName"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="32dp"
@@ -290,12 +279,13 @@
         android:id="@+id/textViewSetAbilityScoresHeader"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
         android:text="Enter Your Ability Scores"
         app:layout_constraintEnd_toStartOf="@+id/buttonGoToEnterName"
-        app:layout_constraintStart_toEndOf="@+id/buttonGoToSelectClass"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -24,7 +24,7 @@ import com.squareup.otto.Subscribe;
 
 public class SelectNameFragment extends Fragment {
 
-    Button buttonToClassProperties, buttonCreateCharacter;
+    Button buttonCreateCharacter;
     EditText editTextCharacterName;
     DnDClass dnDClass;
     Race race;
@@ -48,15 +48,6 @@ public class SelectNameFragment extends Fragment {
         BUS.register(this);
         //Define Variables
         editTextCharacterName = view.findViewById(R.id.editTextCharacterName);
-
-        //Button to go back to Class Properties Fragment
-        buttonToClassProperties = (Button) view.findViewById(R.id.btnToClassPropertiesFragment);
-        buttonToClassProperties.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
 
         //Button to Create Character (essentially finish the process of creating a character atm)
         buttonCreateCharacter = view.findViewById(R.id.btnCreateCharacter);

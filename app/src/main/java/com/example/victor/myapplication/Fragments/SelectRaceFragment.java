@@ -285,6 +285,7 @@ public class SelectRaceFragment extends Fragment {
             case "Nothing Selected":
                 txtvwDisplayText.setText("Nothing Selected");
                 disableButton(buttonMoreInfo);
+                disableButton(buttonToClass);
                 break;
             /*case "Dwarf":
                 readAndParse("JSONs/RaceJSONs/Dwarf.json");
@@ -292,11 +293,13 @@ public class SelectRaceFragment extends Fragment {
             case "Hill Dwarf":
                 readAndParse("JSONs/RaceJSONs/Dwarf_Hill.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Hill Dwarf";
                 break;
             case "Mountain Dwarf":
                 readAndParse("JSONs/RaceJSONs/Dwarf_Mountain.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Mountain Dwarf";
                 break;
             /*case "Elf":
@@ -305,16 +308,19 @@ public class SelectRaceFragment extends Fragment {
             case "High Elf":
                 readAndParse("JSONs/RaceJSONs/Elf_High_Elf.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "High Elf";
                 break;
             case "Wood Elf":
                 readAndParse("JSONs/RaceJSONs/Elf_Wood_Elf.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Wood Elf";
                 break;
             case "Dark Elf (Drow)":
                 readAndParse("JSONs/RaceJSONs/Elf_Dark_Elf_Drow.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Dark Elf";
                 break;
             /*case "Halfling":
@@ -323,21 +329,25 @@ public class SelectRaceFragment extends Fragment {
             case "Lightfoot Halfling":
                 readAndParse("JSONs/RaceJSONs/Halfling_Lightfoot.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Lightfoot Halfling";
                 break;
             case "Stout Halfling":
                 readAndParse("JSONs/RaceJSONs/Halfling_Stout.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Stout Halfling";
                 break;
             case "Human":
                 readAndParse("JSONs/RaceJSONs/Human.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Human";
                 break;
             case "Dragonborn":
                 readAndParse("JSONs/RaceJSONs/Dragonborn.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Dragonborn";
                 break;
             /*case "Gnome":
@@ -346,26 +356,31 @@ public class SelectRaceFragment extends Fragment {
             case "Forest Gnome":
                 readAndParse("JSONs/RaceJSONs/Gnome_Forest_Gnome.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Forest Gnome";
                 break;
             case "Rock Gnome":
                 readAndParse("JSONs/RaceJSONs/Gnome_Rock_Gnome.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Rock Gnome";
                 break;
             case "Half-Elf":
                 readAndParse("JSONs/RaceJSONs/Half-Elf.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Half-Elf";
                 break;
             case "Half-Orc":
                 readAndParse("JSONs/RaceJSONs/Half-Orc.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Half-Orc";
                 break;
             case "Tiefling":
                 readAndParse("JSONs/RaceJSONs/Tiefling.json");
                 enableButton(buttonMoreInfo);
+                enableButton(buttonToClass);
                 busRaceName = "Tiefling";
                 break;
         }

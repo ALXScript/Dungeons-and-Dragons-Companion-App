@@ -28,7 +28,7 @@ import com.squareup.otto.Produce;
 public class SetAbilityScoresFragment extends Fragment {
 
     EditText editTextStr,editTextDex,editTextCon,editTextInt,editTextWis,editTextCha;
-    Button buttonCalculateModifiers, buttonGoToSelectClass, buttonGoToSelectName;
+    Button buttonCalculateModifiers, buttonGoToSelectName;
     TextView textViewStrModifier, textViewDexModifier, textViewConModifier, textViewIntModifier, textViewWisModifier, textViewChaModifier;
     boolean validInput;
     Bus BUS;
@@ -41,6 +41,7 @@ public class SetAbilityScoresFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_set_ability_scores, container, false);
         super.onCreate(savedInstanceState);
+
 
         //Get the Instance of the BUS
         BUS=BusProvider.getInstance();
@@ -61,7 +62,7 @@ public class SetAbilityScoresFragment extends Fragment {
         textViewIntModifier = view.findViewById(R.id.textViewIntModifier);
         textViewWisModifier= view.findViewById(R.id.textViewWisModifier);
         textViewChaModifier = view.findViewById(R.id.textViewChaModifier);
-
+        buttonGoToSelectName = view.findViewById(R.id.buttonGoToEnterName);
 
 
         buttonCalculateModifiers.setOnClickListener(new View.OnClickListener() {
@@ -158,6 +159,9 @@ public class SetAbilityScoresFragment extends Fragment {
                 BUS.post(sendAbilityScores(abilityScores));
                 BUS.unregister(this);
                 */
+
+                //enable button after calculating
+                enableButton(buttonGoToSelectName);
             }
         });//end OnClickListener
 
@@ -165,7 +169,6 @@ public class SetAbilityScoresFragment extends Fragment {
         BUS.register(this);
 
         //Go to Set Name
-        buttonGoToSelectName = (Button) view.findViewById(R.id.buttonGoToEnterName);
         buttonGoToSelectName.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -182,15 +185,8 @@ public class SetAbilityScoresFragment extends Fragment {
             }
         });
 
-        buttonGoToSelectClass = (Button) view.findViewById(R.id.buttonGoToSelectClass);
-        buttonGoToSelectClass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-                //getFragmentManager().removeOnBackStackChangedListener(super.this);
-                //getFragmentManager().popBackStack();
-            }
-        });
+        //disable the button to proceed
+        disableButton(buttonGoToSelectName);
 
 
 
@@ -198,6 +194,17 @@ public class SetAbilityScoresFragment extends Fragment {
     }//end OnCreateView
 
 
+    //Function that makes a button invisible and disabled
+    public void disableButton(Button passButton){
+        passButton.setEnabled(false);
+        passButton.setVisibility(View.GONE);
+    }
+
+    //Function that makes a button visible and enabled
+    public void enableButton(Button passButton){
+        passButton.setEnabled(true);
+        passButton.setVisibility(View.VISIBLE);
+    }
 
 
 //
