@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnToSelectName"
+        android:id="@+id/btnToSetAbilityScores"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="32dp"
         android:layout_height="32dp"

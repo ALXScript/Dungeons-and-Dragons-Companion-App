@@ -20,7 +20,7 @@ import com.example.victor.myapplication.R;
 public class SelectClassPropertiesFragment extends Fragment {
 
     Button buttonToSelectClass;
-    Button buttonToNameSelection;
+    Button buttonToSetAbilityScores;
 
     @Nullable
     @Override
@@ -38,12 +38,12 @@ public class SelectClassPropertiesFragment extends Fragment {
             }
         });
 
-        buttonToNameSelection = (Button) view.findViewById(R.id.btnToSelectName);
-        buttonToNameSelection.setOnClickListener(new View.OnClickListener() {
+        buttonToSetAbilityScores = (Button) view.findViewById(R.id.btnToSetAbilityScores);
+        buttonToSetAbilityScores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fragManager = getFragmentManager();
-                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectNameFragment()).addToBackStack(null).commit();
+                fragManager.beginTransaction().replace(R.id.fragment_container, new SetAbilityScoresFragment()).addToBackStack(null).commit();
             }
         });
         return view;

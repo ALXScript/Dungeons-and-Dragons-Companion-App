@@ -20,7 +20,6 @@ import com.squareup.otto.Produce;
 import com.squareup.otto.Subscribe;
 
 public class SelectNameFragment extends Fragment {
-
     Button buttonToClassProperties;
     DnDClass dnDClass;
     Race race;
@@ -41,8 +40,6 @@ public class SelectNameFragment extends Fragment {
                 getActivity().onBackPressed();
             }
         });
-
-
         return view;
     }
 
@@ -53,8 +50,7 @@ public class SelectNameFragment extends Fragment {
     //Then create a charater using these variables
     //Then call BUS.post(sendCharacter("CREATED CHARACTER"));
     //BUS.unregister(this);
-    @Subscribe
-    public void getClass(DnDClass dnDClass)
+    @Subscribe public void getClass(DnDClass dnDClass)
     {
         this.dnDClass=dnDClass;
     }
@@ -66,14 +62,11 @@ public class SelectNameFragment extends Fragment {
     {
         this.abilityScores=abilityScoreSender.getAbilityScores();
     }
+
     //This is the produce function. It takes in an already created charater
     //Make sure you call it while the BUS is registered and inside a BUS.post()
     @Produce
-    public Character sendCharacter (Character character)
-    {
-
-        return character;
-    }
+    public Character sendCharacter (Character character) {return character;}
 }
 
 

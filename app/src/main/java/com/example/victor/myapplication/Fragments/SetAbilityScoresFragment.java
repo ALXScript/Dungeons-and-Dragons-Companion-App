@@ -1,5 +1,6 @@
 package com.example.victor.myapplication.Fragments;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -157,6 +158,26 @@ public class SetAbilityScoresFragment extends Fragment {
                 BUS.unregister(this);
             }
         });//end OnClickListener
+
+        //Go to Set Name
+        buttonGoToSelectName = (Button) view.findViewById(R.id.buttonGoToEnterName);
+        buttonGoToSelectName.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragManager = getFragmentManager();
+                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectNameFragment()).addToBackStack(null).commit();
+            }
+        });
+
+        buttonGoToSelectClass = (Button) view.findViewById(R.id.buttonGoToSelectClass);
+        buttonGoToSelectClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+                //getFragmentManager().removeOnBackStackChangedListener(super.this);
+                //getFragmentManager().popBackStack();
+            }
+        });
 
 
 

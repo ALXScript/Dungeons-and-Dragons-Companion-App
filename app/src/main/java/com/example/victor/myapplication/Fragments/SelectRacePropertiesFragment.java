@@ -46,8 +46,6 @@ public class SelectRacePropertiesFragment extends Fragment {
     Button buttonToRace;
     Button buttonToClass;
 
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -73,13 +71,12 @@ public class SelectRacePropertiesFragment extends Fragment {
         //Generation based off of languages goes here
         if (checkLanguages(languages, languagesLength)){
             //button variables
-
-
             buttonToRace = (Button) view.findViewById(R.id.btnToRaceFragment);
             buttonToRace.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v){
-                    getActivity().onBackPressed();
+                    //getActivity().onBackPressed();
+                    getFragmentManager().popBackStack();
                 }
             });
 
@@ -166,15 +163,13 @@ public class SelectRacePropertiesFragment extends Fragment {
 
     //Function that checks if there are language choosables
     boolean checkLanguages(String passLanguages[], int passLangLength){
+        boolean checker = false;
         for (int i = 0; i < passLangLength; i++){
             if (passLanguages[i].equals("Extra")){
-                return true;
-            }
-            else{
-
+                checker = true;
             }
         }
-        return false;
+        return checker;
     }
 
     //**************GENERATOR FUNCTIONS****************
