@@ -111,15 +111,12 @@ public class SelectNameFragment extends Fragment {
         raceName=race.getRaceName();
     }
     @Subscribe void getAbilityScores(AbilityScoreSender abilityScoreSender)
-    {
-        this.abilityScores=abilityScoreSender.getAbilityScores();
-    }
+    { abilityScores=abilityScoreSender.getAbilityScores();}
     //This is the produce function. It takes in an already created charater
     //Make sure you call it while the BUS is registered and inside a BUS.post()
     @Produce
     public Character sendCharacter (Character character)
     {
-
         return character;
     }
 }

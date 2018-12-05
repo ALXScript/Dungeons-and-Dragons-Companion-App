@@ -12,11 +12,13 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.victor.myapplication.Adapters.AbilityScoreAdapter;
 import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.example.victor.myapplication.Classes.BusProvider;
 import com.example.victor.myapplication.Classes.Character;
+import com.example.victor.myapplication.Classes.DnDClass;
 import com.example.victor.myapplication.R;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
@@ -37,25 +39,29 @@ public class CharacterSheetFragment extends Fragment {
     int skillModifiers[]= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     int abilityScores[] = {0,0,0,0,0,0};
     int [] abilityScoreModifiers={0,0,0,0,0,0};
+    String name = "NA";
+    String className="NA";
+    boolean skillProficiencies[];
+
 
     int currentHitPoints;
     int maxHitPoints =0;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        int skillModifiers[] = currentPlayerCharacter.getAllSkillModifiers();
+
         view = inflater.inflate(R.layout.fragment_character_sheet, container, false);
 
         //Used to load PlayerCharacter
         BUS = BusProvider.getInstance();
         BUS.register(this);
 
-
-        textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
-        textViewCharacterName.setText(currentPlayerCharacter.getName());
+//        toastMessage("Im in");
+        textViewCharacterName = view.findViewById(R.id.textViewCharacterName);
+        textViewCharacterName.setText(name);
 
         textViewClassName=view.findViewById(R.id.textViewClassName);
-        textViewClassName.setText(currentPlayerCharacter.getClassName());
+        textViewClassName.setText(className);
 
         //Load in the ability scores
 //        //int abilityScores[] = {0,0,0,0,0,0};
@@ -74,7 +80,6 @@ public class CharacterSheetFragment extends Fragment {
         skillsRecyclerView.setNestedScrollingEnabled(false);
         skillsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         skillNames = getResources().getStringArray(R.array.Skills);
-        boolean skillProficiencies []=currentPlayerCharacter.getAllSkillProficiencies();
         skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies,skillModifiers);
         skillsRecyclerView.setAdapter(skillsListAdapter);
 
@@ -85,8 +90,11 @@ public class CharacterSheetFragment extends Fragment {
         buttonIncreaseHitPoints =view.findViewById(R.id.buttonIncreaseHealth);
 
         //Initialize Health Bar Values
-        currentHitPoints = currentPlayerCharacter.getCurrentHitPoints();
-        maxHitPoints = currentPlayerCharacter.getMaxHitPoints();
+        if (currentPlayerCharacter!=null) {
+            currentHitPoints = currentPlayerCharacter.getCurrentHitPoints();
+            maxHitPoints = currentPlayerCharacter.getMaxHitPoints();
+        }
+        else{currentHitPoints=maxHitPoints=100;}
         progressBar = view.findViewById(R.id.progressBar);
         progressBar.setMax(maxHitPoints);
         progressBar.setProgress(currentHitPoints);
@@ -137,10 +145,20 @@ public class CharacterSheetFragment extends Fragment {
     @Subscribe
     public void getCharacter(Character sampleCharacter)
     {
+        toastMessage("CHARACTER AQUIRED");
         currentPlayerCharacter = sampleCharacter;
         abilityScores=currentPlayerCharacter.getAbilityScores();
         abilityScoreModifiers=currentPlayerCharacter.getAllAbilityScoreModifiers();
         skillModifiers=currentPlayerCharacter.getAllSkillModifiers();
+        skillProficiencies=currentPlayerCharacter.getAllSkillProficiencies();
+    }
 
+    @Subscribe
+    public void getClass (DnDClass dnDClass)
+    {
+        className=dnDClass.getClassName();
+    }
+    private void toastMessage(String message) {
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }
