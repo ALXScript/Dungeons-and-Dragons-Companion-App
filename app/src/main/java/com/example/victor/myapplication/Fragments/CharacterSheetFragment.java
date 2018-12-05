@@ -30,13 +30,10 @@ public class CharacterSheetFragment extends Fragment {
     AbilityScoreAdapter abilityScoreAdapter;
     SkillsListAdapter skillsListAdapter;
     String [] abilityScoreNames,skillNames;
-    TextView textViewHitPointValue, textViewClassName;
-    TextView textViewCharacterName;
+    TextView textViewHitPointValue, textViewClassName, textViewCharacterName;
     String displayHitPoints;
     View view;
     Bus BUS;
-
-    SelectRaceFragment passRaceAttributes;
 
     int currentHitPoints;
     int maxHitPoints =0;
@@ -48,9 +45,9 @@ public class CharacterSheetFragment extends Fragment {
         //Used to load PlayerCharacter
         BUS = BusProvider.getInstance();
         BUS.register(this);
-        int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
 
         int abilityScores[] = currentPlayerCharacter.getAbilityScores();
+        int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
         int skillModifiers[] = currentPlayerCharacter.getAllSkillModifiers();
 
         textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
@@ -58,6 +55,7 @@ public class CharacterSheetFragment extends Fragment {
 
         textViewClassName=view.findViewById(R.id.textViewClassName);
         textViewClassName.setText(currentPlayerCharacter.getClassName());
+
         //Load in the ability scores
         //int abilityScores[] = {0,0,0,0,0,0};
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
@@ -105,8 +103,6 @@ public class CharacterSheetFragment extends Fragment {
                     currentHitPoints =progressBar.getProgress();
                     displayHitPoints = (Integer.toString(currentHitPoints)+ "/" + Integer.toString(maxHitPoints));
                     textViewHitPointValue.setText(displayHitPoints);
-
-
                 }
             }
         });
@@ -140,7 +136,7 @@ public class CharacterSheetFragment extends Fragment {
     @Subscribe
     public void getCharacter(Character sampleCharacter)
     {
-        currentPlayerCharacter=sampleCharacter;
+        currentPlayerCharacter = sampleCharacter;
 
     }
 }
