@@ -85,6 +85,7 @@ public class Character {
         mySpeed = 30;
         maxHitPoints=currentHitPoints=10;
 
+        statProficiencyBonus=2;
     }
 
     //Getters................................................................................
