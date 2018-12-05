@@ -57,11 +57,9 @@ public class CharacterSheetFragment extends Fragment {
         textViewClassName=view.findViewById(R.id.textViewClassName);
         textViewClassName.setText(currentPlayerCharacter.getClassName());
 
-        int abilityScores[] = {0,0,0,0,0,0};
-        int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
         //Load in the ability scores
-        //int abilityScores[] = {0,0,0,0,0,0};
-        if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
+//        //int abilityScores[] = {0,0,0,0,0,0};
+//        if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
         abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
