@@ -43,7 +43,7 @@ public class SelectClassPropertiesFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fragManager = getFragmentManager();
-                fragManager.beginTransaction().replace(R.id.fragment_container, new SetAbilityScoresFragment()).addToBackStack(null).commit();
+                fragManager.beginTransaction().replace(R.id.fragment_container, new SetAbilityScoresFragment()).commit();
             }
         });
         return view;

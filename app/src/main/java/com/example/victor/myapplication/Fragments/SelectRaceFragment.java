@@ -63,12 +63,19 @@ public class SelectRaceFragment extends Fragment {
     String [] stringRaceList;
     ArrayAdapter<String> raceListAdapter;
 
+    //define the bus Race object
+    String busRaceName;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view=inflater.inflate(R.layout.fragment_select_race,container,false);
         super.onCreate(savedInstanceState);
+
+        //Get the instance of the bus
         BUS=BusProvider.getInstance();
+
         //TextView variables
         txtvwDisplayText = (TextView) view.findViewById(R.id.txtvwJSONResultRace);
         txtvwDisplayText.setText("Initial Setting Text");
@@ -103,6 +110,15 @@ public class SelectRaceFragment extends Fragment {
                 FragmentManager fragManager = getFragmentManager();
                 fragManager.beginTransaction().replace(R.id.fragment_container, new SelectClassFragment()).commit();
                 */
+                //Register the BUS
+                BUS.register(this);
+
+                //Send the Race Name to the BUS
+                BUS.post(sendRace(busRaceName));
+
+                //Unregister the BUS
+//                BUS.unregister(this);
+
 
                 //Set the fragment before the move is made
                 Fragment frag = new SelectRacePropertiesFragment();
@@ -123,7 +139,7 @@ public class SelectRaceFragment extends Fragment {
                 //begin transaction with arguments
                 frag.setArguments(sendData);
                 fragTrans.replace(R.id.fragment_container, frag);
-                fragTrans.addToBackStack(null);
+//                fragTrans.addToBackStack(null);
                 fragTrans.commit();
 
             }
@@ -275,10 +291,12 @@ public class SelectRaceFragment extends Fragment {
             case "Hill Dwarf":
                 readAndParse("JSONs/RaceJSONs/Dwarf_Hill.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Hill Dwarf";
                 break;
             case "Mountain Dwarf":
                 readAndParse("JSONs/RaceJSONs/Dwarf_Mountain.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Mountain Dwarf";
                 break;
             /*case "Elf":
                 readAndParse("JSONs/RaceJSONs/Elf.json");
@@ -286,14 +304,17 @@ public class SelectRaceFragment extends Fragment {
             case "High Elf":
                 readAndParse("JSONs/RaceJSONs/Elf_High_Elf.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "High Elf";
                 break;
             case "Wood Elf":
                 readAndParse("JSONs/RaceJSONs/Elf_Wood_Elf.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Wood Elf";
                 break;
             case "Dark Elf (Drow)":
                 readAndParse("JSONs/RaceJSONs/Elf_Dark_Elf_Drow.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Dark Elf";
                 break;
             /*case "Halfling":
                 readAndParse("JSONs/RaceJSONs/Halfling.json");
@@ -301,18 +322,22 @@ public class SelectRaceFragment extends Fragment {
             case "Lightfoot Halfling":
                 readAndParse("JSONs/RaceJSONs/Halfling_Lightfoot.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Lightfoot Halfling";
                 break;
             case "Stout Halfling":
                 readAndParse("JSONs/RaceJSONs/Halfling_Stout.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Stout Halfling";
                 break;
             case "Human":
                 readAndParse("JSONs/RaceJSONs/Human.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Human";
                 break;
             case "Dragonborn":
                 readAndParse("JSONs/RaceJSONs/Dragonborn.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Dragonborn";
                 break;
             /*case "Gnome":
                 readAndParse("JSONs/RaceJSONs/Gnome.json");
@@ -320,22 +345,27 @@ public class SelectRaceFragment extends Fragment {
             case "Forest Gnome":
                 readAndParse("JSONs/RaceJSONs/Gnome_Forest_Gnome.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Forest Gnome";
                 break;
             case "Rock Gnome":
                 readAndParse("JSONs/RaceJSONs/Gnome_Rock_Gnome.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Rock Gnome";
                 break;
             case "Half-Elf":
                 readAndParse("JSONs/RaceJSONs/Half-Elf.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Half-Elf";
                 break;
             case "Half-Orc":
                 readAndParse("JSONs/RaceJSONs/Half-Orc.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Half-Orc";
                 break;
             case "Tiefling":
                 readAndParse("JSONs/RaceJSONs/Tiefling.json");
                 enableButton(buttonMoreInfo);
+                busRaceName = "Tiefling";
                 break;
         }
     }

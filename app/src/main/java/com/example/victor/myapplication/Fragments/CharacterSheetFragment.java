@@ -34,21 +34,22 @@ public class CharacterSheetFragment extends Fragment {
     String displayHitPoints;
     View view;
     Bus BUS;
+    int skillModifiers[]= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    int abilityScores[] = {0,0,0,0,0,0};
+    int [] abilityScoreModifiers={0,0,0,0,0,0};
 
     int currentHitPoints;
     int maxHitPoints =0;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        int skillModifiers[] = currentPlayerCharacter.getAllSkillModifiers();
         view = inflater.inflate(R.layout.fragment_character_sheet, container, false);
 
         //Used to load PlayerCharacter
         BUS = BusProvider.getInstance();
         BUS.register(this);
 
-        int abilityScores[] = currentPlayerCharacter.getAbilityScores();
-        int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
-        int skillModifiers[] = currentPlayerCharacter.getAllSkillModifiers();
 
         textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
         textViewCharacterName.setText(currentPlayerCharacter.getName());
@@ -56,6 +57,8 @@ public class CharacterSheetFragment extends Fragment {
         textViewClassName=view.findViewById(R.id.textViewClassName);
         textViewClassName.setText(currentPlayerCharacter.getClassName());
 
+        int abilityScores[] = {0,0,0,0,0,0};
+        int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
         //Load in the ability scores
         //int abilityScores[] = {0,0,0,0,0,0};
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
@@ -137,6 +140,9 @@ public class CharacterSheetFragment extends Fragment {
     public void getCharacter(Character sampleCharacter)
     {
         currentPlayerCharacter = sampleCharacter;
+        abilityScores=currentPlayerCharacter.getAbilityScores();
+        abilityScoreModifiers=currentPlayerCharacter.getAllAbilityScoreModifiers();
+        skillModifiers=currentPlayerCharacter.getAllSkillModifiers();
 
     }
 }

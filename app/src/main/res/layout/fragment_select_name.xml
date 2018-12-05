@@ -16,7 +16,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/left_arrow_24dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/editTextCharacterName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.164" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextCharacterName"
         android:layout_width="285dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"

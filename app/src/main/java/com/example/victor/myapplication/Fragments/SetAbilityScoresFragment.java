@@ -1,17 +1,14 @@
 package com.example.victor.myapplication.Fragments;
 
-import android.app.FragmentManager;
-import android.content.Context;
-import android.net.Uri;
-import android.os.Bundle;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.victor.myapplication.Classes.AbilityScoreSender;
 import com.example.victor.myapplication.Classes.BusProvider;
@@ -44,7 +41,10 @@ public class SetAbilityScoresFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_set_ability_scores, container, false);
         super.onCreate(savedInstanceState);
+
+        //Get the Instance of the BUS
         BUS=BusProvider.getInstance();
+
         //Initialize the text views. A lot of this should be moved to a recycler view but this is a
         //'fast' n sloppy implementation
         validInput=false;
@@ -153,9 +153,11 @@ public class SetAbilityScoresFragment extends Fragment {
                 {
                     //Toast.makeText(getActivity(),"There were errors!",Toast.LENGTH_SHORT).show();
                 }
+                /*
                 BUS.register(this);
                 BUS.post(sendAbilityScores(abilityScores));
                 BUS.unregister(this);
+                */
             }
         });//end OnClickListener
 
@@ -164,8 +166,18 @@ public class SetAbilityScoresFragment extends Fragment {
         buttonGoToSelectName.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                //Register the bus
+                BUS.register(this);
+
+                //Send the ability scores to the BUS
+                BUS.post(sendAbilityScores(abilityScores));
+
+                //Unregister the BUS
+//                BUS.unregister(this);
+
+                //Transfer to Select Name Fragment
                 FragmentManager fragManager = getFragmentManager();
-                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectNameFragment()).addToBackStack(null).commit();
+                fragManager.beginTransaction().replace(R.id.fragment_container, new SelectNameFragment()).commit();
             }
         });
 

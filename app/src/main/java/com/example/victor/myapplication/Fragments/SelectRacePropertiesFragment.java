@@ -1,21 +1,18 @@
 package com.example.victor.myapplication.Fragments;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.view.View;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.example.victor.myapplication.R;
 
@@ -114,7 +111,7 @@ public class SelectRacePropertiesFragment extends Fragment {
                     //begin transaction with arguments
                     //frag.setArguments(sendData);
                     fragTrans.replace(R.id.fragment_container, frag);
-                    fragTrans.addToBackStack(null);
+//                    fragTrans.addToBackStack(null);
                     fragTrans.commit();
 
                 }
