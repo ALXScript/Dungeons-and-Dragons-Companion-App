@@ -29,7 +29,7 @@ public class SelectNameFragment extends Fragment {
     DnDClass dnDClass;
     Race race;
     String name,raceName,className;
-    int [] abilityScores={0,0,0,0,0,0};
+    int [] abilityScores = {0,0,0,0,0,0};
     Character newCharacter;
     //AbilityScoreSender abilityScores;
     Bus BUS;
@@ -66,8 +66,7 @@ public class SelectNameFragment extends Fragment {
                 //Get the name from the editText box
                 name = editTextCharacterName.getText().toString();
 
-                //Register the BUS
-//                BUS.register(this);
+
 
 
                 //Post the character we just created to the BUS
@@ -105,12 +104,14 @@ public class SelectNameFragment extends Fragment {
     {
         className = dnDClass.getClassName();
     }
-    @Subscribe void getRace (Race race)
+    @Subscribe
+    void getRace (Race race)
     {
         raceName = race.getRaceName();
     }
-    @Subscribe void getAbilityScores(AbilityScoreSender abilityScoreSender)
-    { abilityScores=abilityScoreSender.getAbilityScores();}
+    @Subscribe
+    void getAbilityScores(AbilityScoreSender abilityScoreSender)
+    { abilityScores = abilityScoreSender.getAbilityScores();}
     //This is the produce function. It takes in an already created charater
     //Make sure you call it while the BUS is registered and inside a BUS.post()
     @Produce

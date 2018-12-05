@@ -161,13 +161,14 @@ public class SetAbilityScoresFragment extends Fragment {
             }
         });//end OnClickListener
 
+        //Register the bus
+        BUS.register(this);
+
         //Go to Set Name
         buttonGoToSelectName = (Button) view.findViewById(R.id.buttonGoToEnterName);
         buttonGoToSelectName.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //Register the bus
-                BUS.register(this);
 
                 //Send the ability scores to the BUS
                 BUS.post(sendAbilityScores());

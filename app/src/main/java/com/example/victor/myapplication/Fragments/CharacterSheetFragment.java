@@ -37,10 +37,11 @@ public class CharacterSheetFragment extends Fragment {
     View view;
     Bus BUS;
     int skillModifiers[]= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    int abilityScores[] = {0,0,0,0,0,0};
+    int abilityScores[] = {10,10,10,10,10,10};
     int [] abilityScoreModifiers={0,0,0,0,0,0};
     String name = "NA";
-    String className="NA";
+    String className="Bard";//TODO FIX ME
+    //FIXME WOW
     boolean skillProficiencies[];
 
 
@@ -64,8 +65,7 @@ public class CharacterSheetFragment extends Fragment {
         textViewClassName.setText(className);
 
         //Load in the ability scores
-//        //int abilityScores[] = {0,0,0,0,0,0};
-//        if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
+        if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
         abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
@@ -82,7 +82,6 @@ public class CharacterSheetFragment extends Fragment {
         skillNames = getResources().getStringArray(R.array.Skills);
         skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies,skillModifiers);
         skillsRecyclerView.setAdapter(skillsListAdapter);
-
 
         //Health bar ..............................................................................
         textViewHitPointValue =view.findViewById(R.id.textViewHealthValue);
@@ -147,10 +146,14 @@ public class CharacterSheetFragment extends Fragment {
     {
         toastMessage("CHARACTER AQUIRED");
         currentPlayerCharacter = sampleCharacter;
-        abilityScores=currentPlayerCharacter.getAbilityScores();
+        abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreModifiers=currentPlayerCharacter.getAllAbilityScoreModifiers();
         skillModifiers=currentPlayerCharacter.getAllSkillModifiers();
         skillProficiencies=currentPlayerCharacter.getAllSkillProficiencies();
+        name=currentPlayerCharacter.getName();
+        maxHitPoints=currentPlayerCharacter.getMaxHitPoints();
+        currentHitPoints=currentPlayerCharacter.getCurrentHitPoints();
+        className=currentPlayerCharacter.getClassName();
     }
 
     @Subscribe
