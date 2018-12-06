@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.victor.myapplication.R;
@@ -54,6 +55,11 @@ public class SelectClassPropertiesFragment extends Fragment {
         //create the layout
         LinearLayout LI = view.findViewById(R.id.classLinearLayout);
         LinearLayout.LayoutParams LP = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        //add the textView
+        TextView textViewChooseSubclass = new TextView(getActivity());
+        textViewChooseSubclass.setText("Please choose a Sub Class:");
+        LI.addView(textViewChooseSubclass);
 
         //make the Radio Buttons
         RadioGroup l1 = new RadioGroup(this.getActivity());
