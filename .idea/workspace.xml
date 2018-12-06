@@ -14,19 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac22607e-4232-4f9d-992c-8d0c2129c351" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/Race.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -58,19 +47,44 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
-              <caret line="1" column="56" lean-forward="true" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
+              <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav_header.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav_header.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+            <state relative-caret-position="252">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
+                <element signature="e#690#708#0" expanded="true" />
                 <element signature="e#908#934#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CharacterSheetFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_character_sheet.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -2405,7 +2419,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class_properties.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_name.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_select_class.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectNameFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/CharacterDataPasser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/DatabaseAccess.java" />
@@ -2428,11 +2441,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SpellbookFragment.java" />
         <option value="$PROJECT_DIR$/local.properties" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Classes/Race.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/DiceFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml" />
       </list>
     </option>
   </component>
@@ -2534,6 +2548,12 @@
               <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="Fragments" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
               <item name="Dungeons-and-Dragons-Companion-App" type="1abcf292:AndroidViewProjectNode" />
@@ -2888,7 +2908,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544122709190</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Minor Edits">
+      <created>1544123584918</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1544123584918</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3000,7 +3027,8 @@
     <MESSAGE value="&#10;trying to fix bugs" />
     <MESSAGE value="&#10;actually fixed bugs" />
     <MESSAGE value="Reformatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformatting" />
+    <MESSAGE value="Minor Edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Edits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3133,16 +3161,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="41" column="50" selection-start-line="36" selection-start-column="8" selection-end-line="41" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="3474">
-          <caret line="193" column="39" selection-start-line="193" selection-start-column="39" selection-end-line="193" selection-end-column="39" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3302,16 +3320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/SelectRaceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4552">
@@ -3366,17 +3374,38 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
-          <caret line="1" column="56" lean-forward="true" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
+          <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        <state relative-caret-position="252">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
+            <element signature="e#690#708#0" expanded="true" />
             <element signature="e#908#934#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/victor/myapplication/Fragments/CharacterSheetFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_character_sheet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">

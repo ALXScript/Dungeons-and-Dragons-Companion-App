@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="cursive"
-            android:text="+3"
+            android:text="+2"
             app:layout_constraintBottom_toBottomOf="@+id/textViewProficienyBonusHeader"
             app:layout_constraintStart_toEndOf="@+id/textViewProficienyBonusHeader"
             app:layout_constraintTop_toTopOf="@+id/textViewProficienyBonusHeader" />
