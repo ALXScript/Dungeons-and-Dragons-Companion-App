@@ -25,8 +25,7 @@ import static java.lang.Boolean.TRUE;
 
 public class DiceFragment extends Fragment implements View.OnClickListener
 {
-    private ImageView d6;
-    private Button rollButton, d4, d8, d10, d12, d20, d100;
+    private Button rollButton, d4, d6, d8, d10, d12, d20, d100;
     private TextView diceResultTextView, diceQuant;
 
     private Random rng = new Random();
