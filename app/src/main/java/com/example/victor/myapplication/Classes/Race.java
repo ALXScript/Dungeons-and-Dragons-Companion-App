@@ -15,7 +15,6 @@ public class Race {
     {
         return this.raceName;
     }
-
     //Alex code
     public void setSpeed(int passSpeed){this.speed = passSpeed;}
     public int getSpeed(){return this.speed;}
