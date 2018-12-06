@@ -19,6 +19,7 @@ import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.example.victor.myapplication.Classes.BusProvider;
 import com.example.victor.myapplication.Classes.Character;
 import com.example.victor.myapplication.Classes.DnDClass;
+import com.example.victor.myapplication.Classes.Race;
 import com.example.victor.myapplication.R;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
@@ -47,6 +48,12 @@ public class CharacterSheetFragment extends Fragment {
 
     int currentHitPoints;
     int maxHitPoints =0;
+
+    //Alex Code
+    TextView textViewSpeedValue, textViewHitDiceValue;
+    int speedValue;
+    String hitDiceValue;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -130,6 +137,18 @@ public class CharacterSheetFragment extends Fragment {
             }
         });
         //......................................................................................
+
+        //Alex Code
+        //get the text views
+        textViewSpeedValue = view.findViewById(R.id.textViewSpeedValue);
+        textViewHitDiceValue = view.findViewById(R.id.textViewHitDiceValue);
+        //set the appropriate values
+        if(currentPlayerCharacter!=null){
+            textViewSpeedValue.setText(String.valueOf(speedValue));
+            textViewHitDiceValue.setText(String.valueOf(hitDiceValue));
+        }
+
+
         return view;
     }//end OnCreate
     /*
@@ -154,6 +173,11 @@ public class CharacterSheetFragment extends Fragment {
         maxHitPoints=currentPlayerCharacter.getMaxHitPoints();
         currentHitPoints=currentPlayerCharacter.getCurrentHitPoints();
         className=currentPlayerCharacter.getClassName();
+
+        //Alex Code
+        speedValue = currentPlayerCharacter.getSpeed();
+        hitDiceValue = currentPlayerCharacter.getMyHitDice();
+
     }
 
     @Subscribe

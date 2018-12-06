@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.victor.myapplication.Activities.MainActivity;
 import com.example.victor.myapplication.Classes.AbilityScoreSender;
@@ -33,6 +34,12 @@ public class SelectNameFragment extends Fragment {
     Character newCharacter;
     //AbilityScoreSender abilityScores;
     Bus BUS;
+
+    //Alex Code
+    String hitDice;
+    int charSpeed = 0;
+    int HP = 0;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -83,6 +90,11 @@ public class SelectNameFragment extends Fragment {
         return view;
     }
 
+    public void toastMessage(String message){
+        //Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
     //These are subscribe functions.
     //YOU DO NOT NEED TO CALL SUBSCRIBE FUNCTIONS
     //When you register a bus it will call any subscribe functions it needs to.
@@ -103,13 +115,28 @@ public class SelectNameFragment extends Fragment {
     @Subscribe
     void getAbilityScores(AbilityScoreSender abilityScoreSender)
     { abilityScores = abilityScoreSender.getAbilityScores();}
+
+    //Alex Code
+    @Subscribe
+    public void getSpeed(Race race){
+        charSpeed = race.getSpeed();
+        toastMessage(String.valueOf(charSpeed));
+    }
+    @Subscribe
+    public void getHP(DnDClass dnDClass){HP = dnDClass.getHP();}
+    @Subscribe
+    public void getHitDice(DnDClass dnDClass){hitDice = dnDClass.getHitDice();}
+
     //This is the produce function. It takes in an already created charater
     //Make sure you call it while the BUS is registered and inside a BUS.post()
     @Produce
     public Character sendCharacter ()
     {
         //Create a new instance of a character, using the parameters from the Posterboard on the BUS
-        Character newCharacter = new Character(name, abilityScores, raceName, className);
+        Character newCharacter = new Character(name, abilityScores, raceName, className, charSpeed, HP, hitDice);
+
+        //Alex Code
+        //toastMessage(String.valueOf(charSpeed));
 
         return newCharacter;
     }

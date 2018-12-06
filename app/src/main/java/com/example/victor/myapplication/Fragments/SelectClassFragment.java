@@ -34,7 +34,7 @@ import java.io.InputStream;
 public class SelectClassFragment extends Fragment {
     //Global Variables
     String hitDice;
-    String hpAtLVL1;
+    int hpAtLVL1;
     String hpHighLVL;
     String proficienciesArmor[] = new String[10];
     String proficienciesWeapons[] = new String[10];
@@ -204,7 +204,7 @@ public class SelectClassFragment extends Fragment {
             hitDice = classObject.getString("HP_Hit_Dice");
 
             //get the HP at level 1 (one)
-            hpAtLVL1 = classObject.getString("HP_HP_LVL1");
+            hpAtLVL1 = classObject.getInt("HP_HP_LVL1");
 
             //Get the HP at a higher level
             hpHighLVL = classObject.getString("HP_HP_HighLVL");
@@ -555,6 +555,11 @@ public class SelectClassFragment extends Fragment {
     {
         DnDClass dnDClass = new DnDClass();
         dnDClass.setClassName(className);
+
+        //Alex Code
+        dnDClass.setHP(hpAtLVL1);
+        dnDClass.setHitDice(hitDice);
+
         return dnDClass;
     }
 

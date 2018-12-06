@@ -75,15 +75,20 @@ public class Character {
     private int mySpellBookTable;
     private int myInventoryTable;
 
-    public Character(String name, int abilityScores[], String myRace, String myClass)
+    public Character(String name, int abilityScores[], String myRace, String myClass, int passSpeed, int passHP, String passHitDice)
     {
         this.name = name;
         this.abilityScores = abilityScores;
         this.className=myClass;
         this.raceName=myRace;
         armorClass = 13;
-        mySpeed = 30;
-        maxHitPoints=currentHitPoints=10;
+        //mySpeed = 30;
+        //maxHitPoints=currentHitPoints=10;
+
+        //Alex Code
+        this.mySpeed = passSpeed;
+        maxHitPoints = currentHitPoints = passHP;
+        this.myHitDice = passHitDice;
 
         statProficiencyBonus=2;
     }
@@ -146,6 +151,11 @@ public class Character {
 
     public String getRaceName()
     {return raceName;}
+
+
+    //Alex Code
+    public int getSpeed(){return mySpeed;}
+    public String getMyHitDice(){return myHitDice;}
     //Setters................................................................................
 
 

@@ -483,6 +483,10 @@ public class SelectRaceFragment extends Fragment {
     {
         Race race= new Race();
         race.setRaceName(raceName);
+
+        //Alex Code
+        race.setSpeed(speed);
+
         return race;
     }
 
