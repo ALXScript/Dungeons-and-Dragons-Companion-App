@@ -4,7 +4,7 @@ public class Race {
     private String raceName;
 
     //Alex Code
-    private int speed;
+    private int speed=30;
 
     public void setRaceName(String raceName)
     {

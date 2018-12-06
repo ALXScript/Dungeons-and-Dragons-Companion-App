@@ -34,7 +34,7 @@ public class SelectRaceFragment extends Fragment {
     //Global Variables
     int abilityScores[] = new int[6];
     String alignment[] = new String[9];
-    int speed;
+    int speed=30;
     String ability[] = new String[10];
     String abilityDescription[] = new String[10];
     String languages[] = new String[16];

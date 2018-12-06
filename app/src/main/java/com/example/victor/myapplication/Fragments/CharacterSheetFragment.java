@@ -163,7 +163,6 @@ public class CharacterSheetFragment extends Fragment {
     @Subscribe
     public void getCharacter(Character sampleCharacter)
     {
-        toastMessage("CHARACTER AQUIRED");
         currentPlayerCharacter = sampleCharacter;
         abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreModifiers=currentPlayerCharacter.getAllAbilityScoreModifiers();
@@ -175,7 +174,7 @@ public class CharacterSheetFragment extends Fragment {
         className=currentPlayerCharacter.getClassName();
 
         //Alex Code
-        speedValue = currentPlayerCharacter.getSpeed();
+        speedValue = 30;
         hitDiceValue = currentPlayerCharacter.getMyHitDice();
 
     }
