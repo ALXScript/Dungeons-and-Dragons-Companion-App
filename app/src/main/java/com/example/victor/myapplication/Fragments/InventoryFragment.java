@@ -55,13 +55,13 @@ public class InventoryFragment extends Fragment {
 
         myDialog = new Dialog(getContext()); //for item infoinventory popup
 
-        getIDFromListView();
+        getSlugFromListView();
 
         return view;
     }
 
-    private void getItemInfo(int id, Dialog myDialog) {
-        Cursor data = myDatabaseAccess.getData();
+    private void getItemInfo(String slug, Dialog myDialog) {
+        Cursor data = myDatabaseAccess.getItemsData();
 
         itemSource = (TextView) myDialog.findViewById(R.id.itemSourceTextView);
         itemType = (TextView) myDialog.findViewById(R.id.itemTypeTextView);
@@ -70,36 +70,40 @@ public class InventoryFragment extends Fragment {
         itemCount = (TextView) myDialog.findViewById(R.id.itemCountTextView);
 
         while (data.moveToNext()) {
-            if (data.getInt(0) == id) {
-                itemSource.setText(data.getString(3));
-                itemType.setText(data.getString(4));
-                itemDesc.setText(data.getString(2));
+            if (slug.equals(data.getString(0))) {
+                itemSource.setText(data.getString(6));
+                itemType.setText(data.getString(2));
+                itemDesc.setText(data.getString(3));
                 itemNameTextView.setText(data.getString(1));
             }
         }
 
-        itemCount.setText("QTY: " + Integer.toString(myDatabaseAccess.getExistingItemCount(id)));
+        data.close();
+
+        itemCount.setText("QTY: " + Integer.toString(myDatabaseAccess.getExistingItemCount(slug)));
     }
 
-    private void getIDFromListView() {
+    private void getSlugFromListView() {
         //set an onItemClickListener to the ListView
         inventoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 String name = adapterView.getItemAtPosition(i).toString();
 
-                Cursor data = myDatabaseAccess.getItemIDitems(name); //get the id associated with that name
-                int itemID = -1;
+                Cursor data = myDatabaseAccess.getItemSlugitems(name); //get the slug associated with that name
+                String itemSlug = "_";
 
                 while (data.moveToNext()) {
-                    itemID = data.getInt(0);
+                    itemSlug = data.getString(0);
                 }
 
-                if (itemID > -1) {
+                data.close();
+
+                if (itemSlug != "_") {
 
                     myDialog.setContentView(R.layout.popup_iteminfoinventory);
 
-                    getItemInfo(itemID, myDialog);
+                    getItemInfo(itemSlug, myDialog);
 
                     removeItemBttn = (Button) myDialog.findViewById(R.id.itemRemoveInventoryBtn);
                     closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
@@ -111,19 +115,19 @@ public class InventoryFragment extends Fragment {
                         }
                     });
 
-                    final int finalItemID = itemID;
+                    final String finalItemSlug = itemSlug;
                     removeItemBttn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            int itemCount = myDatabaseAccess.getExistingItemCount(finalItemID);
+                            int itemCount = myDatabaseAccess.getExistingItemCount(finalItemSlug);
 
                             if(itemCount > 1) {
-                                myDatabaseAccess.removeFromInventoriesCount(finalItemID, itemCount-1); //remove 1 from count
-                                getItemInfo(finalItemID, myDialog);
+                                myDatabaseAccess.removeFromInventoriesCount(finalItemSlug, itemCount-1); //remove 1 from count
+                                getItemInfo(finalItemSlug, myDialog);
                             }
 
                             else {
-                                myDatabaseAccess.deleteItemFromInv(finalItemID);
+                                myDatabaseAccess.deleteItemFromInv(finalItemSlug);
                                 adapter.remove(adapter.getItem(i));
                                 adapter.notifyDataSetChanged();
                                 myDialog.dismiss();

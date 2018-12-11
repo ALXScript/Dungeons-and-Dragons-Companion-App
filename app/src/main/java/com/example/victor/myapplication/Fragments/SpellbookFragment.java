@@ -21,7 +21,8 @@ import com.example.victor.myapplication.R;
 
 import java.util.List;
 
-public class SpellbookFragment extends Fragment {
+public class SpellbookFragment extends Fragment
+{
 
     //General Listview Variables
     ListView spellbookListView;
@@ -41,7 +42,9 @@ public class SpellbookFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState)
+    {
         View view = inflater.inflate(R.layout.fragment_spellbook, container, false);
         super.onCreate(savedInstanceState);
 
@@ -50,17 +53,19 @@ public class SpellbookFragment extends Fragment {
         myDatabaseAccess.open();
         spellNames = myDatabaseAccess.fillSpellbook();
 
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, spellNames);
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,
+                                           spellNames);
         spellbookListView.setAdapter(adapter);
 
         myDialog = new Dialog(getContext()); //for spell infospellbook popup
 
-        getIDFromListView();
+        getSlugFromListView();
 
         return view;
     }
 
-    private void getSpellInfo(int id, Dialog myDialog) {
+    private void getSpellInfo(String slug, Dialog myDialog)
+    {
         Cursor data = myDatabaseAccess.getSpellsData();
 
         spellSource = (TextView) myDialog.findViewById(R.id.spellSourceTextView);
@@ -69,8 +74,10 @@ public class SpellbookFragment extends Fragment {
         spellNameTextView = (TextView) myDialog.findViewById(R.id.spellNameTextView);
         spellCount = (TextView) myDialog.findViewById(R.id.spellCountTextView);
 
-        while (data.moveToNext()) {
-            if (data.getInt(0) == id) {
+        while (data.moveToNext())
+        {
+            if (slug.equals(data.getString(0)))
+            {
                 spellSource.setText(data.getString(3));
                 spellType.setText(data.getString(4));
                 spellDesc.setText(data.getString(2));
@@ -78,52 +85,69 @@ public class SpellbookFragment extends Fragment {
             }
         }
 
-        spellCount.setText("QTY: " + Integer.toString(myDatabaseAccess.getExistingSpellCount(id)));
+        data.close();
+
+        spellCount.setText("QTY: " + Integer.toString(myDatabaseAccess.getExistingSpellCount
+                (slug)));
     }
 
-    private void getIDFromListView() {
+    private void getSlugFromListView()
+    {
         //set an onItemClickListener to the ListView
-        spellbookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spellbookListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l)
+            {
                 String name = adapterView.getItemAtPosition(i).toString();
 
-                Cursor data = myDatabaseAccess.getSpellIDSpells(name); //get the id associated with that name
-                int spellID = -1;
+                Cursor data = myDatabaseAccess.getSpellSlugSpells(name); //get the slug
+                // associated with that name
+                String spellSlug = "_";
 
-                while (data.moveToNext()) {
-                    spellID = data.getInt(0);
+                while (data.moveToNext())
+                {
+                    spellSlug = data.getString(0);
                 }
 
-                if (spellID > -1) {
+                data.close();
+
+                if (spellSlug != "_")
+                {
 
                     myDialog.setContentView(R.layout.popup_spellinfospellbook);
 
-                    getSpellInfo(spellID, myDialog);
+                    getSpellInfo(spellSlug, myDialog);
 
                     removeSpellBttn = (Button) myDialog.findViewById(R.id.spellRemoveSpellbookBtn);
                     closeBttn = (Button) myDialog.findViewById(R.id.closeBtn);
 
-                    closeBttn.setOnClickListener(new View.OnClickListener() {
+                    closeBttn.setOnClickListener(new View.OnClickListener()
+                    {
                         @Override
-                        public void onClick(View v) {
+                        public void onClick(View v)
+                        {
                             myDialog.dismiss();
                         }
                     });
 
-                    final int finalSpellID = spellID;
-                    removeSpellBttn.setOnClickListener(new View.OnClickListener() {
+                    final String finalSpellSlug = spellSlug;
+                    removeSpellBttn.setOnClickListener(new View.OnClickListener()
+                    {
                         @Override
-                        public void onClick(View v) {
-                            int spellCount = myDatabaseAccess.getExistingSpellCount(finalSpellID);
+                        public void onClick(View v)
+                        {
+                            int spellCount = myDatabaseAccess.getExistingSpellCount(finalSpellSlug);
 
-                            if(spellCount > 1) {
-                                myDatabaseAccess.removeFromSpellbooksCount(finalSpellID, spellCount-1); //remove 1 from count
-                                getSpellInfo(finalSpellID, myDialog);
-                            }
-
-                            else {
-                                myDatabaseAccess.deleteItemFromSpellbook(finalSpellID);
+                            if (spellCount > 1)
+                            {
+                                myDatabaseAccess.removeFromSpellbooksCount(finalSpellSlug,
+                                                                           spellCount - 1);
+                                //remove 1 from count
+                                getSpellInfo(finalSpellSlug, myDialog);
+                            } else
+                            {
+                                myDatabaseAccess.deleteItemFromSpellbook(finalSpellSlug);
                                 adapter.remove(adapter.getItem(i));
                                 adapter.notifyDataSetChanged();
                                 myDialog.dismiss();
@@ -131,17 +155,17 @@ public class SpellbookFragment extends Fragment {
                             }
                         }
                     });
-
                     myDialog.show();
-                } else {
+                } else
+                {
                     toastMessage("No ID associated with that name");
                 }
-
             }
         });
     }
 
-    private void toastMessage(String message) {
+    private void toastMessage(String message)
+    {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }

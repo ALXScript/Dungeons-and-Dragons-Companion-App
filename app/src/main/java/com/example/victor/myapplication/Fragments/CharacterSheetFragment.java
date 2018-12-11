@@ -12,15 +12,17 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.victor.myapplication.Adapters.AbilityScoreAdapter;
+import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.example.victor.myapplication.Classes.BusProvider;
 import com.example.victor.myapplication.Classes.Character;
+import com.example.victor.myapplication.Classes.DnDClass;
+import com.example.victor.myapplication.Classes.Race;
 import com.example.victor.myapplication.R;
-import com.example.victor.myapplication.Adapters.SkillsListAdapter;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
-
 
 public class CharacterSheetFragment extends Fragment {
 
@@ -31,32 +33,50 @@ public class CharacterSheetFragment extends Fragment {
     AbilityScoreAdapter abilityScoreAdapter;
     SkillsListAdapter skillsListAdapter;
     String [] abilityScoreNames,skillNames;
-    TextView textViewHitPointValue;
-    TextView textViewCharacterName;
+    TextView textViewHitPointValue, textViewClassName, textViewCharacterName;
     String displayHitPoints;
     View view;
     Bus BUS;
+    int skillModifiers[]= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    int abilityScores[] = {10,10,10,10,10,10};
+    int [] abilityScoreModifiers={0,0,0,0,0,0};
+    String name = "NA";
+    String className="Bard";//TODO FIX ME
+    //FIXME WOW
+    boolean skillProficiencies[];
+
 
     int currentHitPoints;
     int maxHitPoints =0;
+
+    //Alex Code
+    TextView textViewSpeedValue, textViewHitDiceValue;
+    int speedValue;
+    String hitDiceValue;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         view = inflater.inflate(R.layout.fragment_character_sheet, container, false);
 
         //Used to load PlayerCharacter
         BUS = BusProvider.getInstance();
         BUS.register(this);
-        int [] abilityScoreModifiers = currentPlayerCharacter.getAllAbilityScoreModifiers();
 
-        textViewCharacterName=view.findViewById(R.id.textViewCharacterName);
-        textViewCharacterName.setText(currentPlayerCharacter.getMyName());
+//        toastMessage("Im in");
+        textViewCharacterName = view.findViewById(R.id.textViewCharacterName);
+        textViewCharacterName.setText(name);
+
+        textViewClassName=view.findViewById(R.id.textViewClassName);
+        textViewClassName.setText(className);
+
         //Load in the ability scores
-        int abilityScores[] = {0,0,0,0,0,0};
         if (currentPlayerCharacter!=null)  abilityScores = currentPlayerCharacter.getAbilityScores();
         abilityScoreRecycler = view.findViewById(R.id.recyclerViewAbilityScores);
         abilityScoreRecycler.setHasFixedSize(true);
-        abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        abilityScoreRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.);
         abilityScoreNames = getResources().getStringArray(R.array.AbilityScores);
         abilityScoreAdapter = new AbilityScoreAdapter(getContext(), abilityScoreNames,abilityScores,abilityScoreModifiers);
         abilityScoreRecycler.setAdapter(abilityScoreAdapter);
@@ -67,8 +87,7 @@ public class CharacterSheetFragment extends Fragment {
         skillsRecyclerView.setNestedScrollingEnabled(false);
         skillsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         skillNames = getResources().getStringArray(R.array.Skills);
-        boolean skillProficiencies []=currentPlayerCharacter.getSkillProficiencies();
-        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies);
+        skillsListAdapter = new SkillsListAdapter(getContext(),skillNames, skillProficiencies,skillModifiers);
         skillsRecyclerView.setAdapter(skillsListAdapter);
 
         //Health bar ..............................................................................
@@ -77,8 +96,11 @@ public class CharacterSheetFragment extends Fragment {
         buttonIncreaseHitPoints =view.findViewById(R.id.buttonIncreaseHealth);
 
         //Initialize Health Bar Values
-        currentHitPoints = currentPlayerCharacter.getCurrentHitPoints();
-        maxHitPoints = currentPlayerCharacter.getMaxHitPoints();
+        if (currentPlayerCharacter!=null) {
+            currentHitPoints = currentPlayerCharacter.getCurrentHitPoints();
+            maxHitPoints = currentPlayerCharacter.getMaxHitPoints();
+        }
+        else{currentHitPoints=maxHitPoints=100;}
         progressBar = view.findViewById(R.id.progressBar);
         progressBar.setMax(maxHitPoints);
         progressBar.setProgress(currentHitPoints);
@@ -96,8 +118,6 @@ public class CharacterSheetFragment extends Fragment {
                     currentHitPoints =progressBar.getProgress();
                     displayHitPoints = (Integer.toString(currentHitPoints)+ "/" + Integer.toString(maxHitPoints));
                     textViewHitPointValue.setText(displayHitPoints);
-
-
                 }
             }
         });
@@ -117,6 +137,18 @@ public class CharacterSheetFragment extends Fragment {
             }
         });
         //......................................................................................
+
+        //Alex Code
+        //get the text views
+        textViewSpeedValue = view.findViewById(R.id.textViewSpeedValue);
+        textViewHitDiceValue = view.findViewById(R.id.textViewHitDiceValue);
+        //set the appropriate values
+        if(currentPlayerCharacter!=null){
+            textViewSpeedValue.setText(String.valueOf(speedValue));
+            textViewHitDiceValue.setText(String.valueOf(hitDiceValue));
+        }
+
+
         return view;
     }//end OnCreate
     /*
@@ -131,7 +163,28 @@ public class CharacterSheetFragment extends Fragment {
     @Subscribe
     public void getCharacter(Character sampleCharacter)
     {
-        currentPlayerCharacter=sampleCharacter;
+        currentPlayerCharacter = sampleCharacter;
+        abilityScores = currentPlayerCharacter.getAbilityScores();
+        abilityScoreModifiers=currentPlayerCharacter.getAllAbilityScoreModifiers();
+        skillModifiers=currentPlayerCharacter.getAllSkillModifiers();
+        skillProficiencies=currentPlayerCharacter.getAllSkillProficiencies();
+        name=currentPlayerCharacter.getName();
+        maxHitPoints=currentPlayerCharacter.getMaxHitPoints();
+        currentHitPoints=currentPlayerCharacter.getCurrentHitPoints();
+        className=currentPlayerCharacter.getClassName();
 
+        //Alex Code
+        speedValue = 30;
+        hitDiceValue = currentPlayerCharacter.getMyHitDice();
+
+    }
+
+    @Subscribe
+    public void getClass (DnDClass dnDClass)
+    {
+        className=dnDClass.getClassName();
+    }
+    private void toastMessage(String message) {
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }

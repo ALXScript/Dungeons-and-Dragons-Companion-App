@@ -1,13 +1,12 @@
 <resources>
-    <string name="app_name">DnD Companion</string>
-    <string name="charCreat">Create Char</string>
-    <string name="selChar">Select Char</string>
+    <string name="app_name">Tome Of Adventurers</string>
+    <string name="teamEmailAddress">TomeOfAdventurers@gmail.com</string>
+    <string name="charCreat">Create Character</string>
+    <string name="selChar">Select Character</string>
     <string name="diceRoll">Roll Dice</string>
 
 
-
     <string name="stats">Stats</string>
-
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -21,6 +20,14 @@
         <item>Wis</item>
         <item>Cha</item>
     </string-array>
+
+    <string name="AbilityScoreName">Ability Score Name</string>
+    <string name = "Strength">Strength</string>
+    <string name = "Dexterity">Dexterity</string>
+    <string name = "Constitution">Constitution</string>
+    <string name = "Intelligence">Intelligence</string>
+    <string name = "Wisdom">Wisdom</string>
+    <string name = "Charisma">Charisma</string>
 
     <string-array name="Skills">
         <item>Acrobatics</item>
@@ -44,19 +51,16 @@
     </string-array>
 
     <string-array name="RaceList">
-        <item>Dwarf</item>
+        <item>Nothing Selected</item>
         <item>Hill Dwarf</item>
         <item>Mountain Dwarf</item>
-        <item>Elf</item>
         <item>High Elf</item>
         <item>Wood Elf</item>
         <item>Dark Elf (Drow)</item>
-        <item>Halfling</item>
         <item>Lightfoot Halfling</item>
         <item>Stout Halfling</item>
         <item>Human</item>
         <item>Dragonborn</item>
-        <item>Gnome</item>
         <item>Forest Gnome</item>
         <item>Rock Gnome</item>
         <item>Half-Elf</item>
@@ -65,6 +69,7 @@
     </string-array>
 
     <string-array name="ClassList">
+        <item>Nothing Selected</item>
         <item>Barbarian</item>
         <item>Bard</item>
         <item>Cleric</item>
@@ -79,12 +84,30 @@
         <item>Wizard</item>
     </string-array>
 
+    <string-array name="LanguageList">
+        <item>Common</item>
+        <item>Dwarvish</item>
+        <item>Elvish</item>
+        <item>Giant</item>
+        <item>Gnomish</item>
+        <item>Goblin</item>
+        <item>Halfling</item>
+        <item>Orc</item>
+        <item>Abyssal</item>
+        <item>Celestial</item>
+        <item>Draconic</item>
+        <item>Deep Speech</item>
+        <item>Infernal</item>
+        <item>Primordial</item>
+        <item>Sylvan</item>
+        <item>Undercommon</item>
+    </string-array>
+
     <string name="home">Home</string>
 
 
     <string name="rollDice">Roll Dice</string>
     <string name="database">Database</string>
-
 
 
     <string name="close">(X)</string>
@@ -102,7 +125,6 @@
 
     <string name="spells">Spells</string>
     <string name="spellBook">Spell Book</string>
-
 
 
     <string name="areYouSure">Are you sure?</string>

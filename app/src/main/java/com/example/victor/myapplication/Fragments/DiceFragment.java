@@ -19,20 +19,23 @@ import android.widget.TextView;
 import com.example.victor.myapplication.R;
 
 import java.util.Random;
+
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
-public class DiceFragment extends Fragment implements View.OnClickListener{
-    private ImageView d6;
-    private Button rollButton, d4, d8, d10, d12, d20, d100;
-    private TextView diceResultTextView , diceQuant;
+public class DiceFragment extends Fragment implements View.OnClickListener
+{
+    private Button rollButton, d4, d6, d8, d10, d12, d20, d100;
+    private TextView diceResultTextView, diceQuant;
 
     private Random rng = new Random();
-    private int[] diceCount = {0,0,0,0,0,0,0};//Number of dice being rolled
+    private int[] diceCount = {0, 0, 0, 0, 0, 0, 0};//Number of dice being rolled
 
     @Override
-    public void onClick(View v){
-        switch (v.getId()){
+    public void onClick(View v)
+    {
+        switch (v.getId())
+        {
             case R.id.d4: //diceCount[0]
                 diceCount[0]++;
                 displayDiceSelected();
@@ -63,8 +66,9 @@ public class DiceFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.roll:
                 rollDice();
-                for (int i =0; i<7; i++){ //Resetting all counts
-                    diceCount[i] =0;
+                for (int i = 0; i < 7; i++)
+                { //Resetting all counts
+                    diceCount[i] = 0;
                 }
                 break;
         }
@@ -74,13 +78,15 @@ public class DiceFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+            @Nullable Bundle savedInstanceState)
+    {
 
         View view = inflater.inflate(R.layout.fragment_diceroller, container, false);
         super.onCreate(savedInstanceState);
 
         //Onclick listeners
-        d4 = view.findViewById(R.id.d4); //Assigns id d4 from fragment_diceroller.xml to local button d4
+        d4 = view.findViewById(R.id.d4); //Assigns id d4 from fragment_diceroller.xml to local
+        // button d4
         d4.setOnClickListener(this);
 
         d6 = view.findViewById(R.id.d6);
@@ -110,50 +116,61 @@ public class DiceFragment extends Fragment implements View.OnClickListener{
         return view;
     }
 
-    private void displayDiceSelected(){
-        int[] diceSize = {4,6,8,10,12,20,100};
-        String displayDice = "No dice Selected", additionalDice;
-        boolean firstRoll = TRUE;
+    private void displayDiceSelected()
+    {
+        int[]   diceSize    = {4, 6, 8, 10, 12, 20, 100};
+        String  displayDice = "No dice Selected", additionalDice;
+        boolean firstRoll   = TRUE;
 
-        for (int i =0; i < 7; i++){ //Loop for all 7 dice
-            if (diceCount[i] > 0 && firstRoll == TRUE){ //If dice[i] is selected and it is the first dice
-                displayDice = Integer.toString(diceCount[i])+"d"+Integer.toString(diceSize[i]);
+        for (int i = 0; i < 7; i++)
+        { //Loop for all 7 dice
+            if (diceCount[i] > 0 && firstRoll == TRUE)
+            { //If dice[i] is selected and it is the first dice
+                displayDice = Integer.toString(diceCount[i]) + "d" + Integer.toString(diceSize[i]);
                 firstRoll = FALSE;
-            }
-            else if(diceCount[i] > 0){ //Concat all other dice onto first roll
-                additionalDice = " + " + Integer.toString(diceCount[i])+"d"+ Integer.toString(diceSize[i]);
-                displayDice += additionalDice;
-            }
-            else{ }//No dice selected = Do nothing
+            } else
+                if (diceCount[i] > 0)
+                { //Concat all other dice onto first roll
+                    additionalDice = " + " + Integer.toString(diceCount[i]) + "d" + Integer
+                            .toString(diceSize[i]);
+                    displayDice += additionalDice;
+                } else
+                {
+                }//No dice selected = Do nothing
         }
         diceQuant.setText(displayDice); //Update text to show dice selected
     }
 
 
-    private void rollDice(){
-        int[] diceSize = {4,6,8,10,12,20,100};
-        int sum=0;
-        String individualDiceRoll = "No Dice Selected", newRoll;
-        boolean firstRoll = TRUE;
+    private void rollDice()
+    {
+        int[]   diceSize           = {4, 6, 8, 10, 12, 20, 100};
+        int     sum                = 0;
+        String  individualDiceRoll = "No Dice Selected", newRoll;
+        boolean firstRoll          = TRUE;
 
-        for (int j= 0; j<7; j++) {
-            for (int i = 0; i < diceCount[j]; i++) {
-                int diceResults= rng.nextInt(diceSize[j]) + 1;
-                if (firstRoll == TRUE) {
+        for (int j = 0; j < 7; j++)
+        {
+            for (int i = 0; i < diceCount[j]; i++)
+            {
+                int diceResults = rng.nextInt(diceSize[j]) + 1;
+                if (firstRoll == TRUE)
+                {
                     individualDiceRoll = Integer.toString(diceResults);
                     firstRoll = FALSE;
-                }
-                else {
+                } else
+                {
                     newRoll = " + " + Integer.toString(diceResults);
                     individualDiceRoll += newRoll;
                 }
                 sum += diceResults;
             }
         }
-        if (firstRoll == FALSE) {
+        if (firstRoll == FALSE)
+        {
             diceResultTextView.setText(individualDiceRoll + " = " + String.valueOf(sum));
-        }
-        else {
+        } else
+        {
             diceResultTextView.setText(individualDiceRoll);
             diceQuant.setText("No Dice Selected");
         }
